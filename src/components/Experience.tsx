@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -245,7 +245,7 @@ function RailsSVG({ hovered }: { hovered: boolean }) {
 /* ─────────────────────────────────────────────────────────────────────────
    Tilt Card
    ───────────────────────────────────────────────────────────────────────── */
-type IllustrationComponent = (props: { hovered: boolean }) => JSX.Element;
+type IllustrationComponent = (props: { hovered: boolean }) => React.JSX.Element;
 
 interface CardProps {
   fig: string;

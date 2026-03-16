@@ -27,7 +27,7 @@ export default function Footer() {
               <a href="#" className="text-[13px] text-[#8a8f98] hover:text-[#F8FAFC] transition-colors duration-200">
                 Capabilities
               </a>
-              <a href="#" className="text-[13px] text-[#8a8f98] hover:text-[#F8FAFC] transition-colors duration-200">
+              <a href="/research" className="text-[13px] text-[#8a8f98] hover:text-[#F8FAFC] transition-colors duration-200">
                 Research &amp; Perspectives
               </a>
               <a href="#" className="text-[13px] text-[#8a8f98] hover:text-[#F8FAFC] transition-colors duration-200">

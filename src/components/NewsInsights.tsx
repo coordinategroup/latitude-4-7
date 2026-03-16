@@ -2,54 +2,32 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { urlFor } from "@/sanity/lib/image";
 
-const articles = [
-  {
-    index: "01",
-    category: "Technology",
-    title: "How small island economies are leading the digital governance conversation",
-    excerpt:
-      "For decades, digital transformation has been framed as a challenge exclusive to large, resource-rich nations. That assumption is being quietly dismantled by a new generation of island economies building governance frameworks with precision, speed, and long-term intent.",
-    image: "/images/Homepage/feature_article_1.jpg",
-    date: "March 2026",
-    href: "#",
-  },
-  {
-    index: "02",
-    category: "Policy",
-    title: "The infrastructure layer that governments overlook",
-    excerpt:
-      "When national digital strategies fail, the cause is rarely technical. More often, it is the absence of a coherent governance layer — the connective tissue between political mandate and operational delivery that determines whether technology serves the public.",
-    image: "/images/Homepage/feature_article_1.jpg",
-    date: "February 2026",
-    href: "#",
-  },
-  {
-    index: "03",
-    category: "Finance",
-    title: "Sovereign data control as a financial instrument",
-    excerpt:
-      "In an era where data is increasingly treated as a tradeable asset, the question of who controls national financial data is no longer abstract. For small states, it is a matter of economic independence.",
-    image: "/images/Homepage/feature_article_1.jpg",
-    date: "January 2026",
-    href: "#",
-  },
-  {
-    index: "04",
-    category: "Insight",
-    title: "Why international partnerships require independent oversight",
-    excerpt:
-      "Digital partnerships between governments and international technology providers carry significant asymmetries of expertise. Without an independent oversight function, national governments risk ceding operational control.",
-    image: "/images/Homepage/feature_article_1.jpg",
-    date: "December 2025",
-    href: "#",
-  },
-];
+export type SpotlightArticle = {
+  _id: string;
+  category?: string;
+  title: string;
+  subheading?: string;
+  slug: { current: string };
+  publishedAt: string;
+  mainImage?: { asset: { _id: string; url: string }; alt?: string };
+};
 
-export default function NewsInsights() {
+function formatDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString("en-GB", {
+    month: "long",
+    year: "numeric",
+  });
+}
+
+export default function NewsInsights({ articles }: { articles: SpotlightArticle[] }) {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
+
+  if (!articles.length) return null;
 
   const go = (dir: number) => {
     setDirection(dir);
@@ -64,11 +42,9 @@ export default function NewsInsights() {
 
         {/* Header */}
         <div className="flex items-center justify-between mb-10">
-          <div className="flex flex-col gap-3">
-            <span className="text-[12px] font-semibold uppercase tracking-widest text-[#8a8f98]">
-              Spotlight
-            </span>
-          </div>
+          <span className="text-[12px] font-semibold uppercase tracking-widest text-[#8a8f98]">
+            Spotlight
+          </span>
           {/* Nav arrows */}
           <div className="flex items-center gap-3">
             <span className="text-[14px] text-[#8a8f98] font-mono">
@@ -98,12 +74,12 @@ export default function NewsInsights() {
         {/* Card */}
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
-            key={current}
+            key={article._id}
             custom={direction}
             initial={{ opacity: 0, x: direction * 40 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: direction * -40 }}
-            transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] as const }}
             className="grid grid-cols-1 md:grid-cols-[1fr_1fr] border border-white/[0.08] overflow-hidden"
           >
             {/* Left: text */}
@@ -111,39 +87,49 @@ export default function NewsInsights() {
               <div className="flex flex-col gap-5">
                 <div className="flex items-center gap-4">
                   <span className="font-mono text-[14px] tracking-[0.22em] text-[#D4B996]/45 uppercase">
-                    {article.index}
+                    {String(current + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-[12px] font-semibold uppercase tracking-widest text-[#8a8f98]">
-                    {article.category}
+                  {article.category && (
+                    <span className="text-[12px] font-semibold uppercase tracking-widest text-[#8a8f98]">
+                      {article.category}
+                    </span>
+                  )}
+                  <span className="text-[13px] text-[#8a8f98] ml-auto">
+                    {formatDate(article.publishedAt)}
                   </span>
-                  <span className="text-[13px] text-[#8a8f98] ml-auto">{article.date}</span>
                 </div>
                 <h3 className="text-[28px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.2]">
                   {article.title}
                 </h3>
-                <p className="text-[15px] text-[#8a8f98] leading-[1.8]">
-                  {article.excerpt}
-                </p>
+                {article.subheading && (
+                  <p className="text-[15px] text-[#8a8f98] leading-[1.8]">
+                    {article.subheading}
+                  </p>
+                )}
               </div>
-              <a
-                href={article.href}
+              <Link
+                href={`/research/${article.slug.current}`}
                 className="flex items-center gap-2 text-[15px] font-medium text-[#F8FAFC] hover:text-[#F8FAFC]/70 transition-colors w-fit"
               >
                 Read article
                 <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                   <path d="M2.5 7h9M7 2.5L11.5 7 7 11.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </a>
+              </Link>
             </div>
 
             {/* Right: image */}
-            <div className="relative min-h-[420px]">
-              <Image
-                src={article.image}
-                alt={article.title}
-                fill
-                className="object-cover"
-              />
+            <div className="relative min-h-[420px] overflow-hidden">
+              {article.mainImage?.asset?.url ? (
+                <Image
+                  src={urlFor(article.mainImage).width(900).height(700).url()}
+                  alt={article.mainImage.alt ?? article.title}
+                  fill
+                  className="object-cover"
+                />
+              ) : (
+                <div className="absolute inset-0 bg-white/[0.03]" />
+              )}
             </div>
           </motion.div>
         </AnimatePresence>

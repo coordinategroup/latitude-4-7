@@ -75,8 +75,8 @@ export default function StrategicContext() {
   const containerHeight = `${sentences.length * 60}vh`;
 
   return (
-    <div ref={containerRef} style={{ height: containerHeight }} className="mt-24">
-      <section className="sticky top-0 h-screen bg-[#08090A] border-t border-white/[0.06] flex items-center">
+    <div ref={containerRef} style={{ height: containerHeight }}>
+      <section className="sticky top-0 h-screen bg-[#08090A] flex items-center">
         <div className="px-20 md:px-32 w-full">
           <div className="grid grid-cols-1 md:grid-cols-[30%_1fr] gap-12 md:gap-20 items-start">
 

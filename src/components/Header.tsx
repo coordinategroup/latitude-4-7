@@ -110,10 +110,10 @@ export default function Header() {
             </AnimatePresence>
           </div>
 
-          <a href="#" className="text-[13px] text-[#8a8f98] hover:text-[#F8FAFC] transition-colors">
+          <a href="/research" className="text-[13px] text-[#8a8f98] hover:text-[#F8FAFC] transition-colors">
             Research &amp; Perspectives
           </a>
-          <a href="#" className="text-[13px] text-[#8a8f98] hover:text-[#F8FAFC] transition-colors">
+          <a href="/who-we-are" className="text-[13px] text-[#8a8f98] hover:text-[#F8FAFC] transition-colors">
             Who We Are
           </a>
           <a href="#contact" className="text-[13px] bg-white text-[#08090A] px-5 py-2 rounded-[4px] font-medium hover:bg-white/90 transition-colors">

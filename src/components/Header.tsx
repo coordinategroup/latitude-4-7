@@ -246,10 +246,10 @@ export default function Header() {
         {mobileOpen && (
           <motion.div
             className="fixed inset-0 z-[60] bg-[#08090A] flex flex-col md:hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            initial={{ opacity: 0, y: "-100%" }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: "-100%" }}
+            transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
           >
             {/* Top bar */}
             <div className="flex items-center justify-between px-6 pt-8 pb-6 border-b border-white/[0.06]">
@@ -284,8 +284,9 @@ export default function Header() {
                 <button
                   className="w-full flex items-center justify-between px-6 py-5 text-left"
                   onClick={() => setMobileCapOpen(!mobileCapOpen)}
+                  style={{ fontFamily: "var(--font-jetbrains-mono)" }}
                 >
-                  <span className="text-[18px] font-medium text-[#F8FAFC] tracking-[-0.01em]">Capabilities</span>
+                  <span className="text-[11px] tracking-widest text-[#F8FAFC] uppercase">CAPABILITIES</span>
                   <motion.svg
                     width="16" height="16" viewBox="0 0 12 12" fill="none"
                     animate={{ rotate: mobileCapOpen ? 180 : 0 }}
@@ -300,22 +301,19 @@ export default function Header() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
+                      transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="flex flex-col gap-2 px-6 pb-4">
-                        {capabilities.map((item, i) => (
+                      <div className="flex flex-col divide-y divide-white/[0.04] pl-10 pr-6 pb-4">
+                        {capabilities.map((item) => (
                           <a
                             key={item.label}
                             href={item.href}
                             onClick={() => setMobileOpen(false)}
-                            className="flex flex-col gap-1.5 p-4 border border-white/[0.08] bg-white/[0.02]"
+                            className="py-4 text-[11px] tracking-widest text-[#8a8f98] hover:text-[#D4B996] transition-colors duration-150 uppercase"
+                            style={{ fontFamily: "var(--font-jetbrains-mono)" }}
                           >
-                            <span className="font-mono text-[11px] tracking-[0.2em] text-[#D4B996]/60 uppercase">
-                              {String(i + 1).padStart(2, "0")}
-                            </span>
-                            <span className="text-[15px] font-medium text-[#F8FAFC]">{item.label}</span>
-                            <span className="text-[12px] text-[#8a8f98] leading-snug">{item.description}</span>
+                            _{item.label.replace(/ /g, "_")}
                           </a>
                         ))}
                       </div>
@@ -324,11 +322,21 @@ export default function Header() {
                 </AnimatePresence>
               </div>
 
-              <a href="/research" onClick={() => setMobileOpen(false)} className="px-6 py-5 text-[18px] font-medium text-[#F8FAFC] tracking-[-0.01em]">
-                Research
+              <a
+                href="/research"
+                onClick={() => setMobileOpen(false)}
+                className="px-6 py-5 text-[11px] tracking-widest text-[#F8FAFC] uppercase"
+                style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+              >
+                RESEARCH
               </a>
-              <a href="/who-we-are" onClick={() => setMobileOpen(false)} className="px-6 py-5 text-[18px] font-medium text-[#F8FAFC] tracking-[-0.01em]">
-                Who We Are
+              <a
+                href="/who-we-are"
+                onClick={() => setMobileOpen(false)}
+                className="px-6 py-5 text-[11px] tracking-widest text-[#F8FAFC] uppercase"
+                style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+              >
+                WHO_WE_ARE
               </a>
             </div>
 

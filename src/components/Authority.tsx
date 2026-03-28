@@ -9,13 +9,13 @@ const fadeUp = {
 
 export default function Authority() {
   return (
-    <section className="bg-[#08090A] py-32 border-t border-white/[0.06]">
-      <div className="px-20 md:px-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start">
+    <section className="bg-[#08090A] py-16 md:py-32 border-t border-white/[0.06]">
+      <div className="px-6 md:px-20 lg:px-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 items-start">
 
           {/* Left: heading */}
           <motion.h2
-            className="text-[40px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.1]"
+            className="text-[26px] md:text-[40px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.1]"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"

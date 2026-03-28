@@ -3,9 +3,9 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-black/[0.08] -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)]">
-      <div className="px-20 md:px-32 pt-32 pb-0">
+      <div className="px-6 md:px-20 lg:px-32 pt-16 md:pt-32 pb-0">
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 pb-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-8 pb-12 md:pb-20">
 
           {/* Column 1: Identity */}
           <div className="flex flex-col gap-6">
@@ -80,7 +80,7 @@ export default function Footer() {
       <div className="border-t border-black/[0.08] -mx-[calc((100vw-100%)/2)]" />
 
       {/* Bottom bar */}
-      <div className="px-20 md:px-32 py-8 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      <div className="px-6 md:px-20 lg:px-32 py-8 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
         <span className="text-[12px] text-black/40 font-mono tracking-widest">
           4.6753<span className="text-[#C48C59]">&deg;</span>S &nbsp;/&nbsp; 55.4920<span className="text-[#C48C59]">&deg;</span>E
         </span>

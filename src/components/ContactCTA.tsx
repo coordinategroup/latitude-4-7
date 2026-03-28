@@ -8,11 +8,11 @@ export default function ContactCTA() {
   return (
     <section id="contact" className="relative bg-white py-40 border-t border-black/[0.08] overflow-hidden -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)]">
 
-      <div className="relative z-10 px-20 md:px-32 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 px-6 md:px-20 lg:px-32 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
         {/* Left: content */}
         <div className="flex flex-col gap-6 max-w-2xl">
-          <h2 className="text-[40px] font-medium text-[#08090A] tracking-[-0.02em] leading-[1.15]">
+          <h2 className="text-[28px] md:text-[40px] font-medium text-[#08090A] tracking-[-0.02em] leading-[1.15]">
             Begin Engagement
           </h2>
           <p className="text-[16px] text-black leading-[1.85] max-w-md">
@@ -30,7 +30,7 @@ export default function ContactCTA() {
         </div>
 
         {/* Right: sonar */}
-        <div className="flex items-center justify-end">
+        <div className="hidden md:flex items-center justify-end">
           <div className="relative w-[320px] h-[320px] md:w-[420px] md:h-[420px] flex items-center justify-center">
 
             {/* Radial grid lines */}

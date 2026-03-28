@@ -31,20 +31,20 @@ function HUDOverlay() {
         <rect width="100%" height="100%" fill="url(#hud-grid)" opacity="0.05"/>
       </svg>
 
-      {/* Corner brackets */}
-      <div className="absolute top-8 left-8 w-8 h-8">
+      {/* Corner brackets — desktop only */}
+      <div className="hidden md:block absolute top-8 left-8 w-8 h-8">
         <div className="absolute top-0 left-0 w-full h-px bg-[#D4B996]/50"/>
         <div className="absolute top-0 left-0 w-px h-full bg-[#D4B996]/50"/>
       </div>
-      <div className="absolute top-8 right-8 w-8 h-8">
+      <div className="hidden md:block absolute top-8 right-8 w-8 h-8">
         <div className="absolute top-0 right-0 w-full h-px bg-[#D4B996]/50"/>
         <div className="absolute top-0 right-0 w-px h-full bg-[#D4B996]/50"/>
       </div>
-      <div className="absolute bottom-8 left-8 w-8 h-8">
+      <div className="hidden md:block absolute bottom-8 left-8 w-8 h-8">
         <div className="absolute bottom-0 left-0 w-full h-px bg-[#D4B996]/50"/>
         <div className="absolute bottom-0 left-0 w-px h-full bg-[#D4B996]/50"/>
       </div>
-      <div className="absolute bottom-8 right-8 w-8 h-8">
+      <div className="hidden md:block absolute bottom-8 right-8 w-8 h-8">
         <div className="absolute bottom-0 right-0 w-full h-px bg-[#D4B996]/50"/>
         <div className="absolute bottom-0 right-0 w-px h-full bg-[#D4B996]/50"/>
       </div>
@@ -164,16 +164,16 @@ export default function Hero() {
       <HeroGrid />
 
       {/* Heading + subtext + button — bottom left */}
-      <div className="absolute bottom-0 left-0 flex flex-col items-start px-20 pb-20 md:px-32 md:pb-24">
+      <div className="absolute bottom-0 left-0 flex flex-col items-start px-6 pb-12 md:px-32 md:pb-24">
         <motion.h1
-          className="font-medium text-[#F8FAFC] tracking-[-0.02em] text-left text-[32px] md:text-[42px] lg:text-[52px] 3xl:text-[80px] leading-[1.1]"
+          className="font-medium text-[#F8FAFC] tracking-[-0.02em] text-left text-[26px] md:text-[42px] lg:text-[52px] 3xl:text-[80px] leading-[1.1]"
           variants={fadeUp}
           custom={0.1}
           initial="hidden"
           animate="visible"
         >
           {lines.map((lineWords, li) => (
-            <span key={li} className="block">
+            <span key={li} className="md:block">
               {lineWords.map((w, wi) => (
                 <span key={wi} className="inline-block mr-[0.25em]">{w}</span>
               ))}
@@ -188,7 +188,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
         >
-          <p className="text-[20px] text-[#F8FAFC]/85 leading-relaxed max-w-xl text-left">
+          <p className="text-[15px] md:text-[20px] text-[#F8FAFC]/85 leading-relaxed max-w-xl text-left">
             Providing the digital governance and independent oversight needed to build a resilient, independent digital economy.
           </p>
         </motion.div>
@@ -216,7 +216,7 @@ export default function Hero() {
         custom={0.35}
         initial="hidden"
         animate="visible"
-        className="absolute bottom-16 right-0 px-20 md:px-32 flex items-center gap-2.5"
+        className="absolute bottom-12 md:bottom-16 right-0 px-6 md:px-32 flex items-center gap-2.5"
       >
         <span className="flicker w-1.5 h-1.5 rounded-full bg-[#D4B996]/70 shrink-0" />
         <span

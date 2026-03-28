@@ -28,11 +28,11 @@ export default async function CaseStudies() {
   const posts: Post[] = await client.fetch(QUERY);
 
   return (
-    <section id="case-studies" className="bg-[#08090A] py-32">
-      <div className="px-20 md:px-32">
+    <section id="case-studies" className="bg-[#08090A] py-16 md:py-32">
+      <div className="px-6 md:px-20 lg:px-32">
 
         <div className="flex items-end justify-between mb-10">
-          <h2 className="text-[36px] md:text-[36.8px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-tight">
+          <h2 className="text-[26px] md:text-[36.8px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-tight">
             Research &amp; Perspectives
           </h2>
           <Link href="/research" className="group relative px-6 py-2.5 text-[10px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 hover:translate-x-px transition-all duration-300" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
@@ -45,7 +45,7 @@ export default async function CaseStudies() {
             <Link
               key={post._id}
               href={`/research/${post.slug.current}`}
-              className="relative overflow-hidden min-h-[498px] flex flex-col group cursor-pointer"
+              className="relative overflow-hidden min-h-[320px] sm:min-h-[498px] flex flex-col group cursor-pointer"
             >
               {/* Background image */}
               {post.mainImage?.asset?.url ? (

@@ -37,12 +37,12 @@ export default function NewsInsights({ articles }: { articles: SpotlightArticle[
   const article = articles[current];
 
   return (
-    <section className="bg-[#08090A] py-32 border-t border-white/[0.06]">
-      <div className="px-20 md:px-32">
+    <section className="bg-[#08090A] py-16 md:py-32 border-t border-white/[0.06]">
+      <div className="px-6 md:px-20 lg:px-32">
 
         {/* Header */}
         <div className="flex items-center justify-between mb-10">
-          <h2 className="text-[36px] md:text-[36.8px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-tight">
+          <h2 className="text-[26px] md:text-[36.8px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-tight">
             Spotlight
           </h2>
           {/* Nav arrows */}
@@ -83,7 +83,7 @@ export default function NewsInsights({ articles }: { articles: SpotlightArticle[
             className="grid grid-cols-1 md:grid-cols-[1fr_1fr] border border-white/[0.08] overflow-hidden"
           >
             {/* Left: text */}
-            <div className="flex flex-col justify-between p-12 gap-10">
+            <div className="flex flex-col justify-between p-6 md:p-12 gap-8 md:gap-10">
               <div className="flex flex-col gap-5">
                 <div className="flex items-center gap-4">
                   <span className="font-mono text-[14px] tracking-[0.22em] text-[#D4B996]/45 uppercase">
@@ -98,7 +98,7 @@ export default function NewsInsights({ articles }: { articles: SpotlightArticle[
                     {formatDate(article.publishedAt)}
                   </span>
                 </div>
-                <h3 className="text-[28px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.2]">
+                <h3 className="text-[22px] md:text-[28px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.2]">
                   {article.title}
                 </h3>
                 {article.subheading && (
@@ -119,7 +119,7 @@ export default function NewsInsights({ articles }: { articles: SpotlightArticle[
             </div>
 
             {/* Right: image */}
-            <div className="relative min-h-[380px] overflow-hidden">
+            <div className="relative min-h-[240px] md:min-h-[380px] overflow-hidden">
               {article.mainImage?.asset?.url ? (
                 <Image
                   src={urlFor(article.mainImage).width(900).height(700).url()}

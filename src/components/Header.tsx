@@ -30,6 +30,8 @@ export default function Header() {
   const [hoveredItem, setHoveredItem] = useState(0);
   const [scrolled, setScrolled] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileCapOpen, setMobileCapOpen] = useState(false);
 
   const openMenu = () => {
     clearTimeout(closeTimer.current);
@@ -61,7 +63,7 @@ export default function Header() {
           backdropFilter: scrolled ? "blur(12px)" : "none",
         }}
       >
-        <div className="px-20 md:px-32 pt-[32px] pb-[20px] flex items-center justify-between">
+        <div className="px-4 md:px-20 lg:px-32 pt-[32px] pb-[20px] flex items-center justify-between">
 
           <a href="/">
             <Image
@@ -137,10 +139,16 @@ export default function Header() {
             </a>
           </nav>
 
-          {/* Mobile */}
-          <a href="#contact" className="md:hidden text-[13px] bg-white text-[#08090A] px-4 py-2 rounded-[4px] font-medium">
-            Secure briefing
-          </a>
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden flex flex-col gap-[5px] p-2"
+            onClick={() => setMobileOpen(true)}
+            aria-label="Open menu"
+          >
+            <span className="w-6 h-px bg-[#F8FAFC] block" />
+            <span className="w-6 h-px bg-[#F8FAFC] block" />
+            <span className="w-4 h-px bg-[#F8FAFC] block" />
+          </button>
 
         </div>
       </header>
@@ -230,6 +238,112 @@ export default function Header() {
               </motion.div>
             </motion.div>
           </>
+        )}
+      </AnimatePresence>
+
+      {/* ── Mobile full-screen menu ───────────────────────────────────── */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            className="fixed inset-0 z-[60] bg-[#08090A] flex flex-col md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            {/* Top bar */}
+            <div className="flex items-center justify-between px-6 pt-8 pb-6 border-b border-white/[0.06]">
+              <a href="/" onClick={() => setMobileOpen(false)}>
+                <Image
+                  src="/images/Logos/latitude_logo.png"
+                  alt="Latitude 4.7"
+                  width={140}
+                  height={40}
+                  className="object-contain object-left"
+                />
+              </a>
+              <button
+                onClick={() => setMobileOpen(false)}
+                className="p-2 text-[#F8FAFC]"
+                aria-label="Close menu"
+              >
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M4 4L16 16M16 4L4 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Gold rule */}
+            <div className="h-px bg-gradient-to-r from-[#D4B996] via-[#D4B996]/40 to-transparent" />
+
+            {/* Nav items */}
+            <div className="flex flex-col divide-y divide-white/[0.06] flex-1 overflow-y-auto">
+
+              {/* Capabilities — expandable */}
+              <div>
+                <button
+                  className="w-full flex items-center justify-between px-6 py-5 text-left"
+                  onClick={() => setMobileCapOpen(!mobileCapOpen)}
+                >
+                  <span className="text-[18px] font-medium text-[#F8FAFC] tracking-[-0.01em]">Capabilities</span>
+                  <motion.svg
+                    width="16" height="16" viewBox="0 0 12 12" fill="none"
+                    animate={{ rotate: mobileCapOpen ? 180 : 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <path d="M2 4.5L6 8l4-3.5" stroke="#D4B996" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                  </motion.svg>
+                </button>
+                <AnimatePresence>
+                  {mobileCapOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="flex flex-col gap-2 px-6 pb-4">
+                        {capabilities.map((item, i) => (
+                          <a
+                            key={item.label}
+                            href={item.href}
+                            onClick={() => setMobileOpen(false)}
+                            className="flex flex-col gap-1.5 p-4 border border-white/[0.08] bg-white/[0.02]"
+                          >
+                            <span className="font-mono text-[11px] tracking-[0.2em] text-[#D4B996]/60 uppercase">
+                              {String(i + 1).padStart(2, "0")}
+                            </span>
+                            <span className="text-[15px] font-medium text-[#F8FAFC]">{item.label}</span>
+                            <span className="text-[12px] text-[#8a8f98] leading-snug">{item.description}</span>
+                          </a>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              <a href="/research" onClick={() => setMobileOpen(false)} className="px-6 py-5 text-[18px] font-medium text-[#F8FAFC] tracking-[-0.01em]">
+                Research
+              </a>
+              <a href="/who-we-are" onClick={() => setMobileOpen(false)} className="px-6 py-5 text-[18px] font-medium text-[#F8FAFC] tracking-[-0.01em]">
+                Who We Are
+              </a>
+            </div>
+
+            {/* Secure briefing CTA */}
+            <div className="px-6 pb-12 pt-6 border-t border-white/[0.06]">
+              <a
+                href="mailto:contact@latitudefourseven.com"
+                onClick={() => setMobileOpen(false)}
+                className="block w-full text-center py-4 text-[11px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] transition-all duration-300"
+                style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+              >
+                SECURE_BRIEFING
+              </a>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </>

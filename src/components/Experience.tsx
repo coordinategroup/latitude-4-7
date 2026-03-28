@@ -309,12 +309,12 @@ const cards: CardProps[] = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="bg-[#08090A] py-32 border-t border-white/[0.06]">
-      <div className="px-20 md:px-32">
+    <section id="experience" className="bg-[#08090A] py-16 md:py-32 border-t border-white/[0.06]">
+      <div className="px-6 md:px-20 lg:px-32">
 
         {/* Section header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 pb-10 border-b border-white/[0.08] mb-12">
-          <h2 className="text-[40px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.15] max-w-2xl">
+          <h2 className="text-[26px] md:text-[40px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.15] max-w-2xl">
             Defining the standards<br />of national digital governance
           </h2>
           <a href="/governance-frameworks" className="hidden md:block px-6 py-2.5 text-[10px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 hover:translate-x-px transition-all duration-300" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>

@@ -67,14 +67,14 @@ export default function StrategicContext() {
   return (
     <div ref={containerRef} style={{ height: "220vh" }}>
       <section className="sticky top-0 h-screen bg-[#08090A] flex items-center">
-        <div className="px-20 md:px-32 w-full">
-          <div className="grid grid-cols-1 md:grid-cols-[30%_1fr] gap-12 md:gap-20 items-start">
+        <div className="px-6 md:px-20 lg:px-32 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-[30%_1fr] gap-8 md:gap-20 items-start">
 
             <h2 className="font-medium text-[#F8FAFC] tracking-[-0.02em] leading-snug self-start mt-0" style={{ fontSize: "clamp(18px, 1.5vw, 26px)" }}>
               A step closer to digital independence
             </h2>
 
-            <div className="flex flex-col gap-10" style={{ fontSize: "clamp(22px, 2vw, 54px)", lineHeight: "1.3", maxWidth: "900px" }}>
+            <div className="flex flex-col gap-10" style={{ fontSize: "clamp(18px, 2vw, 54px)", lineHeight: "1.3", maxWidth: "900px" }}>
               <Sentence scrollYProgress={scrollYProgress} start={s0Start} end={s0End}>
                 <span className="font-medium tracking-[-0.02em] text-[#F8FAFC]">
                   Our role is to ensure that national systems, from financial rails to data exchange, are world-class, secure, and remain firmly under local sovereign control.

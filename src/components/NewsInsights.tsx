@@ -37,14 +37,14 @@ export default function NewsInsights({ articles }: { articles: SpotlightArticle[
   const article = articles[current];
 
   return (
-    <section className="bg-[#08090A] py-24 border-t border-white/[0.06]">
+    <section className="bg-[#08090A] py-32 border-t border-white/[0.06]">
       <div className="px-20 md:px-32">
 
         {/* Header */}
         <div className="flex items-center justify-between mb-10">
-          <span className="text-[12px] font-semibold uppercase tracking-widest text-[#8a8f98]">
+          <h2 className="text-[36px] md:text-[36.8px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-tight">
             Spotlight
-          </span>
+          </h2>
           {/* Nav arrows */}
           <div className="flex items-center gap-3">
             <span className="text-[14px] text-[#8a8f98] font-mono">
@@ -119,7 +119,7 @@ export default function NewsInsights({ articles }: { articles: SpotlightArticle[
             </div>
 
             {/* Right: image */}
-            <div className="relative min-h-[420px] overflow-hidden">
+            <div className="relative min-h-[380px] overflow-hidden">
               {article.mainImage?.asset?.url ? (
                 <Image
                   src={urlFor(article.mainImage).width(900).height(700).url()}

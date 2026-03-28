@@ -30,17 +30,19 @@ export default async function Home() {
 
   return (
     <>
-      <Header />
-      <main>
-        <Hero />
-        <StrategicContext />
-        <CaseStudies />
-        <Experience />
-        <NewsInsights articles={spotlightArticles} />
-        <Authority />
-        <ContactCTA />
-      </main>
-      <Footer />
+      <Hero />
+      <div className="mx-auto w-full max-w-[1800px]">
+        <Header />
+        <main>
+          <StrategicContext />
+          <CaseStudies />
+          <Experience />
+          <NewsInsights articles={spotlightArticles} />
+          <Authority />
+          <ContactCTA />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }

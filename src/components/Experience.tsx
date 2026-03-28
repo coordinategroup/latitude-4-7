@@ -192,29 +192,21 @@ function RailsSVG({ hovered }: { hovered: boolean }) {
   return (
     <svg viewBox="0 0 200 200" fill="none" aria-hidden="true" className="w-full h-full">
       {/* Rails */}
-      {SEGMENTS.map((seg, i) => {
-        const len = Math.hypot(seg.x2 - seg.x1, seg.y2 - seg.y1);
-        return (
-          <motion.line
-            key={i}
-            x1={seg.x1}
-            y1={seg.y1}
-            x2={seg.x2}
-            y2={seg.y2}
-            stroke="#D4B996"
-            strokeWidth="0.9"
-            strokeDasharray={len}
-            animate={{
-              strokeDashoffset: hovered ? 0 : len,
-              opacity: hovered ? 0.65 : 0.14,
-            }}
-            transition={{
-              strokeDashoffset: { duration: 0.35, delay: i * 0.045, ease: "easeOut" },
-              opacity: { duration: 0.25, delay: i * 0.045 },
-            }}
-          />
-        );
-      })}
+      {SEGMENTS.map((seg, i) => (
+        <motion.line
+          key={i}
+          x1={seg.x1}
+          y1={seg.y1}
+          x2={seg.x2}
+          y2={seg.y2}
+          stroke="#D4B996"
+          strokeWidth="0.9"
+          animate={{
+            opacity: hovered ? 0.65 : 0.30,
+          }}
+          transition={{ duration: 0.25 }}
+        />
+      ))}
 
       {/* Nodes at every intersection */}
       {ROWS.flatMap((y, ri) =>
@@ -229,8 +221,7 @@ function RailsSVG({ hovered }: { hovered: boolean }) {
               r={isCentre ? 5 : 3.5}
               style={{ transformOrigin: `${x}px ${y}px` }}
               animate={{
-                fill: hovered ? "#D4B996" : "rgba(212,185,150,0.28)",
-                opacity: hovered ? (isCentre ? 1 : 0.8) : 0.28,
+                fill: hovered ? "#D4B996" : "rgba(212,185,150,0.75)",
                 scale: hovered ? (isCentre ? 1.4 : 1.15) : 1,
               }}
               transition={{ duration: 0.3, delay: idx * 0.04 }}
@@ -295,23 +286,23 @@ function Card({ fig, title, description, Illustration, className }: CardProps) {
 const cards: CardProps[] = [
   {
     fig: "FIG 0.1",
-    title: "Sovereign Independence",
+    title: "Sovereign Infrastructure",
     description:
-      "Ensuring that national digital solutions remain neutral; autonomous; and fully under local control.",
+      "Moving from \u201cdigital tenancy\u201d to a future where the Seychelles owns and operates its own core national data and financial ledgers.",
     Illustration: PillarSVG,
   },
   {
     fig: "FIG 0.2",
-    title: "Unified Technology",
+    title: "System Interoperability",
     description:
-      "Creating a cohesive framework where banking and government systems communicate with total security.",
+      "Breaking down silos between government and banking to create a seamless, unified digital ecosystem for all citizens.",
     Illustration: LayersSVG,
   },
   {
     fig: "FIG 0.3",
-    title: "Partnership Compliance",
+    title: "Local Upskilling",
     description:
-      "Supporting international digital collaborations to ensure they align with the highest national standards.",
+      "Investing in a new generation of Seychellois talent to ensure the country has the internal expertise to lead its own technological future.",
     Illustration: RailsSVG,
   },
 ];
@@ -326,9 +317,9 @@ export default function Experience() {
           <h2 className="text-[40px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.15] max-w-2xl">
             Defining the standards<br />of national digital governance
           </h2>
-          <span className="text-[12px] font-semibold uppercase tracking-widest text-[#8a8f98] hidden md:block">
-            Strategic framework
-          </span>
+          <a href="/governance-frameworks" className="hidden md:block px-6 py-2.5 text-[10px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 hover:translate-x-px transition-all duration-300" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
+            GOVERNANCE_FRAMEWORKS
+          </a>
         </div>
 
         {/* Bento grid */}

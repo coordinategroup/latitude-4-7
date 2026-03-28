@@ -28,8 +28,17 @@ export default async function CaseStudies() {
   const posts: Post[] = await client.fetch(QUERY);
 
   return (
-    <section id="case-studies" className="bg-[#08090A] py-16">
+    <section id="case-studies" className="bg-[#08090A] py-32">
       <div className="px-20 md:px-32">
+
+        <div className="flex items-end justify-between mb-10">
+          <h2 className="text-[36px] md:text-[36.8px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-tight">
+            Research &amp; Perspectives
+          </h2>
+          <Link href="/research" className="group relative px-6 py-2.5 text-[10px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 hover:translate-x-px transition-all duration-300" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
+            READ_MORE
+          </Link>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
           {posts.map((post) => (
@@ -55,7 +64,7 @@ export default async function CaseStudies() {
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/45 transition-colors duration-500" />
 
               {/* Title */}
-              <div className="relative z-10 pl-8 pr-4 pt-10 pb-0 flex-1">
+              <div className="relative z-10 px-8 pt-10 pb-0 flex-1">
                 <h3 className="text-[26px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-snug">
                   {post.title}
                 </h3>

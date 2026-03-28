@@ -27,7 +27,7 @@ export default function Authority() {
 
           {/* Right: body */}
           <motion.p
-            className="text-[17px] text-[#8a8f98] leading-[1.9]"
+            className="text-[17px] text-[#F8FAFC] leading-[1.9]"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"

@@ -189,7 +189,7 @@ export default function Hero() {
           animate="visible"
         >
           <p className="text-[15px] md:text-[20px] text-[#F8FAFC]/85 leading-relaxed max-w-xl text-left">
-            Providing the digital governance and independent oversight needed to build a resilient, independent digital economy.
+            Providing the digital governance and independent oversight needed to build a resilient digital economy.
           </p>
         </motion.div>
 

@@ -251,8 +251,8 @@ export default async function ArticlePage(
       <main className="bg-[#08090A] min-h-screen">
 
         {/* ── Article Hero ─────────────────────────────────────────────── */}
-        <section className="relative pt-24 pb-16 border-b border-white/[0.06]">
-          <div className="px-6 md:px-20 lg:px-32 max-w-[1400px] mx-auto">
+        <section className="relative pb-16 border-b border-white/[0.06]">
+          <div className="px-6 md:px-20 lg:px-32 max-w-[1400px] mx-auto pt-40">
 
             {/* Type label */}
             <span className="text-[12px] font-semibold uppercase tracking-widest text-[#D4B996]">

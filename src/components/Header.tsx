@@ -3,6 +3,14 @@
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+type NavArticle = {
+  _id: string;
+  type: string;
+  title: string;
+  slug: { current: string };
+  publishedAt: string;
+  mainImage?: { asset: { url: string } };
+};
 
 const capabilities = [
   {
@@ -27,23 +35,15 @@ const capabilities = [
 
 export default function Header() {
   const [capOpen, setCapOpen] = useState(false);
-  const [hoveredItem, setHoveredItem] = useState(0);
   const [scrolled, setScrolled] = useState(false);
-  const closeTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileCapOpen, setMobileCapOpen] = useState(false);
-
-  const openMenu = () => {
-    clearTimeout(closeTimer.current);
-    setCapOpen(true);
-  };
-  const scheduleClose = () => {
-    closeTimer.current = setTimeout(() => setCapOpen(false), 120);
-  };
-  const cancelClose = () => clearTimeout(closeTimer.current);
-
+const [navArticles, setNavArticles] = useState<NavArticle[]>([]);
   useEffect(() => {
-    if (capOpen) setHoveredItem(0);
+    if (capOpen) {
+      fetch("/api/nav-articles")
+        .then((r) => r.json())
+        .then(setNavArticles);
+    }
   }, [capOpen]);
 
   useEffect(() => {
@@ -56,7 +56,6 @@ export default function Header() {
     <>
       <header
         className="fixed top-0 left-0 right-0 z-50 border-b transition-colors duration-500"
-        onMouseEnter={cancelClose}
         style={{
           backgroundColor: scrolled ? "rgba(8,9,10,0.90)" : "transparent",
           borderColor: scrolled ? "rgba(255,255,255,0.06)" : "transparent",
@@ -82,20 +81,20 @@ export default function Header() {
             {/* Capabilities trigger */}
             <div
               className="relative"
-              onMouseEnter={openMenu}
             >
               <button
-                className="group relative flex items-center gap-1.5 text-[10px] text-[#F8FAFC] hover:text-white transition-colors px-3 py-1.5"
+                className="group relative flex items-center gap-1.5 text-[10px] text-[#F8FAFC] hover:text-white transition-colors px-5 py-2"
+                onClick={() => setCapOpen(v => !v)}
               >
-                <span className={`absolute top-0 left-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40`} />
-                <span className={`absolute top-0 left-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40`} />
-                <span className={`absolute top-0 right-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40`} />
-                <span className={`absolute top-0 right-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40`} />
-                <span className={`absolute bottom-0 left-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40`} />
-                <span className={`absolute bottom-0 left-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40`} />
-                <span className={`absolute bottom-0 right-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40`} />
-                <span className={`absolute bottom-0 right-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40`} />
-                <span style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="text-[10px] tracking-widest">CAPABILITIES</span>
+                <span className="absolute top-0 left-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40" />
+                <span className="absolute top-0 left-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40" />
+                <span className="absolute top-0 right-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40" />
+                <span className="absolute top-0 right-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40" />
+                <span className="absolute bottom-0 left-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40" />
+                <span className="absolute bottom-0 left-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40" />
+                <span className="absolute bottom-0 right-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40" />
+                <span className="absolute bottom-0 right-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40" />
+                <span style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="text-[10px] tracking-widest">{capOpen ? "CLOSE_STRATEGY" : "VIEW_STRATEGY"}</span>
                 <motion.svg
                   width="11" height="11" viewBox="0 0 12 12" fill="none"
                   animate={{ rotate: capOpen ? 180 : 0 }}
@@ -105,30 +104,6 @@ export default function Header() {
                 </motion.svg>
               </button>
             </div>
-
-            <a href="/research-and-perspectives" className="group relative text-[10px] text-[#F8FAFC] hover:text-white transition-colors px-3 py-1.5">
-              <span className={`absolute top-0 left-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40`} />
-              <span className={`absolute top-0 left-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40`} />
-              <span className={`absolute top-0 right-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40`} />
-              <span className={`absolute top-0 right-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40`} />
-              <span className={`absolute bottom-0 left-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40`} />
-              <span className={`absolute bottom-0 left-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40`} />
-              <span className={`absolute bottom-0 right-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40`} />
-              <span className={`absolute bottom-0 right-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40`} />
-              <span style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="text-[10px] tracking-widest">RESEARCH_&amp;_PERSPECTIVES</span>
-            </a>
-
-            <a href="/who-we-are" className="group relative text-[10px] text-[#F8FAFC] hover:text-white transition-colors px-3 py-1.5">
-              <span className={`absolute top-0 left-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40`} />
-              <span className={`absolute top-0 left-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40`} />
-              <span className={`absolute top-0 right-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40`} />
-              <span className={`absolute top-0 right-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40`} />
-              <span className={`absolute bottom-0 left-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40`} />
-              <span className={`absolute bottom-0 left-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40`} />
-              <span className={`absolute bottom-0 right-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40`} />
-              <span className={`absolute bottom-0 right-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40`} />
-              <span style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="text-[10px] tracking-widest">WHO_WE_ARE</span>
-            </a>
 
             <a
               href="#contact"
@@ -153,91 +128,98 @@ export default function Header() {
         </div>
       </header>
 
+
+      {/* ── Desktop full-page capabilities overlay ───────────────────── */}
       <AnimatePresence>
         {capOpen && (
-          <>
-            {/* Blurred backdrop — full screen, behind the panel, closes on hover */}
-            <motion.div
-              className="fixed inset-0 z-30"
-              style={{ backdropFilter: "blur(6px)", backgroundColor: "rgba(0,0,0,0.25)" }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              onMouseEnter={scheduleClose}
-            />
+          <motion.div
+            className="hidden md:flex fixed inset-0 z-40 bg-[#08090A] flex-col"
+            initial={{ opacity: 0, y: "-100%" }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: "-100%" }}
+            transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            {/* Gold rule */}
+            <div className="h-px bg-gradient-to-r from-[#D4B996] via-[#D4B996]/40 to-transparent shrink-0" />
 
-            {/* White panel — content width with gutters */}
-            <motion.div
-              className="fixed top-[108px] left-20 right-20 md:left-32 md:right-32 z-40 bg-[#16181D] border border-white/[0.08] flex flex-col overflow-hidden"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
-              onMouseEnter={cancelClose}
-              onMouseLeave={scheduleClose}
-            >
-              {/* Gold rule at top */}
-              <div className="h-[1px] w-full bg-gradient-to-r from-[#D4B996] via-[#D4B996]/40 to-transparent" />
+            {/* Content */}
+            <div className="flex-1 px-20 lg:px-32 pt-36 pb-16 grid grid-cols-[1fr_1fr] gap-24 overflow-hidden">
 
-              {/* Capabilities list */}
-              <div className="flex flex-col justify-center py-10">
-                <p className="font-mono text-[11px] tracking-[0.22em] text-[#D4B996] uppercase mb-10 px-12">
-                  Capabilities
+              {/* Left: navigation */}
+              <div className="flex flex-col justify-start gap-2 border-r border-white/[0.06] pr-24">
+                <p className="text-[11px] tracking-[0.22em] text-[#D4B996]/60 uppercase mb-8" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
+                  Navigation
                 </p>
-
-                <div className="flex flex-col divide-y divide-white/[0.06]">
-                  {capabilities.map((item, i) => (
-                    <motion.a
-                      key={item.label}
-                      href={item.href}
-                      className="group relative flex items-center gap-10 py-8 px-12 transition-colors duration-150"
-                      onMouseEnter={() => setHoveredItem(i)}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.1 + i * 0.05, duration: 0.25 }}
-                    >
-                      {hoveredItem === i && (
-                        <div className="absolute inset-0 bg-white" />
+                {[...capabilities.map(item => ({ label: item.label, href: item.href, nested: true })),
+                  { label: "Research & Perspectives", href: "/research-and-perspectives", nested: false },
+                  { label: "Who We Are", href: "/who-we-are", nested: false },
+                ].map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setCapOpen(false)}
+                    className="group flex items-center justify-between py-5 border-b border-white/[0.06] hover:border-white/[0.12] transition-colors duration-200"
+                  >
+                    <span className="flex items-center gap-3">
+                      {item.nested && (
+                        <span className="text-[#D4B996]/40 text-[18px] leading-none">↳</span>
                       )}
-                      <span className={`relative font-mono text-[12px] tracking-[0.15em] w-7 shrink-0 transition-colors duration-150 ${hoveredItem === i ? "text-[#C5A059]" : "text-[#D4B996]"}`}>
-                        {item.index}
+                      <span className="text-[28px] font-medium text-[#F8FAFC] tracking-[-0.02em] group-hover:text-[#D4B996] transition-colors duration-200">
+                        {item.label}
                       </span>
-                      <div className="flex-1 flex items-baseline gap-8">
-                        <span
-                          className={`relative font-normal tracking-[-0.02em] leading-none transition-colors duration-150 ${hoveredItem === i ? "text-[#0A0A0B]" : "text-[#F8FAFC]"}`}
-                          style={{ fontFamily: "var(--font-dm-sans)", fontSize: "clamp(28px, 3vw, 52px)" }}
-                        >
-                          {item.label}
+                    </span>
+                    <svg className="w-5 h-5 text-[#D4B996] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200" viewBox="0 0 14 14" fill="none">
+                      <path d="M2.5 7h9M7 2.5L11.5 7 7 11.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </a>
+                ))}
+              </div>
+
+              {/* Right: articles 2x2 */}
+              <div className="flex flex-col justify-start">
+                <div className="flex items-center justify-between mb-8 shrink-0">
+                  <p className="text-[11px] tracking-[0.22em] text-[#D4B996]/60 uppercase" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
+                    Research &amp; Perspectives
+                  </p>
+                  <a
+                    href="/research-and-perspectives"
+                    onClick={() => setCapOpen(false)}
+                    className="text-[10px] tracking-widest text-[#D4B996]/50 hover:text-[#D4B996] transition-colors duration-200 uppercase"
+                    style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+                  >
+                    View all →
+                  </a>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  {navArticles.map((article) => (
+                    <a
+                      key={article._id}
+                      href={`/research-and-perspectives/${article.slug.current}`}
+                      onClick={() => setCapOpen(false)}
+                      className="group flex flex-col overflow-hidden border border-white/[0.06] hover:border-white/[0.14] transition-colors duration-200"
+                    >
+                      <div className="relative flex-1 min-h-[160px] bg-white/[0.03] overflow-hidden">
+                        {article.mainImage?.asset?.url ? (
+                          <Image src={article.mainImage.asset.url} alt={article.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                        ) : (
+                          <div className="absolute inset-0 bg-white/[0.03]" />
+                        )}
+                      </div>
+                      <div className="flex flex-col gap-1 p-3 shrink-0">
+                        <span className="text-[9px] tracking-widest text-[#8a8f98] uppercase" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
+                          {article.type}
                         </span>
-                        <span className={`relative text-[13px] leading-relaxed max-w-xs transition-all duration-150 ${hoveredItem === i ? "text-[#0A0A0B]/50 opacity-100" : "text-[#F8FAFC]/40 opacity-0"}`}>
-                          {item.description}
+                        <span className="text-[12px] font-medium text-[#F8FAFC] leading-snug group-hover:text-[#D4B996] transition-colors duration-200 line-clamp-2 min-h-[2.75em]">
+                          {article.title}
                         </span>
                       </div>
-                      <svg
-                        className={`relative w-5 h-5 transition-all duration-150 shrink-0 mr-2 ${hoveredItem === i ? "text-[#0A0A0B]/40 opacity-100 translate-x-0" : "text-[#D4B996] opacity-0 -translate-x-2"}`}
-                        viewBox="0 0 14 14" fill="none"
-                      >
-                        <path d="M2.5 7h9M7 2.5L11.5 7 7 11.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </motion.a>
+                    </a>
                   ))}
                 </div>
               </div>
+            </div>
 
-              {/* Bottom label */}
-              <motion.div
-                className="px-12 pb-8"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.3 }}
-              >
-                <p className="font-mono text-[11px] tracking-[0.22em] text-white/20 uppercase">
-                  Latitude Four Seven — Seychelles Digital Advisory
-                </p>
-              </motion.div>
-            </motion.div>
-          </>
+          </motion.div>
         )}
       </AnimatePresence>
 
@@ -278,66 +260,29 @@ export default function Header() {
 
             {/* Nav items */}
             <div className="flex flex-col divide-y divide-white/[0.06] flex-1 overflow-y-auto">
-
-              {/* Capabilities — expandable */}
-              <div>
-                <button
-                  className="w-full flex items-center justify-between px-6 py-5 text-left"
-                  onClick={() => setMobileCapOpen(!mobileCapOpen)}
-                  style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+              {[...capabilities.map(item => ({ label: item.label, href: item.href, nested: true })),
+                { label: "Research & Perspectives", href: "/research-and-perspectives", nested: false },
+                { label: "Who We Are", href: "/who-we-are", nested: false },
+              ].map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="group flex items-center justify-between px-6 py-5"
                 >
-                  <span className="text-[11px] tracking-widest text-[#F8FAFC] uppercase">CAPABILITIES</span>
-                  <motion.svg
-                    width="16" height="16" viewBox="0 0 12 12" fill="none"
-                    animate={{ rotate: mobileCapOpen ? 180 : 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <path d="M2 4.5L6 8l4-3.5" stroke="#D4B996" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-                  </motion.svg>
-                </button>
-                <AnimatePresence>
-                  {mobileCapOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <div className="flex flex-col divide-y divide-white/[0.04] pl-10 pr-6 pb-4">
-                        {capabilities.map((item) => (
-                          <a
-                            key={item.label}
-                            href={item.href}
-                            onClick={() => setMobileOpen(false)}
-                            className="py-4 text-[11px] tracking-widest text-[#8a8f98] hover:text-[#D4B996] transition-colors duration-150 uppercase"
-                            style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-                          >
-                            _{item.label.replace(/ /g, "_")}
-                          </a>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-
-              <a
-                href="/research-and-perspectives"
-                onClick={() => setMobileOpen(false)}
-                className="px-6 py-5 text-[11px] tracking-widest text-[#F8FAFC] uppercase"
-                style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-              >
-                RESEARCH_&amp;_PERSPECTIVES
-              </a>
-              <a
-                href="/who-we-are"
-                onClick={() => setMobileOpen(false)}
-                className="px-6 py-5 text-[11px] tracking-widest text-[#F8FAFC] uppercase"
-                style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-              >
-                WHO_WE_ARE
-              </a>
+                  <span className="flex items-center gap-2.5">
+                    {item.nested && (
+                      <span className="text-[#D4B996]/40 text-[14px] leading-none">↳</span>
+                    )}
+                    <span className="text-[18px] font-medium text-[#F8FAFC] tracking-[-0.02em] group-hover:text-[#D4B996] transition-colors duration-200">
+                      {item.label}
+                    </span>
+                  </span>
+                  <svg className="w-4 h-4 text-[#D4B996] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200" viewBox="0 0 14 14" fill="none">
+                    <path d="M2.5 7h9M7 2.5L11.5 7 7 11.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              ))}
             </div>
 
             {/* Secure briefing CTA */}

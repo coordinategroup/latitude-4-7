@@ -21,9 +21,17 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Latitude Four Seven | Senior Product Leadership",
+  title: "Latitude 4.7 | Digital Independence",
   description:
-    "Senior product leaders embedded directly into your organisation. Structured outside IR35 from day one, so your team moves faster and your finance team stops worrying.",
+    "Independent technical governance and oversight to secure the Seychelles' digital infrastructure.",
+  robots: "index, follow",
+  openGraph: {
+    title: "Latitude 4.7 | Digital Independence",
+    description:
+      "Technical oversight and governance for the Seychelles' digital mission.",
+    type: "website",
+    locale: "en_GB",
+  },
 };
 
 export default function RootLayout({

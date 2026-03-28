@@ -465,7 +465,7 @@ export default async function ArticlePage(
                 {post.relatedContent.map((related) => (
                   <Link
                     key={related._id}
-                    href={`/research/${related.slug.current}`}
+                    href={`/research-and-perspectives/${related.slug.current}`}
                     className="group relative overflow-hidden flex flex-col min-h-[320px] border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-300"
                   >
                     {/* Image */}

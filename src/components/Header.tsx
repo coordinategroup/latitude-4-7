@@ -106,7 +106,7 @@ export default function Header() {
               </button>
             </div>
 
-            <a href="/research" className="group relative text-[10px] text-[#F8FAFC] hover:text-white transition-colors px-3 py-1.5">
+            <a href="/research-and-perspectives" className="group relative text-[10px] text-[#F8FAFC] hover:text-white transition-colors px-3 py-1.5">
               <span className={`absolute top-0 left-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40`} />
               <span className={`absolute top-0 left-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40`} />
               <span className={`absolute top-0 right-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40`} />
@@ -115,7 +115,7 @@ export default function Header() {
               <span className={`absolute bottom-0 left-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40`} />
               <span className={`absolute bottom-0 right-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40`} />
               <span className={`absolute bottom-0 right-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40`} />
-              <span style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="text-[10px] tracking-widest">RESEARCH</span>
+              <span style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="text-[10px] tracking-widest">RESEARCH_&amp;_PERSPECTIVES</span>
             </a>
 
             <a href="/who-we-are" className="group relative text-[10px] text-[#F8FAFC] hover:text-white transition-colors px-3 py-1.5">
@@ -323,12 +323,12 @@ export default function Header() {
               </div>
 
               <a
-                href="/research"
+                href="/research-and-perspectives"
                 onClick={() => setMobileOpen(false)}
                 className="px-6 py-5 text-[11px] tracking-widest text-[#F8FAFC] uppercase"
                 style={{ fontFamily: "var(--font-jetbrains-mono)" }}
               >
-                RESEARCH
+                RESEARCH_&amp;_PERSPECTIVES
               </a>
               <a
                 href="/who-we-are"

@@ -141,7 +141,7 @@ function HeroGrid() {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden min-h-screen bg-black">
+    <section className="relative overflow-hidden min-h-[100dvh] bg-black">
 
       {/* Background video */}
       <video
@@ -164,7 +164,7 @@ export default function Hero() {
       <HeroGrid />
 
       {/* Heading + subtext + button — bottom left */}
-      <div className="absolute bottom-0 left-0 flex flex-col items-start px-6 pb-12 md:px-32 md:pb-24">
+      <div className="absolute bottom-0 left-0 flex flex-col items-start px-6 pb-28 md:px-32 md:pb-24">
         <motion.h1
           className="font-medium text-[#F8FAFC] tracking-[-0.02em] text-left text-[26px] md:text-[42px] lg:text-[52px] 3xl:text-[80px] leading-[1.1]"
           variants={fadeUp}
@@ -216,7 +216,7 @@ export default function Hero() {
         custom={0.35}
         initial="hidden"
         animate="visible"
-        className="absolute bottom-12 md:bottom-16 right-0 px-6 md:px-32 flex items-center gap-2.5"
+        className="absolute bottom-28 md:bottom-16 right-0 px-6 md:px-32 flex items-center gap-2.5"
       >
         <span className="flicker w-1.5 h-1.5 rounded-full bg-[#D4B996]/70 shrink-0" />
         <span

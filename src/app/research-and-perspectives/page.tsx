@@ -32,7 +32,7 @@ export default async function ResearchPage() {
       <main className="bg-[#08090A] min-h-screen">
 
         {/* ── Page header ──────────────────────────────────────────────── */}
-        <section className="px-20 md:px-32 pt-24 pb-16 border-b border-white/[0.06]">
+        <section className="px-6 md:px-20 lg:px-32 pt-40 pb-16 border-b border-white/[0.06]">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div className="flex flex-col gap-4">
               <span className="text-[12px] font-semibold uppercase tracking-widest text-[#8a8f98]">

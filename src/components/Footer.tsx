@@ -1,13 +1,15 @@
 import Image from "next/image";
 
+const monoStyle = { fontFamily: "var(--font-jetbrains-mono)" };
+
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-black/[0.08] -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)]">
       <div className="px-6 md:px-20 lg:px-32 pt-16 md:pt-32 pb-0">
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-8 pb-12 md:pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-8 md:gap-16 pb-12 md:pb-20">
 
-          {/* Column 1: Identity */}
+          {/* Column 1: Identity + Group blurb */}
           <div className="flex flex-col gap-6">
             <Image
               src="/images/Logos/Logo_inverted.png"
@@ -16,6 +18,13 @@ export default function Footer() {
               height={40}
               className="object-contain object-left"
             />
+            <p className="text-[13px] font-light text-black leading-[1.75]">
+              Latitude 4.7 is a strategic advisory unit of the Coordinate Group. For product management and advisory, visit{" "}
+              <a href="#" className="text-[#C48C59] hover:text-[#b37a48] transition-colors duration-200 underline underline-offset-2">
+                Longitude 5.5
+              </a>
+              .
+            </p>
           </div>
 
           {/* Column 2: Navigation */}
@@ -24,14 +33,14 @@ export default function Footer() {
               Navigation
             </span>
             <nav className="flex flex-col gap-3">
-              <a href="#" className="text-[13px] text-black/60 hover:text-black transition-colors duration-200">
-                Capabilities
+              <a href="#" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
+                CAPABILITIES
               </a>
-              <a href="/research" className="text-[13px] text-black/60 hover:text-black transition-colors duration-200">
-                Research &amp; Perspectives
+              <a href="/research-and-perspectives" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
+                RESEARCH_&amp;_PERSPECTIVES
               </a>
-              <a href="#" className="text-[13px] text-black/60 hover:text-black transition-colors duration-200">
-                Who We Are
+              <a href="/who-we-are" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
+                WHO_WE_ARE
               </a>
             </nav>
           </div>
@@ -42,27 +51,13 @@ export default function Footer() {
               Resources
             </span>
             <nav className="flex flex-col gap-3">
-              <a href="#" className="text-[13px] text-black/60 hover:text-black transition-colors duration-200">
-                Agency Onboarding
+              <a href="#" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
+                AGENCY_ONBOARDING
               </a>
-              <a href="#" className="text-[13px] text-black/60 hover:text-black transition-colors duration-200">
-                Institutional Registry
+              <a href="#" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
+                INSTITUTIONAL_REGISTRY
               </a>
             </nav>
-          </div>
-
-          {/* Column 4: The Group */}
-          <div className="flex flex-col gap-5">
-            <span className="text-[12px] font-semibold uppercase tracking-widest text-black/30">
-              The Group
-            </span>
-            <p className="text-[13px] text-black leading-[1.75]">
-              Latitude 4.7 is a strategic advisory unit of the Coordinate Group. For product management and advisory, visit{" "}
-              <a href="#" className="text-[#C48C59] hover:text-[#b37a48] transition-colors duration-200 underline underline-offset-2">
-                Longitude 5.5
-              </a>
-              .
-            </p>
           </div>
 
         </div>

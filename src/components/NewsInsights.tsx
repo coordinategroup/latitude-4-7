@@ -108,7 +108,7 @@ export default function NewsInsights({ articles }: { articles: SpotlightArticle[
                 )}
               </div>
               <Link
-                href={`/research/${article.slug.current}`}
+                href={`/research-and-perspectives/${article.slug.current}`}
                 className="flex items-center gap-2 text-[15px] font-medium text-[#F8FAFC] hover:text-[#F8FAFC]/70 transition-colors w-fit"
               >
                 Read article

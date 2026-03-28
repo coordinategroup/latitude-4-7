@@ -29,7 +29,7 @@ export default function Header() {
   const [capOpen, setCapOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(0);
   const [scrolled, setScrolled] = useState(false);
-  const closeTimer = useRef<ReturnType<typeof setTimeout>>();
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const openMenu = () => {
     clearTimeout(closeTimer.current);

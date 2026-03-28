@@ -19,8 +19,8 @@ const capabilities = [
   },
   {
     index: "03",
-    label: "Product Leadership",
-    description: "Embedding senior product expertise directly into government and institutional programmes.",
+    label: "Digital Leadership",
+    description: "Embedding senior digital expertise directly into government and institutional programmes.",
     href: "#",
   },
 ];

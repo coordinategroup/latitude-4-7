@@ -4,8 +4,8 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 const lines = [
-  "Supporting the Seychelles in".split(" "),
-  "its digital leadership".split(" "),
+  "Empowering the Seychelles in".split(" "),
+  "its digital independence.".split(" "),
 ];
 
 const fadeUp = {
@@ -189,7 +189,7 @@ export default function Hero() {
           animate="visible"
         >
           <p className="text-[20px] text-[#F8FAFC]/85 leading-relaxed max-w-xl text-left">
-            Providing the digital governance and independent oversight needed to build a globally leading digital future.
+            Providing the digital governance and independent oversight needed to build a resilient, independent digital economy.
           </p>
         </motion.div>
 

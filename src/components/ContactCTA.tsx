@@ -24,7 +24,7 @@ export default function ContactCTA() {
               className="px-8 py-3 text-[10px] tracking-widest text-[#08090A] border border-[#08090A]/40 hover:border-[#08090A] hover:bg-[#08090A]/5 hover:translate-x-px transition-all duration-300 inline-block"
               style={{ fontFamily: "var(--font-jetbrains-mono)" }}
             >
-              SECURE_BRIEFING
+              SECURE BRIEFING
             </a>
           </div>
         </div>

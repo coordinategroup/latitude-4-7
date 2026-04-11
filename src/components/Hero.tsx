@@ -32,11 +32,11 @@ function HUDOverlay() {
       </svg>
 
       {/* Corner brackets — desktop only */}
-      <div className="hidden md:block absolute top-8 left-8 w-8 h-8">
+      <div className="hidden md:block absolute top-[80px] left-8 w-8 h-8">
         <div className="absolute top-0 left-0 w-full h-px bg-[#D4B996]/50"/>
         <div className="absolute top-0 left-0 w-px h-full bg-[#D4B996]/50"/>
       </div>
-      <div className="hidden md:block absolute top-8 right-8 w-8 h-8">
+      <div className="hidden md:block absolute top-[80px] right-8 w-8 h-8">
         <div className="absolute top-0 right-0 w-full h-px bg-[#D4B996]/50"/>
         <div className="absolute top-0 right-0 w-px h-full bg-[#D4B996]/50"/>
       </div>
@@ -205,7 +205,7 @@ export default function Hero() {
             className="px-8 py-3 text-[11px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 hover:translate-x-px transition-all duration-300"
             style={{ fontFamily: "var(--font-jetbrains-mono)" }}
           >
-            LEARN_MORE
+            LEARN MORE
           </a>
         </motion.div>
       </div>

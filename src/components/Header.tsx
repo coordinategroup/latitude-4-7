@@ -17,19 +17,19 @@ const capabilities = [
     index: "01",
     label: "Sovereign Architecture",
     description: "Designing national digital systems that remain under full local sovereign control.",
-    href: "#",
+    href: "/sovereign-architecture",
   },
   {
     index: "02",
     label: "Governance Frameworks",
     description: "Building the policy and oversight structures that make technology accountable.",
-    href: "#",
+    href: "/governance-frameworks",
   },
   {
     index: "03",
     label: "Digital Leadership",
     description: "Embedding senior digital expertise directly into government and institutional programmes.",
-    href: "#",
+    href: "/digital-leadership",
   },
 ];
 
@@ -54,15 +54,26 @@ const [navArticles, setNavArticles] = useState<NavArticle[]>([]);
 
   return (
     <>
+      {/* Notification bar */}
+      <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center gap-2.5 px-4 py-3.5 bg-[#0E1012] border-b border-white/[0.06]">
+        <span className="relative flex items-center justify-center w-2 h-2 shrink-0">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60" />
+          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400" />
+        </span>
+        <span className="text-[11px] tracking-[0.18em] text-[#F8FAFC]/70 uppercase" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
+          Operating from September 2028
+        </span>
+      </div>
+
       <header
-        className="fixed top-0 left-0 right-0 z-50 border-b transition-colors duration-500"
+        className="fixed top-[41px] left-0 right-0 z-50 border-b transition-colors duration-500"
         style={{
           backgroundColor: scrolled ? "rgba(8,9,10,0.90)" : "transparent",
           borderColor: scrolled ? "rgba(255,255,255,0.06)" : "transparent",
           backdropFilter: scrolled ? "blur(12px)" : "none",
         }}
       >
-        <div className="px-4 md:px-20 lg:px-32 pt-[32px] pb-[20px] flex items-center justify-between">
+        <div className="px-4 md:px-20 lg:px-32 pt-[32px] pb-[20px] flex items-center justify-between relative">
 
           <a href="/">
             <Image
@@ -75,26 +86,16 @@ const [navArticles, setNavArticles] = useState<NavArticle[]>([]);
             />
           </a>
 
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-10">
+          {/* Desktop nav — three items centred absolutely */}
+          <nav className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
 
             {/* Capabilities trigger */}
-            <div
-              className="relative"
-            >
+            <div className="relative">
               <button
-                className="group relative flex items-center gap-1.5 text-[10px] text-[#F8FAFC] hover:text-white transition-colors px-5 py-2"
+                className="group relative flex items-center gap-1.5 text-[#F8FAFC] hover:text-white transition-colors"
                 onClick={() => setCapOpen(v => !v)}
               >
-                <span className="absolute top-0 left-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40" />
-                <span className="absolute top-0 left-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40" />
-                <span className="absolute top-0 right-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40" />
-                <span className="absolute top-0 right-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40" />
-                <span className="absolute bottom-0 left-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40" />
-                <span className="absolute bottom-0 left-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40" />
-                <span className="absolute bottom-0 right-0 w-2.5 h-[1px] group-hover:w-full transition-all duration-300 bg-white/40" />
-                <span className="absolute bottom-0 right-0 w-[1px] h-2.5 group-hover:h-full transition-all duration-300 bg-white/40" />
-                <span style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="text-[10px] tracking-widest">{capOpen ? "CLOSE_STRATEGY" : "VIEW_STRATEGY"}</span>
+                <span style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="text-[12px] tracking-widest">CAPABILITIES</span>
                 <motion.svg
                   width="11" height="11" viewBox="0 0 12 12" fill="none"
                   animate={{ rotate: capOpen ? 180 : 0 }}
@@ -106,24 +107,43 @@ const [navArticles, setNavArticles] = useState<NavArticle[]>([]);
             </div>
 
             <a
-              href="#contact"
-              className="px-5 py-2 text-[10px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 hover:translate-x-px transition-all duration-300"
+              href="/research-and-perspectives"
+              className="text-[12px] tracking-widest text-[#F8FAFC] hover:text-white transition-colors duration-200"
               style={{ fontFamily: "var(--font-jetbrains-mono)" }}
             >
-              SECURE_BRIEFING
+              RESEARCH
+            </a>
+
+            <a
+              href="/who-we-are"
+              className="text-[12px] tracking-widest text-[#F8FAFC] hover:text-white transition-colors duration-200"
+              style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+            >
+              WHO WE ARE
             </a>
           </nav>
 
+          {/* Right: CTA + mobile hamburger */}
+          <div className="flex items-center gap-4">
+            <a
+              href="#contact"
+              className="hidden md:inline-flex px-5 py-2 text-[12px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 hover:translate-x-px transition-all duration-300"
+              style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+            >
+              SECURE BRIEFING
+            </a>
+
           {/* Mobile hamburger */}
-          <button
-            className="md:hidden flex flex-col gap-[5px] p-2"
-            onClick={() => setMobileOpen(true)}
-            aria-label="Open menu"
-          >
-            <span className="w-6 h-px bg-[#F8FAFC] block" />
-            <span className="w-6 h-px bg-[#F8FAFC] block" />
-            <span className="w-4 h-px bg-[#F8FAFC] block" />
-          </button>
+            <button
+              className="md:hidden flex flex-col gap-[5px] p-2"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Open menu"
+            >
+              <span className="w-6 h-px bg-[#F8FAFC] block" />
+              <span className="w-6 h-px bg-[#F8FAFC] block" />
+              <span className="w-4 h-px bg-[#F8FAFC] block" />
+            </button>
+          </div>
 
         </div>
       </header>
@@ -133,7 +153,8 @@ const [navArticles, setNavArticles] = useState<NavArticle[]>([]);
       <AnimatePresence>
         {capOpen && (
           <motion.div
-            className="hidden md:flex fixed inset-0 z-40 bg-[#08090A] flex-col"
+            className="hidden md:flex fixed inset-0 z-40 flex-col"
+            style={{ backgroundColor: "rgba(8,9,10,0.82)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" }}
             initial={{ opacity: 0, y: "-100%" }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
@@ -150,10 +171,7 @@ const [navArticles, setNavArticles] = useState<NavArticle[]>([]);
                 <p className="text-[11px] tracking-[0.22em] text-[#D4B996]/60 uppercase mb-8" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
                   Navigation
                 </p>
-                {[...capabilities.map(item => ({ label: item.label, href: item.href, nested: true })),
-                  { label: "Research & Perspectives", href: "/research-and-perspectives", nested: false },
-                  { label: "Who We Are", href: "/who-we-are", nested: false },
-                ].map((item) => (
+                {capabilities.map(item => ({ label: item.label, href: item.href, nested: true })).map((item) => (
                   <a
                     key={item.label}
                     href={item.href}
@@ -196,22 +214,27 @@ const [navArticles, setNavArticles] = useState<NavArticle[]>([]);
                       key={article._id}
                       href={`/research-and-perspectives/${article.slug.current}`}
                       onClick={() => setCapOpen(false)}
-                      className="group flex flex-col overflow-hidden border border-white/[0.06] hover:border-white/[0.14] transition-colors duration-200"
+                      className="group flex flex-col overflow-hidden border border-white/[0.08] hover:border-white/[0.16] transition-colors duration-300"
                     >
-                      <div className="relative flex-1 min-h-[160px] bg-white/[0.03] overflow-hidden">
+                      <div className="relative h-[200px] bg-white/[0.03] overflow-hidden">
                         {article.mainImage?.asset?.url ? (
-                          <Image src={article.mainImage.asset.url} alt={article.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                          <Image src={article.mainImage.asset.url} alt={article.title} fill className="object-cover object-center group-hover:scale-105 transition-transform duration-700" />
                         ) : (
                           <div className="absolute inset-0 bg-white/[0.03]" />
                         )}
                       </div>
-                      <div className="flex flex-col gap-1 p-3 shrink-0">
-                        <span className="text-[9px] tracking-widest text-[#8a8f98] uppercase" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
-                          {article.type}
-                        </span>
-                        <span className="text-[12px] font-medium text-[#F8FAFC] leading-snug group-hover:text-[#D4B996] transition-colors duration-200 line-clamp-2 min-h-[2.75em]">
+                      <div className="flex flex-col justify-between gap-4 p-6 bg-[#0E1012] flex-1">
+                        <h3 className="text-[16px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-snug">
                           {article.title}
-                        </span>
+                        </h3>
+                        <div className="flex items-center justify-between">
+                          <span className="text-[10px] font-semibold uppercase tracking-widest text-[#8a8f98]" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
+                            {article.type}
+                          </span>
+                          <svg className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[#D4B996]" width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                            <path d="M2.5 7h9M7 2.5L11.5 7 7 11.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div>
                       </div>
                     </a>
                   ))}
@@ -293,7 +316,7 @@ const [navArticles, setNavArticles] = useState<NavArticle[]>([]);
                 className="block w-full text-center py-4 text-[11px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] transition-all duration-300"
                 style={{ fontFamily: "var(--font-jetbrains-mono)" }}
               >
-                SECURE_BRIEFING
+                SECURE BRIEFING
               </a>
             </div>
           </motion.div>

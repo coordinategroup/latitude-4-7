@@ -37,10 +37,10 @@ export default function Footer() {
                 CAPABILITIES
               </a>
               <a href="/research-and-perspectives" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
-                RESEARCH_&amp;_PERSPECTIVES
+                RESEARCH &amp; PERSPECTIVES
               </a>
               <a href="/who-we-are" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
-                WHO_WE_ARE
+                WHO WE ARE
               </a>
             </nav>
           </div>
@@ -52,10 +52,10 @@ export default function Footer() {
             </span>
             <nav className="flex flex-col gap-3">
               <a href="#" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
-                AGENCY_ONBOARDING
+                AGENCY ONBOARDING
               </a>
               <a href="#" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
-                INSTITUTIONAL_REGISTRY
+                INSTITUTIONAL REGISTRY
               </a>
             </nav>
           </div>

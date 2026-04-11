@@ -78,7 +78,7 @@ export default function DigitalLeadershipPage() {
               >
                 Capability // 03
               </span>
-              <h1 className="text-[40px] md:text-[68px] font-medium text-[#F8FAFC] tracking-[-0.03em] leading-[1.05] max-w-4xl">
+              <h1 className="text-[26px] md:text-[42px] lg:text-[52px] font-medium text-[#F8FAFC] tracking-[-0.03em] leading-[1.05] max-w-4xl">
                 The technology is rarely<br />the problem
               </h1>
               <p className="mt-6 text-[17px] md:text-[20px] text-[#F8FAFC]/70 leading-[1.7] max-w-2xl">

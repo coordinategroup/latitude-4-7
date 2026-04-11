@@ -49,7 +49,7 @@ export default function LeadershipPage() {
               >
                 About Us
               </span>
-              <h1 className="text-[42px] md:text-[52px] font-medium text-[#F8FAFC] tracking-[-0.03em] leading-[1.04] max-w-3xl">
+              <h1 className="text-[26px] md:text-[42px] lg:text-[52px] font-medium text-[#F8FAFC] tracking-[-0.03em] leading-[1.04] max-w-3xl">
                 The people shaping real digital change
               </h1>
               <p className="mt-6 text-[17px] md:text-[20px] text-[#C2C7D0] leading-[1.7] max-w-2xl">

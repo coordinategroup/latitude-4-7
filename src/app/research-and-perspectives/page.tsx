@@ -38,7 +38,7 @@ export default async function ResearchPage() {
               <span className="text-[12px] font-semibold uppercase tracking-widest text-[#C2C7D0]">
                 Research &amp; Perspectives
               </span>
-              <h1 className="text-[40px] md:text-[52px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.1] max-w-2xl">
+              <h1 className="text-[26px] md:text-[42px] lg:text-[52px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.1] max-w-2xl">
                 Analysing the digital future of small island states
               </h1>
             </div>

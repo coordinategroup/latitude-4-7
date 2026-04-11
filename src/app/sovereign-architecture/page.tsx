@@ -78,11 +78,11 @@ export default function SovereignArchitecturePage() {
               >
                 Capability // 01
               </span>
-              <h1 className="text-[40px] md:text-[68px] font-medium text-[#F8FAFC] tracking-[-0.03em] leading-[1.05] max-w-4xl">
-                Own the infrastructure.<br />Own the future
+              <h1 className="text-[26px] md:text-[42px] lg:text-[52px] font-medium text-[#F8FAFC] tracking-[-0.03em] leading-[1.05] max-w-4xl">
+                Your infrastructure, your rules
               </h1>
               <p className="mt-6 text-[17px] md:text-[20px] text-[#F8FAFC]/70 leading-[1.7] max-w-2xl">
-                We advise the Seychelles on how to build digital systems it actually controls — not rents from providers who can reprice, restrict, or walk away.
+                We advise the Seychelles on how to build digital systems it actually controls, not rents from providers who can reprice, restrict, or walk away.
               </p>
             </div>
           </section>

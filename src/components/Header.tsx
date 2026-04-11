@@ -255,31 +255,79 @@ export default function Header() {
             <div className="h-px bg-gradient-to-r from-[#D4B996] via-[#D4B996]/40 to-transparent" />
 
             {/* Nav items */}
-            <div className="flex flex-col divide-y divide-white/[0.06] flex-1 overflow-y-auto">
-              {[...capabilities.map(item => ({ label: item.label, href: item.href, nested: true })),
-                { label: "Research & Perspectives", href: "/research-and-perspectives", nested: false },
-                { label: "Who We Are", href: "/who-we-are", nested: false },
-                { label: "Leadership", href: "/leadership", nested: false },
-              ].map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="group flex items-center justify-between px-6 py-5"
-                >
-                  <span className="flex items-center gap-2.5">
-                    {item.nested && (
-                      <span className="text-[#D4B996]/40 text-[14px] leading-none">↳</span>
-                    )}
-                    <span className="text-[18px] font-medium text-[#F8FAFC] tracking-[-0.02em] group-hover:text-[#D4B996] transition-colors duration-200">
-                      {item.label}
-                    </span>
+            <div className="flex flex-col flex-1 overflow-y-auto">
+
+              {/* Capabilities group */}
+              <div className="border-b border-white/[0.06]">
+                <div className="px-6 pt-6 pb-3">
+                  <span className="text-[11px] tracking-[0.22em] text-[#D4B996]/60 uppercase" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
+                    Capabilities
                   </span>
-                  <svg className="w-4 h-4 text-[#D4B996] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200" viewBox="0 0 14 14" fill="none">
-                    <path d="M2.5 7h9M7 2.5L11.5 7 7 11.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </a>
-              ))}
+                </div>
+                {capabilities.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="group flex items-center justify-between px-6 py-4 border-t border-white/[0.06]"
+                  >
+                    <span className="flex items-center gap-2.5">
+                      <span className="text-[#D4B996]/40 text-[14px] leading-none">↳</span>
+                      <span className="text-[17px] font-medium text-[#F8FAFC] tracking-[-0.02em] group-hover:text-[#D4B996] transition-colors duration-200">
+                        {item.label}
+                      </span>
+                    </span>
+                    <svg className="w-4 h-4 text-[#D4B996] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200" viewBox="0 0 14 14" fill="none">
+                      <path d="M2.5 7h9M7 2.5L11.5 7 7 11.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </a>
+                ))}
+              </div>
+
+              {/* Research & Perspectives */}
+              <a
+                href="/research-and-perspectives"
+                onClick={() => setMobileOpen(false)}
+                className="group flex items-center justify-between px-6 py-5 border-b border-white/[0.06]"
+              >
+                <span className="text-[17px] font-medium text-[#F8FAFC] tracking-[-0.02em] group-hover:text-[#D4B996] transition-colors duration-200">
+                  Research &amp; Perspectives
+                </span>
+                <svg className="w-4 h-4 text-[#D4B996] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200" viewBox="0 0 14 14" fill="none">
+                  <path d="M2.5 7h9M7 2.5L11.5 7 7 11.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+
+              {/* About Us group */}
+              <div className="border-b border-white/[0.06]">
+                <div className="px-6 pt-6 pb-3">
+                  <span className="text-[11px] tracking-[0.22em] text-[#D4B996]/60 uppercase" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
+                    About Us
+                  </span>
+                </div>
+                {[
+                  { label: "Who We Are", href: "/who-we-are" },
+                  { label: "Leadership", href: "/leadership" },
+                ].map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="group flex items-center justify-between px-6 py-4 border-t border-white/[0.06]"
+                  >
+                    <span className="flex items-center gap-2.5">
+                      <span className="text-[#D4B996]/40 text-[14px] leading-none">↳</span>
+                      <span className="text-[17px] font-medium text-[#F8FAFC] tracking-[-0.02em] group-hover:text-[#D4B996] transition-colors duration-200">
+                        {item.label}
+                      </span>
+                    </span>
+                    <svg className="w-4 h-4 text-[#D4B996] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200" viewBox="0 0 14 14" fill="none">
+                      <path d="M2.5 7h9M7 2.5L11.5 7 7 11.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </a>
+                ))}
+              </div>
+
             </div>
 
             {/* Secure briefing CTA */}

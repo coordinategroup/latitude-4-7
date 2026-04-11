@@ -62,7 +62,7 @@ export default function SovereignArchitecturePage() {
           {/* ── Hero ───────────────────────────────────────────────────── */}
           <section className="relative h-[85vh] min-h-[600px] flex items-end overflow-hidden">
             <Image
-              src="/images/Who_We_Are/capabilities_image.png"
+              src="/images/Sovereign_Architecture/capabilities_image.png"
               alt="Sovereign Architecture"
               fill
               className="object-cover object-center"

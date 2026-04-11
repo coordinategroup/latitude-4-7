@@ -21,7 +21,7 @@ const criteria = [
   {
     index: "02",
     title: "Oversight with teeth.",
-    body: "A regulator that cannot audit the systems it oversees is not a regulator — it is a letterhead. We help build oversight structures with genuine technical authority: the tools, the access rights, and the mandate to hold digital systems to account.",
+    body: "A regulator that cannot audit the systems it oversees cannot do its job. We help build oversight structures with genuine technical authority: the tools, the access rights, and the mandate to hold digital systems to account.",
   },
   {
     index: "03",

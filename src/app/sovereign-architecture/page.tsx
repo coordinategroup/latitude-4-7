@@ -16,7 +16,7 @@ const criteria = [
   {
     index: "01",
     title: "Control Without Dependency",
-    body: "Sovereign architecture begins with a simple question: who holds the keys? Too many national digital systems run on infrastructure owned and controlled by external providers. We advise on structures where we hold administrative authority, data residency, and contractual leverage — not the vendor.",
+    body: "Sovereign architecture begins with a simple question: who holds the keys? Too many national digital systems run on infrastructure owned and controlled by external providers. We advise on structures where the institution holds administrative authority, data residency, and contractual leverage, not the vendor.",
   },
   {
     index: "02",

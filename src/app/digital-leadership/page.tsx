@@ -9,7 +9,7 @@ import AccordionGroup from "@/components/AccordionGroup";
 export const metadata: Metadata = {
   title: "Digital Leadership | Latitude Four Seven",
   description:
-    "Building the local capability for the Seychelles to lead its own digital transformation — ending revolving-door consultancy for good.",
+    "Building the local capability for the Seychelles to lead its own digital transformation, ending revolving-door consultancy for good.",
 };
 
 const criteria = [
@@ -32,7 +32,7 @@ const criteria = [
 
 const shifts = [
   { post: "Trusted digital identity", from: "Physical documents", to: "Currently, citizens navigate public services through paper-based identity systems that are slow to verify and difficult to scale. The shift is to trusted digital identity infrastructure that works across every government service, reducing friction and extending access to all." },
-  { post: "Interoperable digital payments", from: "Cash-first economy", to: "Cash dependency limits financial inclusion and creates inefficiency across the economy. The shift is to interoperable digital payment rails built for citizens, businesses, and government — accessible, reliable, and designed for the Seychelles context." },
+  { post: "Interoperable digital payments", from: "Cash-first economy", to: "Cash dependency limits financial inclusion and creates inefficiency across the economy. The shift is to interoperable digital payment rails built for citizens, businesses, and government: accessible, reliable, and designed for the Seychelles context." },
   { post: "Product-led procurement", from: "Vendor-led decisions", to: "When procurement is led by vendors, the decisions tend to serve the vendor. The shift is to product-led procurement, where outcomes are defined first, requirements flow from those outcomes, and suppliers are held to them." },
   { post: "Local capability and ownership", from: "Revolving door consultancy", to: "External expertise without genuine knowledge transfer leaves institutions no stronger than before. The shift is to engagements structured around building local capability, so the Seychelles is better equipped at the end of every piece of work than it was at the start." },
 ];
@@ -123,11 +123,11 @@ export default function DigitalLeadershipPage() {
                 </div>
                 <div className="relative bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col gap-6">
                   <p className="text-[20px] md:text-[22px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.5]">
-                    The Seychelles does not have a technology problem. It has a leadership problem. The decisions that shape digital services are too often made without the context, experience, or accountability needed to make them well.
+                    The Seychelles does not have a technology problem. It has a complexity problem. Layered legacy systems, inherited structures, and competing priorities make it genuinely difficult to move in a clear direction, regardless of how strong the intent behind it.
                   </p>
                   <div className="h-px bg-white/[0.06]" />
                   <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                    The shift from physical documents to digital identity, from cash to interoperable payments, from manual processes to automated services — these are not technology problems. They are change management problems, trust problems, and people problems. The technology is almost always the easy part.
+                    The shift from physical documents to digital identity, from cash to interoperable payments, from manual processes to automated services: these are rarely technology problems. They are change management challenges, trust challenges, and institutional ones. The technology is almost always the easy part.
                   </p>
                   <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
                     What makes the difference is whether the people responsible for a service understand it well enough to improve it, defend it, and explain it to the citizens who use it. That requires investment in Seychellois talent, not just in Seychellois infrastructure.

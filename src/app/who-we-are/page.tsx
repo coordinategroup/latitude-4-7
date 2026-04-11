@@ -125,7 +125,7 @@ export default function WhoWeArePage() {
           <section className="px-6 md:px-20 lg:px-32 pt-52 pb-24 border-b border-white/[0.06]">
             <div className="max-w-[1400px] mx-auto">
               <div className="flex flex-col gap-8 max-w-4xl">
-                <h1 className="text-[42px] md:text-[72px] font-medium text-[#F8FAFC] tracking-[-0.03em] leading-[1.04]">
+                <h1 className="text-[42px] md:text-[52px] font-medium text-[#F8FAFC] tracking-[-0.03em] leading-[1.04]">
                   Strategy at the speed of sovereign change
                 </h1>
                 <p className="text-[18px] md:text-[22px] text-[#C2C7D0] leading-[1.6] max-w-2xl">

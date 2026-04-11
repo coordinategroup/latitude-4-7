@@ -66,7 +66,7 @@ export default async function CaseStudies() {
                   {post.title}
                 </h3>
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-semibold uppercase tracking-widest text-[#8a8f98]" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-[#C2C7D0]" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
                     {post.type}
                   </span>
                   <svg className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[#D4B996]" width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">

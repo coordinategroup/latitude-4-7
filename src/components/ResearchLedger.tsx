@@ -18,13 +18,13 @@ export default function ResearchLedger({ entries }: { entries: LedgerEntry[] }) 
 
       {/* Header */}
       <div className="mb-10">
-        <span className="text-[11px] font-semibold uppercase tracking-widest text-[#8a8f98]/60 font-mono">
+        <span className="text-[11px] font-semibold uppercase tracking-widest text-[#C2C7D0]/60 font-mono">
           References
         </span>
         <h3 className="mt-2 text-[24px] font-medium text-[#F8FAFC] tracking-[-0.02em]">
           Research Ledger
         </h3>
-        <p className="mt-1 text-[13px] text-[#8a8f98]">
+        <p className="mt-1 text-[13px] text-[#C2C7D0]">
           {entries.length} source{entries.length !== 1 ? "s" : ""} cited in this article.
         </p>
       </div>
@@ -35,7 +35,7 @@ export default function ResearchLedger({ entries }: { entries: LedgerEntry[] }) 
         {/* Desktop column headers */}
         <div className="hidden md:grid md:grid-cols-[2fr_1fr_3fr_80px] gap-x-6 pb-3 mb-1">
           {["Source", "Institution", "Key Data Point", "Year"].map((h) => (
-            <span key={h} className="text-[10px] font-semibold uppercase tracking-widest text-[#8a8f98]/40 font-mono">
+            <span key={h} className="text-[10px] font-semibold uppercase tracking-widest text-[#C2C7D0]/40 font-mono">
               {h}
             </span>
           ))}
@@ -48,7 +48,7 @@ export default function ResearchLedger({ entries }: { entries: LedgerEntry[] }) 
           >
             {/* Index + Source Title */}
             <div className="flex items-start gap-3">
-              <span className="font-mono text-[11px] text-[#8a8f98]/30 pt-0.5 shrink-0 w-5 text-right">
+              <span className="font-mono text-[11px] text-[#C2C7D0]/30 pt-0.5 shrink-0 w-5 text-right">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div>
@@ -71,21 +71,21 @@ export default function ResearchLedger({ entries }: { entries: LedgerEntry[] }) 
 
             {/* Lead Institution */}
             <div className="pl-8 md:pl-0 flex items-start">
-              <span className="text-[13px] text-[#8a8f98] font-mono leading-snug">
+              <span className="text-[13px] text-[#C2C7D0] font-mono leading-snug">
                 {entry.leadInstitution}
               </span>
             </div>
 
             {/* Key Data Point */}
             <div className="pl-8 md:pl-0">
-              <p className="text-[13px] text-[#8a8f98] leading-[1.75]">
+              <p className="text-[13px] text-[#C2C7D0] leading-[1.75]">
                 {entry.keyDataPoint}
               </p>
             </div>
 
             {/* Year */}
             <div className="pl-8 md:pl-0 flex items-start">
-              <span className="font-mono text-[13px] text-[#8a8f98]">
+              <span className="font-mono text-[13px] text-[#C2C7D0]">
                 {entry.year}
               </span>
             </div>

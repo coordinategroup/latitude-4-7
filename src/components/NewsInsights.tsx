@@ -47,7 +47,7 @@ export default function NewsInsights({ articles }: { articles: SpotlightArticle[
           </h2>
           {/* Nav arrows */}
           <div className="flex items-center gap-3">
-            <span className="text-[14px] text-[#8a8f98] font-mono">
+            <span className="text-[14px] text-[#C2C7D0] font-mono">
               {String(current + 1).padStart(2, "0")} / {String(articles.length).padStart(2, "0")}
             </span>
             <button
@@ -90,11 +90,11 @@ export default function NewsInsights({ articles }: { articles: SpotlightArticle[
                     {String(current + 1).padStart(2, "0")}
                   </span>
                   {article.category && (
-                    <span className="text-[12px] font-semibold uppercase tracking-widest text-[#8a8f98]">
+                    <span className="text-[12px] font-semibold uppercase tracking-widest text-[#C2C7D0]">
                       {article.category}
                     </span>
                   )}
-                  <span className="text-[13px] text-[#8a8f98] ml-auto">
+                  <span className="text-[13px] text-[#C2C7D0] ml-auto">
                     {formatDate(article.publishedAt)}
                   </span>
                 </div>
@@ -102,7 +102,7 @@ export default function NewsInsights({ articles }: { articles: SpotlightArticle[
                   {article.title}
                 </h3>
                 {article.subheading && (
-                  <p className="text-[15px] text-[#8a8f98] leading-[1.8]">
+                  <p className="text-[15px] text-[#C2C7D0] leading-[1.8]">
                     {article.subheading}
                   </p>
                 )}

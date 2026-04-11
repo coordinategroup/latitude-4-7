@@ -195,7 +195,7 @@ const ptComponents: PortableTextComponents = {
           {value.description}
         </p>
         {value.source && (
-          <span className="text-[12px] text-[#8a8f98] mt-1">
+          <span className="text-[12px] text-[#C2C7D0] mt-1">
             {value.source}
           </span>
         )}
@@ -214,7 +214,7 @@ const ptComponents: PortableTextComponents = {
             />
           </div>
           {value.caption && (
-            <figcaption className="mt-3 text-[13px] text-[#8a8f98]/60 text-center">
+            <figcaption className="mt-3 text-[13px] text-[#C2C7D0]/60 text-center">
               {value.caption}
             </figcaption>
           )}
@@ -252,7 +252,7 @@ export default async function ArticlePage(
 
         {/* ── Article Hero ─────────────────────────────────────────────── */}
         <section className="relative pb-16 border-b border-white/[0.06]">
-          <div className="px-6 md:px-20 lg:px-32 max-w-[1400px] mx-auto pt-40">
+          <div className="px-6 md:px-20 lg:px-32 max-w-[1400px] mx-auto pt-52">
 
             {/* Type label */}
             <span className="text-[12px] font-semibold uppercase tracking-widest text-[#D4B996]">
@@ -287,7 +287,7 @@ export default async function ArticlePage(
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinkedIn"
-                        className="text-[#8a8f98] hover:text-[#D4B996] transition-colors"
+                        className="text-[#C2C7D0] hover:text-[#D4B996] transition-colors"
                       >
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -296,13 +296,13 @@ export default async function ArticlePage(
                     )}
                   </div>
                   {post.author.jobTitle && (
-                    <span className="text-[13px] text-[#8a8f98]">{post.author.jobTitle}</span>
+                    <span className="text-[13px] text-[#C2C7D0]">{post.author.jobTitle}</span>
                   )}
                 </div>
               )}
 
               {/* Date + Reading time */}
-              <div className="flex items-center gap-6 text-[13px] text-[#8a8f98]">
+              <div className="flex items-center gap-6 text-[13px] text-[#C2C7D0]">
                 {post.publishedAt && (
                   <span>{formatDate(post.publishedAt)}</span>
                 )}
@@ -347,12 +347,12 @@ export default async function ArticlePage(
               {/* Author card */}
               {post.author && (
                 <div className="border border-white/[0.06] p-6 flex flex-col gap-3">
-                  <span className="text-[11px] font-semibold uppercase tracking-widest text-[#8a8f98]/50">
+                  <span className="text-[11px] font-semibold uppercase tracking-widest text-[#C2C7D0]/50">
                     Author
                   </span>
                   <span className="text-[15px] font-medium text-[#F8FAFC]">{post.author.name}</span>
                   {post.author.jobTitle && (
-                    <span className="text-[13px] text-[#8a8f98] leading-snug">{post.author.jobTitle}</span>
+                    <span className="text-[13px] text-[#C2C7D0] leading-snug">{post.author.jobTitle}</span>
                   )}
                   {post.author.linkedIn && (
                     <a
@@ -379,25 +379,25 @@ export default async function ArticlePage(
                   <div className="flex flex-col gap-3">
                     {post.companyFactsheet.founded && (
                       <div className="flex justify-between items-center border-b border-white/[0.05] pb-3">
-                        <span className="text-[13px] text-[#8a8f98]">Founded</span>
+                        <span className="text-[13px] text-[#C2C7D0]">Founded</span>
                         <span className="text-[13px] font-medium text-[#F8FAFC]">{post.companyFactsheet.founded}</span>
                       </div>
                     )}
                     {post.companyFactsheet.coreTechnology && (
                       <div className="flex flex-col gap-1 border-b border-white/[0.05] pb-3">
-                        <span className="text-[13px] text-[#8a8f98]">Core Technology</span>
+                        <span className="text-[13px] text-[#C2C7D0]">Core Technology</span>
                         <span className="text-[13px] font-medium text-[#F8FAFC] leading-snug">{post.companyFactsheet.coreTechnology}</span>
                       </div>
                     )}
                     {post.companyFactsheet.keyProduct && (
                       <div className="flex flex-col gap-1 border-b border-white/[0.05] pb-3">
-                        <span className="text-[13px] text-[#8a8f98]">Key Product</span>
+                        <span className="text-[13px] text-[#C2C7D0]">Key Product</span>
                         <span className="text-[13px] font-medium text-[#F8FAFC] leading-snug">{post.companyFactsheet.keyProduct}</span>
                       </div>
                     )}
                     {post.companyFactsheet.primaryInvestors && post.companyFactsheet.primaryInvestors.length > 0 && (
                       <div className="flex flex-col gap-2">
-                        <span className="text-[13px] text-[#8a8f98]">Primary Investors</span>
+                        <span className="text-[13px] text-[#C2C7D0]">Primary Investors</span>
                         <div className="flex flex-col gap-1.5">
                           {post.companyFactsheet.primaryInvestors.map((investor) => (
                             <span key={investor} className="text-[13px] font-medium text-[#F8FAFC]">
@@ -413,23 +413,23 @@ export default async function ArticlePage(
 
               {/* Article details */}
               <div className="border border-white/[0.06] p-6 flex flex-col gap-4">
-                <span className="text-[11px] font-semibold uppercase tracking-widest text-[#8a8f98]/50">
+                <span className="text-[11px] font-semibold uppercase tracking-widest text-[#C2C7D0]/50">
                   Article Details
                 </span>
                 <div className="flex flex-col gap-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-[13px] text-[#8a8f98]">Type</span>
+                    <span className="text-[13px] text-[#C2C7D0]">Type</span>
                     <span className="text-[13px] text-[#F8FAFC]">{post.type}</span>
                   </div>
                   {post.publishedAt && (
                     <div className="flex justify-between items-center">
-                      <span className="text-[13px] text-[#8a8f98]">Published</span>
+                      <span className="text-[13px] text-[#C2C7D0]">Published</span>
                       <span className="text-[13px] text-[#F8FAFC]">{formatDate(post.publishedAt)}</span>
                     </div>
                   )}
                   {post.readingTime && (
                     <div className="flex justify-between items-center">
-                      <span className="text-[13px] text-[#8a8f98]">Reading time</span>
+                      <span className="text-[13px] text-[#C2C7D0]">Reading time</span>
                       <span className="text-[13px] text-[#F8FAFC]">{post.readingTime} min</span>
                     </div>
                   )}
@@ -456,7 +456,7 @@ export default async function ArticlePage(
                 <h2 className="text-[28px] font-medium text-[#F8FAFC] tracking-[-0.02em]">
                   Related Content
                 </h2>
-                <span className="text-[12px] font-semibold uppercase tracking-widest text-[#8a8f98] hidden md:block">
+                <span className="text-[12px] font-semibold uppercase tracking-widest text-[#C2C7D0] hidden md:block">
                   Research &amp; Perspectives
                 </span>
               </div>
@@ -490,11 +490,11 @@ export default async function ArticlePage(
                         {related.title}
                       </h3>
                       <div className="mt-auto flex items-center justify-between">
-                        <span className="text-[13px] text-[#8a8f98]">
+                        <span className="text-[13px] text-[#C2C7D0]">
                           {related.publishedAt ? formatDate(related.publishedAt) : ""}
                         </span>
                         {related.readingTime && (
-                          <span className="text-[13px] text-[#8a8f98]">
+                          <span className="text-[13px] text-[#C2C7D0]">
                             {related.readingTime} min
                           </span>
                         )}

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageFadeIn from "@/components/PageFadeIn";
+import AccordionGroup from "@/components/AccordionGroup";
 
 export const metadata: Metadata = {
   title: "Digital Leadership | Latitude Four Seven",
@@ -15,7 +16,7 @@ const criteria = [
   {
     index: "01",
     title: "Product-led thinking at the top.",
-    body: "Digital transformation does not fail because the technology is wrong. It fails because the people making decisions do not understand what they are deciding. We work with senior leaders in the Republic to build genuine product literacy: not technical depth, but enough to ask the right questions and recognise a bad answer.",
+    body: "Digital transformation doesn't fail because the technology is wrong. It fails because strategy and delivery are too often pulling in different directions. We work with senior leaders to close that gap, building genuine product literacy so the right questions get asked before the wrong decisions get made.",
   },
   {
     index: "02",
@@ -25,15 +26,15 @@ const criteria = [
   {
     index: "03",
     title: "Brain gain, not brain drain.",
-    body: "A transformation delivered entirely by external consultants is not a transformation — it is a revolving door. We work alongside local teams from the start, investing in Seychellois talent so the Republic has the internal expertise to lead, adapt, and improve what has been built, without calling us back every time something changes.",
+    body: "Lasting transformation requires local ownership. We work alongside Seychellois teams from the start, investing in the people and institutions that will carry the work forward long after any single engagement is complete.",
   },
 ];
 
 const shifts = [
-  { from: "Physical documents", to: "Trusted digital identity" },
-  { from: "Cash-first economy", to: "Interoperable digital payments" },
-  { from: "Vendor-led decisions", to: "Product-led procurement" },
-  { from: "Revolving door consultancy", to: "Local capability and ownership" },
+  { post: "Trusted digital identity", from: "Physical documents", to: "Currently, citizens navigate public services through paper-based identity systems that are slow to verify and difficult to scale. The shift is to trusted digital identity infrastructure that works across every government service, reducing friction and extending access to all." },
+  { post: "Interoperable digital payments", from: "Cash-first economy", to: "Cash dependency limits financial inclusion and creates inefficiency across the economy. The shift is to interoperable digital payment rails built for citizens, businesses, and government — accessible, reliable, and designed for the Seychelles context." },
+  { post: "Product-led procurement", from: "Vendor-led decisions", to: "When procurement is led by vendors, the decisions tend to serve the vendor. The shift is to product-led procurement, where outcomes are defined first, requirements flow from those outcomes, and suppliers are held to them." },
+  { post: "Local capability and ownership", from: "Revolving door consultancy", to: "External expertise without genuine knowledge transfer leaves institutions no stronger than before. The shift is to engagements structured around building local capability, so the Seychelles is better equipped at the end of every piece of work than it was at the start." },
 ];
 
 const related = [
@@ -61,7 +62,7 @@ export default function DigitalLeadershipPage() {
           {/* ── Hero ───────────────────────────────────────────────────── */}
           <section className="relative h-[85vh] min-h-[600px] flex items-end overflow-hidden">
             <Image
-              src="/images/Who_We_Are/capabilities_image.png"
+              src="/images/Digital_Leadership/hero_cover.png"
               alt="Digital Leadership"
               fill
               className="object-cover object-center"
@@ -78,13 +79,10 @@ export default function DigitalLeadershipPage() {
                 Capability // 03
               </span>
               <h1 className="text-[40px] md:text-[68px] font-medium text-[#F8FAFC] tracking-[-0.03em] leading-[1.05] max-w-4xl">
-                The technology is rarely<br />the problem.
+                The technology is rarely<br />the problem
               </h1>
-              <p className="mt-4 text-[13px] tracking-widest text-[#D4B996]/70 uppercase" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
-                Building the local capability to lead our own transformation.
-              </p>
               <p className="mt-6 text-[17px] md:text-[20px] text-[#F8FAFC]/70 leading-[1.7] max-w-2xl">
-                We advise the Seychelles on building the decision-making culture, product literacy, and local talent that makes transformation stick — and ensures zero knowledge leakage when we leave.
+                We advise the Seychelles on building the decision-making culture, product literacy, and local talent that makes transformation stick.
               </p>
             </div>
           </section>
@@ -94,14 +92,14 @@ export default function DigitalLeadershipPage() {
             <div className="max-w-[1400px] mx-auto px-6 md:px-20 lg:px-32">
               <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/[0.06]">
                 {[
-                  { stat: "3", label: "Leadership criteria applied in every engagement" },
-                  { stat: "Full", label: "Commitment to the cause" },
-                  { stat: "Zero", label: "Knowledge leakage" },
-                  { stat: "30/60/90", label: "The framework behind every engagement" },
+                  { stat: "70%", label: "Of digital transformations fail from lack of internal capability" },
+                  { stat: "60%", label: "Of government projects require consultant re-engagement within 2 years" },
+                  { stat: "3x", label: "Higher return with structured local upskilling" },
+                  { stat: "18 mo", label: "Before knowledge loss becomes critical after consultants depart" },
                 ].map((item) => (
                   <div key={item.label} className="flex flex-col gap-2 px-8 py-10 first:pl-0 last:pr-0">
                     <span className="text-[32px] font-medium text-[#D4B996] tracking-[-0.02em]">{item.stat}</span>
-                    <span className="text-[13px] text-[#8a8f98] leading-snug">{item.label}</span>
+                    <span className="text-[13px] text-[#C2C7D0] leading-snug">{item.label}</span>
                   </div>
                 ))}
               </div>
@@ -120,52 +118,20 @@ export default function DigitalLeadershipPage() {
                     The Challenge
                   </span>
                   <h2 className="text-[26px] md:text-[30px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.2]">
-                    Digital transformation without digital leadership is just expensive IT.
+                    Digital transformation without digital leadership is just expensive IT
                   </h2>
                 </div>
-                <div className="flex flex-col gap-4">
-                  <div className="relative bg-[#D4B996]/[0.06] border border-[#D4B996]/25 p-8">
-                    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-[#D4B996]/60 via-[#D4B996]/30 to-transparent" />
-                    <p className="text-[20px] md:text-[22px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.5]">
-                      The Seychelles does not have a technology problem. It has a revolving door problem. External consultants arrive, build something, and leave — taking the knowledge with them. The cycle repeats.
-                    </p>
-                  </div>
-                  <div className="bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col gap-6">
-                    <p className="text-[16px] text-[#8a8f98] leading-[1.9]">
-                      The shift from physical documents to digital identity, from cash to interoperable payments, from manual processes to automated services — these are not technology problems. They are change management problems, trust problems, and people problems. The technology is almost always the easy part.
-                    </p>
-                    <p className="text-[16px] text-[#8a8f98] leading-[1.9]">
-                      What makes the difference is whether the people responsible for a service understand it well enough to improve it, defend it, and explain it to the citizens who use it. That requires investment in Seychellois talent, not just in Seychellois infrastructure.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* ── Founder's Insight ───────────────────────────────────────── */}
-          <section className="px-6 md:px-20 lg:px-32 py-16 border-b border-white/[0.06] bg-white">
-            <div className="max-w-[1400px] mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-[28%_1fr] gap-12 md:gap-20 items-start">
-                <div>
-                  <span
-                    className="text-[11px] tracking-[0.22em] text-black/40 uppercase block"
-                    style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-                  >
-                    Founder's Insight
-                  </span>
-                </div>
-                <div className="flex flex-col gap-6">
-                  <p className="text-[22px] md:text-[28px] font-medium text-[#08090A] tracking-[-0.02em] leading-[1.4]">
-                    "The Seychelles' digital future should be led by Seychellois people. Our role is to make ourselves unnecessary as quickly as possible. If you leave and nothing works without you, you have not delivered a transformation. You have delivered a dependency."
+                <div className="relative bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col gap-6">
+                  <p className="text-[20px] md:text-[22px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.5]">
+                    The Seychelles does not have a technology problem. It has a leadership problem. The decisions that shape digital services are too often made without the context, experience, or accountability needed to make them well.
                   </p>
-                  <div className="h-px bg-black/[0.08]" />
-                  <span
-                    className="text-[12px] text-black/40 uppercase tracking-widest"
-                    style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-                  >
-                    Luke Albest // Founder
-                  </span>
+                  <div className="h-px bg-white/[0.06]" />
+                  <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
+                    The shift from physical documents to digital identity, from cash to interoperable payments, from manual processes to automated services — these are not technology problems. They are change management problems, trust problems, and people problems. The technology is almost always the easy part.
+                  </p>
+                  <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
+                    What makes the difference is whether the people responsible for a service understand it well enough to improve it, defend it, and explain it to the citizens who use it. That requires investment in Seychellois talent, not just in Seychellois infrastructure.
+                  </p>
                 </div>
               </div>
             </div>
@@ -183,12 +149,9 @@ export default function DigitalLeadershipPage() {
                     Design Criteria
                   </span>
                   <h2 className="text-[26px] md:text-[34px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.15]">
-                    Three things we focus on in every engagement.
+                    Three things we focus on in every engagement
                   </h2>
                 </div>
-                <p className="text-[14px] text-[#8a8f98] leading-[1.75] max-w-xs text-right hidden md:block">
-                  Leadership capability is not a soft outcome. It is the condition that determines whether everything else holds once we leave.
-                </p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06]">
                 {criteria.map((p) => (
@@ -203,12 +166,45 @@ export default function DigitalLeadershipPage() {
                     <h3 className="text-[19px] font-medium text-[#F8FAFC] tracking-[-0.01em] leading-snug">
                       {p.title}
                     </h3>
-                    <p className="text-[14px] text-[#8a8f98] leading-[1.85]">
+                    <p className="text-[14px] text-[#C2C7D0] leading-[1.85]">
                       {p.body}
                     </p>
                   </div>
                 ))}
               </div>
+            </div>
+          </section>
+
+          {/* ── Founder's Insight ───────────────────────────────────────── */}
+          <section className="relative px-6 md:px-20 lg:px-32 py-24 border-b border-white/[0.06] bg-[#08090A] overflow-hidden">
+            {/* Corner brackets */}
+            <div className="hidden md:block absolute top-8 left-8 w-8 h-8">
+              <div className="absolute top-0 left-0 w-full h-px bg-[#D4B996]/50" />
+              <div className="absolute top-0 left-0 w-px h-full bg-[#D4B996]/50" />
+            </div>
+            <div className="hidden md:block absolute top-8 right-8 w-8 h-8">
+              <div className="absolute top-0 right-0 w-full h-px bg-[#D4B996]/50" />
+              <div className="absolute top-0 right-0 w-px h-full bg-[#D4B996]/50" />
+            </div>
+            <div className="hidden md:block absolute bottom-8 left-8 w-8 h-8">
+              <div className="absolute bottom-0 left-0 w-full h-px bg-[#D4B996]/50" />
+              <div className="absolute bottom-0 left-0 w-px h-full bg-[#D4B996]/50" />
+            </div>
+            <div className="hidden md:block absolute bottom-8 right-8 w-8 h-8">
+              <div className="absolute bottom-0 right-0 w-full h-px bg-[#D4B996]/50" />
+              <div className="absolute bottom-0 right-0 w-px h-full bg-[#D4B996]/50" />
+            </div>
+            <div className="max-w-[1400px] mx-auto flex flex-col items-center text-center gap-8">
+              <p className="text-[22px] md:text-[32px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.4] max-w-3xl">
+                "The Seychelles' digital future should be led by Seychellois people. That is not a nice-to-have. It is the measure against which every engagement should be judged. We are here to build something that lasts, not something that impresses."
+              </p>
+              <div className="h-px bg-white/[0.08] w-24" />
+              <span
+                className="text-[12px] text-[#D4B996]/60 uppercase tracking-widest"
+                style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+              >
+                Luke Albest // Founder
+              </span>
             </div>
           </section>
 
@@ -224,23 +220,10 @@ export default function DigitalLeadershipPage() {
                     The Shift
                   </span>
                   <h2 className="text-[32px] md:text-[42px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.15]">
-                    From where the Republic is, to where it needs to be.
+                    From where the Seychelles is, to where it needs to be
                   </h2>
                 </div>
-                <div className="flex flex-col">
-                  {shifts.map((s, i) => (
-                    <div key={s.from}>
-                      {i > 0 && <div className="h-px bg-white/[0.06]" />}
-                      <div className="flex items-center gap-6 py-8">
-                        <span className="flex-1 text-[15px] text-[#8a8f98] leading-snug">{s.from}</span>
-                        <svg width="24" height="12" viewBox="0 0 24 12" fill="none" className="shrink-0 text-[#D4B996]/40">
-                          <path d="M0 6h22M17 1l5 5-5 5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                        <span className="flex-1 text-[15px] text-[#F8FAFC] leading-snug text-right">{s.to}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                <AccordionGroup items={shifts.map(s => ({ title: s.post, body: s.to }))} />
               </div>
             </div>
           </section>
@@ -271,7 +254,7 @@ export default function DigitalLeadershipPage() {
                       <h3 className="text-[22px] font-medium text-[#F8FAFC] tracking-[-0.01em] leading-snug group-hover:text-[#D4B996] transition-colors duration-300">
                         {item.label}
                       </h3>
-                      <p className="text-[14px] text-[#8a8f98] leading-[1.75]">
+                      <p className="text-[14px] text-[#C2C7D0] leading-[1.75]">
                         {item.description}
                       </p>
                     </div>
@@ -295,11 +278,11 @@ export default function DigitalLeadershipPage() {
                   Engage
                 </span>
                 <h2 className="text-[26px] md:text-[30px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.2]">
-                  Leadership capability is the outcome, not the assumption.
+                  Leadership capability is the outcome, not the assumption
                 </h2>
               </div>
               <div className="bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-                <p className="text-[16px] text-[#8a8f98] leading-[1.9]">
+                <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
                   The best time to build local capability is before the engagement model is set. The second best time is now.
                 </p>
                 <a

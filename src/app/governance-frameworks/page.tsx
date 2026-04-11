@@ -4,6 +4,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageFadeIn from "@/components/PageFadeIn";
+import AccordionGroup from "@/components/AccordionGroup";
 
 export const metadata: Metadata = {
   title: "Governance Frameworks | Latitude Four Seven",
@@ -20,7 +21,7 @@ const criteria = [
   {
     index: "02",
     title: "Oversight with teeth.",
-    body: "A regulator that cannot audit the systems it oversees is not a regulator — it is a letterhead. We help the Republic build oversight structures with genuine technical authority: the tools, the access rights, and the mandate to hold digital systems to account.",
+    body: "A regulator that cannot audit the systems it oversees is not a regulator — it is a letterhead. We help build oversight structures with genuine technical authority: the tools, the access rights, and the mandate to hold digital systems to account.",
   },
   {
     index: "03",
@@ -30,10 +31,10 @@ const criteria = [
 ];
 
 const coverage = [
-  { value: "Data Protection", label: "Citizens' data governed by laws written for the digital age" },
-  { value: "KYC & AML", label: "Modern identity verification and anti-money laundering frameworks that meet international standards" },
-  { value: "Audit Rights", label: "Regulators with genuine technical access and authority" },
-  { value: "Digital Identity Law", label: "Legal frameworks that recognise and protect digital identity across all public services" },
+  { value: "Data Protection", label: "Citizens' data must be governed by laws written for the digital age, not legislation drafted before the services it covers existed. We advise on updating data protection frameworks so legal protections match the systems they are meant to govern." },
+  { value: "KYC & AML", label: "Modern identity verification and anti-money laundering obligations must reflect the reality of digital financial services. We advise on frameworks that meet international standards without creating unnecessary friction for citizens and institutions operating in good faith." },
+  { value: "Audit Rights", label: "A regulator without genuine technical access is a regulator in name only. We help build oversight structures with the tools, authority, and expertise to audit the systems they oversee, not just receive reports about them." },
+  { value: "Digital Identity Law", label: "Legal frameworks must recognise and protect digital identity across all public services, giving citizens clear rights over how their identity is used, stored, and shared. Without this, digital services rest on an unenforceable foundation." },
 ];
 
 const related = [
@@ -61,7 +62,7 @@ export default function GovernanceFrameworksPage() {
           {/* ── Hero ───────────────────────────────────────────────────── */}
           <section className="relative h-[85vh] min-h-[600px] flex items-end overflow-hidden">
             <Image
-              src="/images/Who_We_Are/capabilities_image.png"
+              src="/images/Governance_Frameworks/hero_image.png"
               alt="Governance Frameworks"
               fill
               className="object-cover object-center"
@@ -78,11 +79,8 @@ export default function GovernanceFrameworksPage() {
                 Capability // 02
               </span>
               <h1 className="text-[40px] md:text-[68px] font-medium text-[#F8FAFC] tracking-[-0.03em] leading-[1.05] max-w-4xl">
-                Rules written for the world<br />as it actually is.
+                Rules written for the world<br />as it actually is
               </h1>
-              <p className="mt-4 text-[13px] tracking-widest text-[#D4B996]/70 uppercase" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
-                Securing our digital future through modern policy and trust.
-              </p>
               <p className="mt-6 text-[17px] md:text-[20px] text-[#F8FAFC]/70 leading-[1.7] max-w-2xl">
                 We advise the Seychelles on building governance frameworks that reflect 2026 reality: updated legislation, clear oversight, and compliance built in from the ground up.
               </p>
@@ -94,14 +92,14 @@ export default function GovernanceFrameworksPage() {
             <div className="max-w-[1400px] mx-auto px-6 md:px-20 lg:px-32">
               <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/[0.06]">
                 {[
-                  { stat: "4", label: "Coverage areas every framework must address" },
-                  { stat: "Full", label: "Commitment to the cause" },
-                  { stat: "Zero", label: "Trust deficit" },
-                  { stat: "30/60/90", label: "The framework behind every engagement" },
+                  { stat: "62%", label: "Of small island states governed by pre-smartphone legislation" },
+                  { stat: "$4.9M", label: "Average cost of a public sector data protection failure" },
+                  { stat: "3x", label: "Faster citizen adoption with demonstrable digital trust" },
+                  { stat: "20 yrs", label: "Average gap between new technology and updated regulation" },
                 ].map((item) => (
                   <div key={item.label} className="flex flex-col gap-2 px-8 py-10 first:pl-0 last:pr-0">
                     <span className="text-[32px] font-medium text-[#D4B996] tracking-[-0.02em]">{item.stat}</span>
-                    <span className="text-[13px] text-[#8a8f98] leading-snug">{item.label}</span>
+                    <span className="text-[13px] text-[#C2C7D0] leading-snug">{item.label}</span>
                   </div>
                 ))}
               </div>
@@ -120,52 +118,20 @@ export default function GovernanceFrameworksPage() {
                     The Challenge
                   </span>
                   <h2 className="text-[26px] md:text-[30px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.2]">
-                    The laws have not kept up. The technology has not waited.
+                    The laws have not kept up. The technology has not waited
                   </h2>
                 </div>
-                <div className="flex flex-col gap-4">
-                  <div className="relative bg-[#D4B996]/[0.06] border border-[#D4B996]/25 p-8">
-                    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-[#D4B996]/60 via-[#D4B996]/30 to-transparent" />
-                    <p className="text-[20px] md:text-[22px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.5]">
-                      The Seychelles is operating digital services under legislation that was not written for them. KYC processes, AML obligations, and data protection rules are being applied to systems that those rules were never designed to govern.
-                    </p>
-                  </div>
-                  <div className="bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col gap-6">
-                    <p className="text-[16px] text-[#8a8f98] leading-[1.9]">
-                      The result is regulators who lack the tools to audit the systems they oversee, and citizens with no clear legal rights over their own digital identity. That is not a minor compliance gap. It is a structural trust deficit that digital adoption cannot survive.
-                    </p>
-                    <p className="text-[16px] text-[#8a8f98] leading-[1.9]">
-                      The Seychelles has a chance most nations do not: to build governance frameworks from a clean slate, informed by what has worked and failed elsewhere. That opportunity has a window. We help the Republic use it well.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* ── Founder's Insight ───────────────────────────────────────── */}
-          <section className="px-6 md:px-20 lg:px-32 py-16 border-b border-white/[0.06] bg-white">
-            <div className="max-w-[1400px] mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-[28%_1fr] gap-12 md:gap-20 items-start">
-                <div>
-                  <span
-                    className="text-[11px] tracking-[0.22em] text-black/40 uppercase block"
-                    style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-                  >
-                    Founder's Insight
-                  </span>
-                </div>
-                <div className="flex flex-col gap-6">
-                  <p className="text-[22px] md:text-[28px] font-medium text-[#08090A] tracking-[-0.02em] leading-[1.4]">
-                    "Trust is the primary currency of any digital system. Citizens will not adopt services they do not believe are protected. And you cannot build that trust with a rulebook that was written before the internet existed."
+                <div className="relative bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col gap-6">
+                  <p className="text-[20px] md:text-[22px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.5]">
+                    The Seychelles is operating digital services under legislation that was not written for them. KYC processes, AML obligations, and data protection rules are being applied to systems that those rules were never designed to govern.
                   </p>
-                  <div className="h-px bg-black/[0.08]" />
-                  <span
-                    className="text-[12px] text-black/40 uppercase tracking-widest"
-                    style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-                  >
-                    Luke Albest // Founder
-                  </span>
+                  <div className="h-px bg-white/[0.06]" />
+                  <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
+                    The result is regulators who lack the tools to audit the systems they oversee, and citizens with no clear legal rights over their own digital identity. That is not a minor compliance gap. It is a structural trust deficit that digital adoption cannot survive.
+                  </p>
+                  <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
+                    The Seychelles has a chance most nations do not: to build governance frameworks from a clean slate, informed by what has worked and failed elsewhere. That opportunity has a window. We help them use it well.
+                  </p>
                 </div>
               </div>
             </div>
@@ -183,12 +149,9 @@ export default function GovernanceFrameworksPage() {
                     Design Criteria
                   </span>
                   <h2 className="text-[26px] md:text-[34px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.15]">
-                    Three things every governance framework must do.
+                    Three things every governance framework must do
                   </h2>
                 </div>
-                <p className="text-[14px] text-[#8a8f98] leading-[1.75] max-w-xs text-right hidden md:block">
-                  Not aspirations. The minimum standard for a framework we would put our name to.
-                </p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06]">
                 {criteria.map((p) => (
@@ -203,12 +166,45 @@ export default function GovernanceFrameworksPage() {
                     <h3 className="text-[19px] font-medium text-[#F8FAFC] tracking-[-0.01em] leading-snug">
                       {p.title}
                     </h3>
-                    <p className="text-[14px] text-[#8a8f98] leading-[1.85]">
+                    <p className="text-[14px] text-[#C2C7D0] leading-[1.85]">
                       {p.body}
                     </p>
                   </div>
                 ))}
               </div>
+            </div>
+          </section>
+
+          {/* ── Founder's Insight ───────────────────────────────────────── */}
+          <section className="relative px-6 md:px-20 lg:px-32 py-24 border-b border-white/[0.06] bg-[#08090A] overflow-hidden">
+            {/* Corner brackets */}
+            <div className="hidden md:block absolute top-8 left-8 w-8 h-8">
+              <div className="absolute top-0 left-0 w-full h-px bg-[#D4B996]/50" />
+              <div className="absolute top-0 left-0 w-px h-full bg-[#D4B996]/50" />
+            </div>
+            <div className="hidden md:block absolute top-8 right-8 w-8 h-8">
+              <div className="absolute top-0 right-0 w-full h-px bg-[#D4B996]/50" />
+              <div className="absolute top-0 right-0 w-px h-full bg-[#D4B996]/50" />
+            </div>
+            <div className="hidden md:block absolute bottom-8 left-8 w-8 h-8">
+              <div className="absolute bottom-0 left-0 w-full h-px bg-[#D4B996]/50" />
+              <div className="absolute bottom-0 left-0 w-px h-full bg-[#D4B996]/50" />
+            </div>
+            <div className="hidden md:block absolute bottom-8 right-8 w-8 h-8">
+              <div className="absolute bottom-0 right-0 w-full h-px bg-[#D4B996]/50" />
+              <div className="absolute bottom-0 right-0 w-px h-full bg-[#D4B996]/50" />
+            </div>
+            <div className="max-w-[1400px] mx-auto flex flex-col items-center text-center gap-8">
+              <p className="text-[22px] md:text-[32px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.4] max-w-3xl">
+                "Trust is the primary currency of any digital system. Citizens will not adopt services they do not believe are protected. And you cannot build that trust with a rulebook that was written before the internet existed."
+              </p>
+              <div className="h-px bg-white/[0.08] w-24" />
+              <span
+                className="text-[12px] text-[#D4B996]/60 uppercase tracking-widest"
+                style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+              >
+                Luke Albest // Founder
+              </span>
             </div>
           </section>
 
@@ -224,29 +220,10 @@ export default function GovernanceFrameworksPage() {
                     Minimum Standard
                   </span>
                   <h2 className="text-[32px] md:text-[42px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.15]">
-                    Where governance must reach.
+                    Where governance must reach
                   </h2>
                 </div>
-                <div className="flex flex-col">
-                  <div className="bg-white/[0.03] border border-white/[0.08] p-8 mb-4">
-                    <p className="text-[16px] text-[#8a8f98] leading-[1.9]">
-                      A governance framework that only covers some of the Republic's digital services is not a framework — it is a patchwork. These are the four areas every national digital governance structure must address.
-                    </p>
-                  </div>
-                  {coverage.map((item, i) => (
-                    <div key={item.value}>
-                      {i > 0 && <div className="h-px bg-white/[0.06]" />}
-                      <div className="flex flex-col gap-2 py-8">
-                        <span className="text-[18px] font-medium text-[#D4B996] tracking-[-0.01em]">
-                          {item.value}
-                        </span>
-                        <span className="text-[14px] text-[#8a8f98] leading-snug">
-                          {item.label}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                <AccordionGroup items={coverage.map(c => ({ title: c.value, body: c.label }))} />
               </div>
             </div>
           </section>
@@ -277,7 +254,7 @@ export default function GovernanceFrameworksPage() {
                       <h3 className="text-[22px] font-medium text-[#F8FAFC] tracking-[-0.01em] leading-snug group-hover:text-[#D4B996] transition-colors duration-300">
                         {item.label}
                       </h3>
-                      <p className="text-[14px] text-[#8a8f98] leading-[1.75]">
+                      <p className="text-[14px] text-[#C2C7D0] leading-[1.75]">
                         {item.description}
                       </p>
                     </div>
@@ -301,11 +278,11 @@ export default function GovernanceFrameworksPage() {
                   Engage
                 </span>
                 <h2 className="text-[26px] md:text-[30px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.2]">
-                  Governance built for now. Designed to last.
+                  Governance built for now. Designed to last
                 </h2>
               </div>
               <div className="bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-                <p className="text-[16px] text-[#8a8f98] leading-[1.9]">
+                <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
                   The best time to shape the rules is before the systems are built. The second best time is now.
                 </p>
                 <a

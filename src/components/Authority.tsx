@@ -22,7 +22,7 @@ export default function Authority() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.85, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            Bridging the gap between strategy and delivery.
+            Bridging the gap between strategy and delivery
           </motion.h2>
 
           {/* Right: body */}

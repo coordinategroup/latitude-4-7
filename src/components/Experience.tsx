@@ -272,7 +272,7 @@ function Card({ fig, title, description, Illustration, className }: CardProps) {
           <h3 className="text-[20px] font-semibold text-[#F8FAFC] tracking-[-0.02em]">
             {title}
           </h3>
-          <p className="text-[16px] leading-relaxed text-[#8a8f98]">
+          <p className="text-[16px] leading-relaxed text-[#C2C7D0]">
             {description}
           </p>
         </div>

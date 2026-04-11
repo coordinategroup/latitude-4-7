@@ -184,7 +184,7 @@ export default function ValuesSection() {
                 transition: "max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
               }}
             >
-              <p className="text-[15px] text-[#8a8f98] leading-[1.85] pb-8 pl-[72px] max-w-2xl">
+              <p className="text-[15px] text-[#C2C7D0] leading-[1.85] pb-8 pl-[72px] max-w-2xl">
                 {val.description}
               </p>
             </div>

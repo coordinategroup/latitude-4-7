@@ -32,11 +32,11 @@ function HUDOverlay() {
       </svg>
 
       {/* Corner brackets — desktop only */}
-      <div className="hidden md:block absolute top-[80px] left-8 w-8 h-8">
+      <div className="hidden md:block absolute top-[120px] left-8 w-8 h-8">
         <div className="absolute top-0 left-0 w-full h-px bg-[#D4B996]/50"/>
         <div className="absolute top-0 left-0 w-px h-full bg-[#D4B996]/50"/>
       </div>
-      <div className="hidden md:block absolute top-[80px] right-8 w-8 h-8">
+      <div className="hidden md:block absolute top-[120px] right-8 w-8 h-8">
         <div className="absolute top-0 right-0 w-full h-px bg-[#D4B996]/50"/>
         <div className="absolute top-0 right-0 w-px h-full bg-[#D4B996]/50"/>
       </div>

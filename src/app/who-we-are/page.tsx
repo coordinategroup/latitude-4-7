@@ -126,9 +126,9 @@ export default function WhoWeArePage() {
             <div className="max-w-[1400px] mx-auto">
               <div className="flex flex-col gap-8 max-w-4xl">
                 <h1 className="text-[42px] md:text-[72px] font-medium text-[#F8FAFC] tracking-[-0.03em] leading-[1.04]">
-                  Strategy at the speed of sovereign change.
+                  Strategy at the speed of sovereign change
                 </h1>
-                <p className="text-[18px] md:text-[22px] text-[#8a8f98] leading-[1.6] max-w-2xl">
+                <p className="text-[18px] md:text-[22px] text-[#C2C7D0] leading-[1.6] max-w-2xl">
                   We advise governments and institutions on how to take control of their digital future, before someone else defines it for them.
                 </p>
               </div>
@@ -173,7 +173,7 @@ export default function WhoWeArePage() {
                 </h2>
 
                 {/* Right: single paragraph */}
-                <p className="text-[16px] text-[#8a8f98] leading-[1.9]">
+                <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
                   Old systems aren't just slow: they actively resist the fast, accountable decisions that modern institutions need to make. While others are still in planning, those who move will pull ahead. We're here to close the gap between what a government intends and what actually gets done, before the moment passes.
                 </p>
 
@@ -195,7 +195,7 @@ export default function WhoWeArePage() {
 
               <div className="relative w-full aspect-[16/7] overflow-hidden mt-6 mb-12">
                 <Image
-                  src="/images/Who_We_Are/capabilities_image.png"
+                  src="/images/Who_We_Are/group_image.png"
                   alt="Latitude Four Seven"
                   fill
                   className="object-cover object-center"
@@ -217,7 +217,7 @@ export default function WhoWeArePage() {
                     <h3 className="text-[20px] font-medium text-[#F8FAFC] tracking-[-0.01em] leading-snug">
                       {cap.title}
                     </h3>
-                    <p className="text-[14px] text-[#8a8f98] leading-[1.85]">
+                    <p className="text-[14px] text-[#C2C7D0] leading-[1.85]">
                       {cap.body}
                     </p>
                   </div>
@@ -233,7 +233,7 @@ export default function WhoWeArePage() {
 
               <div className="mb-16">
                 <h2 className="text-[28px] md:text-[40px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.15] max-w-xl">
-                  Designed with the people it serves.
+                  Designed with the people it serves
                 </h2>
               </div>
 
@@ -251,7 +251,7 @@ export default function WhoWeArePage() {
                   <h3 className="text-[19px] font-medium text-[#F8FAFC] tracking-[-0.01em] leading-snug mb-4">
                     Shaped by those who know it best.
                   </h3>
-                  <p className="text-[14px] text-[#8a8f98] leading-[1.85]">
+                  <p className="text-[14px] text-[#C2C7D0] leading-[1.85]">
                     We work alongside local teams from the start, not as outside experts imposing a blueprint, but as advisors helping to shape something that fits the context it will live in.
                   </p>
                 </div>
@@ -268,7 +268,7 @@ export default function WhoWeArePage() {
                   <h3 className="text-[19px] font-medium text-[#F8FAFC] tracking-[-0.01em] leading-snug mb-4">
                     Tested with real people, not assumptions.
                   </h3>
-                  <p className="text-[14px] text-[#8a8f98] leading-[1.85]">
+                  <p className="text-[14px] text-[#C2C7D0] leading-[1.85]">
                     Every service is tested with the people it is meant to serve, before it goes live. Not just technically, but practically. Does it make sense? Can they use it without guidance?
                   </p>
                 </div>
@@ -285,7 +285,7 @@ export default function WhoWeArePage() {
                   <h3 className="text-[19px] font-medium text-[#F8FAFC] tracking-[-0.01em] leading-snug mb-4">
                     Technology is only useful if people use it.
                   </h3>
-                  <p className="text-[14px] text-[#8a8f98] leading-[1.85]">
+                  <p className="text-[14px] text-[#C2C7D0] leading-[1.85]">
                     We ensure part of every engagement is about local people understanding what's been built and why. Not dependency on outside experts: genuine capability, built from within.
                   </p>
                 </div>
@@ -300,19 +300,19 @@ export default function WhoWeArePage() {
 
               <div className="flex flex-col gap-8">
                 <h2 className="text-[32px] md:text-[44px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.1]">
-                  A decade inside UK financial services.
+                  A decade inside UK financial services
                 </h2>
-                <p className="text-[16px] text-[#8a8f98] leading-[1.9]">
+                <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
                   Ten years working within some of the largest financial services organisations in the UK, across investments and banking, has given us something most advisors don't have: practical, executable experience from the inside. We know what good digital infrastructure looks like, and what good digital products for citizens look like. Not just building the thing right, but making sure it's the right thing to build.
                 </p>
-                <p className="text-[16px] text-[#8a8f98] leading-[1.9]">
+                <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
                   We bring those learnings directly to governments and institutions. What took the UK years to figure out doesn't have to be repeated from scratch. For a country like the Seychelles, that means shorter paths to better outcomes, grounded in experience that's already been tested at scale.
                 </p>
               </div>
 
               <div className="relative w-full aspect-[4/3] overflow-hidden">
                 <Image
-                  src="/images/Who_We_Are/integrity_image.png"
+                  src="/images/Who_We_Are/london_image.png"
                   alt="UK financial services experience"
                   fill
                   className="object-cover object-center"
@@ -340,9 +340,9 @@ export default function WhoWeArePage() {
           <section className="px-6 md:px-20 lg:px-32 py-32 border-b border-white/[0.06]">
             <div className="max-w-[1400px] mx-auto flex flex-col gap-12">
               <h2 className="text-[52px] md:text-[88px] font-medium text-[#F8FAFC] tracking-[-0.04em] leading-[1.0] max-w-4xl">
-                Set the direction.<br />Before someone else does.
+                Set the direction.<br />Before someone else does
               </h2>
-              <p className="text-[16px] text-[#8a8f98] leading-[1.9] max-w-xl">
+              <p className="text-[16px] text-[#C2C7D0] leading-[1.9] max-w-xl">
                 We're not the largest consultancy in the room. We're the one that's seen what happens when the largest one leaves. We advise for outcomes, not optics: and we stay until the right direction is set.
               </p>
               <div>
@@ -367,12 +367,12 @@ export default function WhoWeArePage() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60" />
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400" />
               </span>
-              <span className="text-[10px] tracking-[0.22em] text-[#8a8f98] uppercase" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
+              <span className="text-[10px] tracking-[0.22em] text-[#C2C7D0] uppercase" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
                 STATUS: STRATEGIC ADVISORY
               </span>
             </div>
-            <span className="text-[#8a8f98]/30 text-[10px]">//</span>
-            <span className="text-[10px] tracking-[0.18em] text-[#8a8f98]/60 uppercase" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
+            <span className="text-[#C2C7D0]/30 text-[10px]">//</span>
+            <span className="text-[10px] tracking-[0.18em] text-[#C2C7D0]/60 uppercase" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
               OPERATIONAL SEPTEMBER 2028
             </span>
           </div>

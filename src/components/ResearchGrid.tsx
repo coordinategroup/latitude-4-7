@@ -38,7 +38,7 @@ export default function ResearchGrid({ posts }: { posts: Post[] }) {
         {/* Type */}
         {types.length > 0 && (
           <div className="flex flex-wrap items-center gap-3">
-            <span className="text-[11px] font-semibold uppercase tracking-widest text-[#8a8f98]/50 w-12 shrink-0">
+            <span className="text-[11px] font-semibold uppercase tracking-widest text-[#C2C7D0]/50 w-12 shrink-0">
               Type
             </span>
             {types.map((type) => (
@@ -48,7 +48,7 @@ export default function ResearchGrid({ posts }: { posts: Post[] }) {
                 className={`px-4 py-1.5 text-[12px] font-medium tracking-wide border transition-all duration-200 ${
                   activeType === type
                     ? "border-[#D4B996] text-[#D4B996] bg-[#D4B996]/[0.08]"
-                    : "border-white/[0.10] text-[#8a8f98] hover:border-white/30 hover:text-[#F8FAFC]"
+                    : "border-white/[0.10] text-[#C2C7D0] hover:border-white/30 hover:text-[#F8FAFC]"
                 }`}
               >
                 {type}
@@ -96,7 +96,7 @@ export default function ResearchGrid({ posts }: { posts: Post[] }) {
                   {post.title}
                 </h3>
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-semibold uppercase tracking-widest text-[#8a8f98]" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-[#C2C7D0]" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
                     {post.type}
                   </span>
                   <svg className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[#D4B996]" width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
@@ -109,10 +109,10 @@ export default function ResearchGrid({ posts }: { posts: Post[] }) {
         </div>
       ) : (
         <div className="py-24 flex flex-col items-center gap-3 text-center">
-          <span className="text-[12px] font-semibold uppercase tracking-widest text-[#8a8f98]">
+          <span className="text-[12px] font-semibold uppercase tracking-widest text-[#C2C7D0]">
             No articles match
           </span>
-          <p className="text-[14px] text-[#8a8f98]">
+          <p className="text-[14px] text-[#C2C7D0]">
             Try clearing a filter.
           </p>
         </div>

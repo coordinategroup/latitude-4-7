@@ -27,35 +27,38 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Column 2: Navigation */}
+          {/* Column 2: Capabilities */}
           <div className="flex flex-col gap-5">
             <span className="text-[12px] font-semibold uppercase tracking-widest text-black/30">
-              Navigation
+              Capabilities
             </span>
             <nav className="flex flex-col gap-3">
-              <a href="#" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
-                CAPABILITIES
+              <a href="/sovereign-architecture" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
+                Sovereign Architecture
               </a>
-              <a href="/research-and-perspectives" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
-                RESEARCH &amp; PERSPECTIVES
+              <a href="/governance-frameworks" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
+                Governance Frameworks
               </a>
-              <a href="/who-we-are" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
-                WHO WE ARE
+              <a href="/digital-leadership" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
+                Digital Leadership
               </a>
             </nav>
           </div>
 
-          {/* Column 3: Resources */}
+          {/* Column 3: About Us */}
           <div className="flex flex-col gap-5">
             <span className="text-[12px] font-semibold uppercase tracking-widest text-black/30">
-              Resources
+              About Us
             </span>
             <nav className="flex flex-col gap-3">
-              <a href="#" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
-                AGENCY ONBOARDING
+              <a href="/research-and-perspectives" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
+                Research &amp; Perspectives
               </a>
-              <a href="#" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
-                INSTITUTIONAL REGISTRY
+              <a href="/who-we-are" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
+                Who We Are
+              </a>
+              <a href="/leadership" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
+                Leadership
               </a>
             </nav>
           </div>

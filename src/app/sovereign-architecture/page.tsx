@@ -97,7 +97,7 @@ export default function SovereignArchitecturePage() {
                   { stat: "3x", label: "Longer to exit a dependency than to enter one" },
                   { stat: "40%", label: "Lower total cost of ownership with sovereign architecture" },
                 ].map((item) => (
-                  <div key={item.label} className="flex flex-col gap-2 px-8 py-10 first:pl-0 last:pr-0">
+                  <div key={item.label} className="flex flex-col gap-2 px-8 py-10 first:pl-0 last:pr-0 odd:pl-0 md:odd:pl-8 md:first:pl-0">
                     <span className="text-[32px] font-medium text-[#D4B996] tracking-[-0.02em]">{item.stat}</span>
                     <span className="text-[13px] text-[#C2C7D0] leading-snug">{item.label}</span>
                   </div>

@@ -16,7 +16,7 @@ const criteria = [
   {
     index: "01",
     title: "Legislation that reflects today.",
-    body: "The Seychelles cannot govern 2026 digital services with laws written in 2004. We advise on updating data protection, KYC, AML, and digital identity legislation so the legal framework is in the same decade as the technology it governs.",
+    body: "The Seychelles cannot govern 2026 digital services with a 2001 mindset. We advise on harmonising the 2023 Data Protection Act with the rest of the legal code, ensuring KYC, AML, and Digital Identity laws work together, not against each other.",
   },
   {
     index: "02",
@@ -31,7 +31,7 @@ const criteria = [
 ];
 
 const coverage = [
-  { value: "Data Protection", label: "Citizens' data must be governed by laws written for the digital age, not legislation drafted before the services it covers existed. We advise on updating data protection frameworks so legal protections match the systems they are meant to govern." },
+  { value: "Data Protection", label: "The 2023 Data Protection Act was a milestone, but a law is only as strong as its implementation. We advise on building the technical oversight required to make these protections real for every citizen, moving beyond paperwork to genuine digital safety." },
   { value: "KYC & AML", label: "Modern identity verification and anti-money laundering obligations must reflect the reality of digital financial services. We advise on frameworks that meet international standards without creating unnecessary friction for citizens and institutions operating in good faith." },
   { value: "Audit Rights", label: "A regulator without genuine technical access is a regulator in name only. We help build oversight structures with the tools, authority, and expertise to audit the systems they oversee, not just receive reports about them." },
   { value: "Digital Identity Law", label: "Legal frameworks must recognise and protect digital identity across all public services, giving citizens clear rights over how their identity is used, stored, and shared. Without this, digital services rest on an unenforceable foundation." },
@@ -41,7 +41,7 @@ const related = [
   {
     index: "01",
     label: "Sovereign Architecture",
-    description: "Engineering the independent digital foundation of the Republic.",
+    description: "Engineering the independent digital foundation of the Seychelles.",
     href: "/sovereign-architecture",
   },
   {
@@ -123,14 +123,14 @@ export default function GovernanceFrameworksPage() {
                 </div>
                 <div className="relative bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col gap-6">
                   <p className="text-[20px] md:text-[22px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.5]">
-                    The Seychelles is operating digital services under legislation that was not written for them. KYC processes, AML obligations, and data protection rules are being applied to systems that those rules were never designed to govern.
+                    The Seychelles is navigating a 2026 digital landscape using a 2001 legal anchor. While the 2023 Data Protection Act is a vital step forward, the legacy of older legislation creates friction for SeyID integration and modern fintech. This is not just legal lag; it is a structural barrier to national agility.
                   </p>
                   <div className="h-px bg-white/[0.06]" />
                   <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
                     The result is regulators who lack the tools to audit the systems they oversee, and citizens with no clear legal rights over their own digital identity. That is not a minor compliance gap. It is a structural trust deficit that digital adoption cannot survive.
                   </p>
                   <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                    The Seychelles has a chance most nations do not: to build governance frameworks from a clean slate, informed by what has worked and failed elsewhere. That opportunity has a window. We help them use it well.
+                    The Seychelles has a chance most countries do not: to build governance frameworks informed by what has worked and failed elsewhere, before the window closes. We help make the most of it.
                   </p>
                 </div>
               </div>
@@ -196,7 +196,7 @@ export default function GovernanceFrameworksPage() {
             </div>
             <div className="max-w-[1400px] mx-auto flex flex-col items-center text-center gap-8">
               <p className="text-[22px] md:text-[32px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.4] max-w-3xl">
-                "Trust is the primary currency of any digital system. Citizens will not adopt services they do not believe are protected. And you cannot build that trust with a rulebook that was written before the internet existed."
+                "Trust is the primary currency of any digital system. Citizens will not adopt services they do not believe are protected. We cannot secure a 2026 economy with a legislative foundation built in 2001. The Seychelles deserves a rulebook written for the world as it actually is."
               </p>
               <div className="h-px bg-white/[0.08] w-24" />
               <span

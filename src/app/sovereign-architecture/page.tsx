@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageFadeIn from "@/components/PageFadeIn";
 import AccordionGroup from "@/components/AccordionGroup";
+import SecureBriefingButton from "@/components/SecureBriefingButton";
 
 export const metadata: Metadata = {
   title: "Sovereign Architecture | Latitude Four Seven",
@@ -285,13 +286,10 @@ export default function SovereignArchitecturePage() {
                 <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
                   The best time to get this right is before a vendor is chosen. The second best time is now.
                 </p>
-                <a
-                  href="mailto:contact@latitudefourseven.com"
+                <SecureBriefingButton
                   className="shrink-0 px-8 py-3 text-[11px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 transition-all duration-300 whitespace-nowrap"
                   style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-                >
-                  SECURE BRIEFING
-                </a>
+                />
               </div>
             </div>
           </section>

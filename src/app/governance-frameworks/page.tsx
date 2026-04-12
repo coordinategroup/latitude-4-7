@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageFadeIn from "@/components/PageFadeIn";
 import AccordionGroup from "@/components/AccordionGroup";
+import SecureBriefingButton from "@/components/SecureBriefingButton";
 
 export const metadata: Metadata = {
   title: "Governance Frameworks | Latitude Four Seven",
@@ -97,7 +98,7 @@ export default function GovernanceFrameworksPage() {
                   { stat: "3x", label: "Faster citizen adoption with demonstrable digital trust" },
                   { stat: "20 yrs", label: "Average gap between new technology and updated regulation" },
                 ].map((item) => (
-                  <div key={item.label} className="flex flex-col gap-2 px-8 py-10 first:pl-0 last:pr-0">
+                  <div key={item.label} className="flex flex-col gap-2 px-8 py-10 first:pl-0 last:pr-0 odd:pl-0 md:odd:pl-8 md:first:pl-0">
                     <span className="text-[32px] font-medium text-[#D4B996] tracking-[-0.02em]">{item.stat}</span>
                     <span className="text-[13px] text-[#C2C7D0] leading-snug">{item.label}</span>
                   </div>
@@ -285,13 +286,10 @@ export default function GovernanceFrameworksPage() {
                 <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
                   The best time to shape the rules is before the systems are built. The second best time is now.
                 </p>
-                <a
-                  href="mailto:contact@latitudefourseven.com"
+                <SecureBriefingButton
                   className="shrink-0 px-8 py-3 text-[11px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 transition-all duration-300 whitespace-nowrap"
                   style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-                >
-                  SECURE BRIEFING
-                </a>
+                />
               </div>
             </div>
           </section>

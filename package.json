@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@formspree/react": "^3.0.0",
     "@portabletext/react": "^6.0.3",
     "@sanity/image-url": "^2.0.3",
     "@sanity/vision": "^5.16.0",

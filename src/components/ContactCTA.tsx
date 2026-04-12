@@ -1,10 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
+import SecureBriefingModal from "./SecureBriefingModal";
 
 const rings = [0, 1, 2, 3, 4];
 
 export default function ContactCTA() {
+  const [briefingOpen, setBriefingOpen] = useState(false);
   return (
     <section id="contact" className="relative bg-white py-40 border-t border-black/[0.08] overflow-hidden -mx-[calc((100vw-100%)/2)] px-[calc((100vw-100%)/2)]">
 
@@ -19,13 +22,14 @@ export default function ContactCTA() {
             For institutional stakeholders and governing bodies requiring independent technical oversight and strategic alignment.
           </p>
           <div className="mt-2">
-            <a
-              href="mailto:contact@latitudefourseven.com"
+            <button
+              onClick={() => setBriefingOpen(true)}
               className="px-8 py-3 text-[10px] tracking-widest text-[#08090A] border border-[#08090A]/40 hover:border-[#08090A] hover:bg-[#08090A]/5 hover:translate-x-px transition-all duration-300 inline-block"
               style={{ fontFamily: "var(--font-jetbrains-mono)" }}
             >
               SECURE BRIEFING
-            </a>
+            </button>
+            <SecureBriefingModal isOpen={briefingOpen} onClose={() => setBriefingOpen(false)} />
           </div>
         </div>
 

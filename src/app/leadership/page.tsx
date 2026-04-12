@@ -3,6 +3,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageFadeIn from "@/components/PageFadeIn";
+import SecureBriefingButton from "@/components/SecureBriefingButton";
 
 export const metadata: Metadata = {
   title: "Leadership | Latitude Four Seven",
@@ -31,6 +32,16 @@ const team = [
     image: "/images/Leaders/Ian_Profile.jpg",
     linkedin: "https://www.linkedin.com/in/ianjordan/",
   },
+  {
+    name: "Oliver Lane",
+    role: "Senior Adviser",
+    bio: [
+      "Founder and CEO of BehindLogin, with a career spanning product strategy, transformation, and delivery across financial services, media, and technology. Oliver spent three and a half years at Hargreaves Lansdown, one of the UK's leading investment platforms, where he worked across product at a business trusted by over one and a half million clients.",
+      "He brings a founder's instinct for building from the ground up alongside deep experience navigating large, regulated organisations. Oliver advises on product strategy and digital transformation, helping institutions move from intent to execution.",
+    ],
+    image: "/images/Leaders/Oliver_Profile.jpg",
+    linkedin: "https://www.linkedin.com/in/oliver-lane1/",
+  },
 ];
 
 export default function LeadershipPage() {
@@ -41,7 +52,7 @@ export default function LeadershipPage() {
         <main className="bg-[#08090A] min-h-screen">
 
           {/* ── Hero ───────────────────────────────────────────────────── */}
-          <section className="px-6 md:px-20 lg:px-32 pt-52 pb-12">
+          <section className="px-6 md:px-20 lg:px-32 pt-52 pb-4 md:pb-12">
             <div className="max-w-[1400px] mx-auto">
               <span
                 className="text-[11px] tracking-[0.22em] text-[#D4B996]/60 uppercase block mb-6"
@@ -59,8 +70,8 @@ export default function LeadershipPage() {
           </section>
 
           {/* ── Team ───────────────────────────────────────────────────── */}
-          <section className="px-6 md:px-20 lg:px-32 pt-12 pb-24 border-b border-white/[0.06]">
-            <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-px bg-white/[0.06]">
+          <section className="px-6 md:px-20 lg:px-32 pt-4 md:pt-12 pb-24 border-b border-white/[0.06]">
+            <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06]">
               {team.map((person, i) => (
                 <div
                   key={i}
@@ -152,13 +163,10 @@ export default function LeadershipPage() {
                 <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
                   If you are working on a national digital programme and want to understand how we can help, get in touch.
                 </p>
-                <a
-                  href="mailto:contact@latitudefourseven.com"
+                <SecureBriefingButton
                   className="shrink-0 px-8 py-3 text-[11px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 transition-all duration-300 whitespace-nowrap"
                   style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-                >
-                  SECURE BRIEFING
-                </a>
+                />
               </div>
             </div>
           </section>

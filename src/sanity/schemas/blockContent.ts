@@ -1,3 +1,4 @@
+import React from "react";
 import { defineType, defineArrayMember } from "sanity";
 
 export default defineType({
@@ -14,6 +15,12 @@ export default defineType({
         { title: "H3", value: "h3" },
         { title: "H4", value: "h4" },
         { title: "Quote", value: "blockquote" },
+        {
+          title: "Caption / Disclaimer",
+          value: "caption",
+          component: ({ children }: { children: React.ReactNode }) =>
+            React.createElement("span", { style: { fontSize: "11px", color: "#888", fontStyle: "italic" } }, children),
+        },
       ],
       lists: [
         { title: "Bullet", value: "bullet" },

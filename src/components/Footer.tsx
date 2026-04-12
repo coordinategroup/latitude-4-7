@@ -60,6 +60,9 @@ export default function Footer() {
               <a href="/leadership" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
                 Leadership
               </a>
+              <a href="/sustainability" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
+                Sustainability
+              </a>
             </nav>
           </div>
 

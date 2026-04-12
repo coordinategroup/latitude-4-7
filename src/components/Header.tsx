@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import SecureBriefingModal from "./SecureBriefingModal";
 const capabilities = [
   {
     index: "01",
@@ -28,6 +29,7 @@ export default function Header() {
   const [capOpen, setCapOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [briefingOpen, setBriefingOpen] = useState(false);
   const capTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const aboutTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -125,13 +127,13 @@ export default function Header() {
 
           {/* Right: CTA + mobile hamburger */}
           <div className="flex items-center gap-4">
-            <a
-              href="#contact"
+            <button
+              onClick={() => setBriefingOpen(true)}
               className="hidden md:inline-flex px-5 py-2 text-[12px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 hover:translate-x-px transition-all duration-300"
               style={{ fontFamily: "var(--font-jetbrains-mono)" }}
             >
               SECURE BRIEFING
-            </a>
+            </button>
 
           {/* Mobile hamburger */}
             <button
@@ -202,6 +204,7 @@ export default function Header() {
                   {[
                     { label: "Who We Are", href: "/who-we-are" },
                     { label: "Leadership", href: "/leadership" },
+                    { label: "Sustainability", href: "/sustainability" },
                   ].map((item) => (
                     <a
                       key={item.label}
@@ -308,6 +311,7 @@ export default function Header() {
                 {[
                   { label: "Who We Are", href: "/who-we-are" },
                   { label: "Leadership", href: "/leadership" },
+                  { label: "Sustainability", href: "/sustainability" },
                 ].map((item) => (
                   <a
                     key={item.label}
@@ -332,18 +336,18 @@ export default function Header() {
 
             {/* Secure briefing CTA */}
             <div className="px-6 pb-12 pt-6 border-t border-white/[0.06]">
-              <a
-                href="mailto:contact@latitudefourseven.com"
-                onClick={() => setMobileOpen(false)}
+              <button
+                onClick={() => { setMobileOpen(false); setBriefingOpen(true); }}
                 className="block w-full text-center py-4 text-[11px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] transition-all duration-300"
                 style={{ fontFamily: "var(--font-jetbrains-mono)" }}
               >
                 SECURE BRIEFING
-              </a>
+              </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+      <SecureBriefingModal isOpen={briefingOpen} onClose={() => setBriefingOpen(false)} />
     </>
   );
 }

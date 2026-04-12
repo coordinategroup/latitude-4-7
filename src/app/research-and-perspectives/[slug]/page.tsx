@@ -142,6 +142,9 @@ const ptComponents: PortableTextComponents = {
         {children}
       </blockquote>
     ),
+    caption: ({ children }) => (
+      <p className="text-[11px] text-[#C2C7D0]/50 italic leading-[1.7] mb-4 mt-2">{children}</p>
+    ),
   },
   list: {
     bullet: ({ children }) => (
@@ -205,14 +208,11 @@ const ptComponents: PortableTextComponents = {
       if (!value?.asset?._ref) return null;
       return (
         <figure className="my-10">
-          <div className="relative w-full aspect-[16/9] overflow-hidden">
-            <Image
-              src={urlFor(value).width(1200).url()}
-              alt={value.alt ?? ""}
-              fill
-              className="object-cover"
-            />
-          </div>
+          <img
+            src={urlFor(value).width(1200).url()}
+            alt={value.alt ?? ""}
+            className="w-full h-auto"
+          />
           {value.caption && (
             <figcaption className="mt-3 text-[13px] text-[#C2C7D0]/60 text-center">
               {value.caption}

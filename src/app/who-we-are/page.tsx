@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageFadeIn from "@/components/PageFadeIn";
 import ValuesSection from "@/components/ValuesSection";
+import SecureBriefingButton from "@/components/SecureBriefingButton";
 
 export const metadata: Metadata = {
   title: "Who We Are | Latitude Four Seven",
@@ -346,8 +347,7 @@ export default function WhoWeArePage() {
                 We're not the largest consultancy in the room. We're the one that's seen what happens when the largest one leaves. We advise for outcomes, not optics: and we stay until the right direction is set.
               </p>
               <div>
-                <a
-                  href="mailto:contact@latitudefourseven.com"
+                <SecureBriefingButton
                   className="inline-flex items-center gap-3 px-8 py-3.5 text-[11px] tracking-widest text-[#BDAE82] border border-[#BDAE82]/50 hover:border-[#BDAE82] hover:bg-[#BDAE82]/10 transition-all duration-300"
                   style={{ fontFamily: "var(--font-jetbrains-mono)" }}
                 >
@@ -355,27 +355,11 @@ export default function WhoWeArePage() {
                   <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                     <path d="M2.5 7h9M7 2.5L11.5 7 7 11.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </a>
+                </SecureBriefingButton>
               </div>
             </div>
           </section>
 
-          {/* ── Status bar ──────────────────────────────────────────────── */}
-          <div className="px-6 md:px-20 lg:px-32 py-5 flex items-center gap-6 border-b border-white/[0.06]">
-            <div className="flex items-center gap-2.5">
-              <span className="relative flex items-center justify-center w-2 h-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60" />
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400" />
-              </span>
-              <span className="text-[10px] tracking-[0.22em] text-[#C2C7D0] uppercase" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
-                STATUS: STRATEGIC ADVISORY
-              </span>
-            </div>
-            <span className="text-[#C2C7D0]/30 text-[10px]">//</span>
-            <span className="text-[10px] tracking-[0.18em] text-[#C2C7D0]/60 uppercase" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
-              OPERATIONAL SEPTEMBER 2028
-            </span>
-          </div>
 
         </main>
       </PageFadeIn>

@@ -33,10 +33,22 @@ const team = [
     linkedin: "https://www.linkedin.com/in/ianjordan/",
   },
   {
+    name: "Hakeem Mothe",
+    role: "Senior Adviser",
+    bio: [
+      "A Seychelles-based businessman with deep roots in the local economy, spanning import and export trade and real estate. Hakeem brings a grounded understanding of how commerce, community, and culture intersect in the islands.",
+      "He advises on local market dynamics and citizen needs, helping ensure that the digital programmes we support are designed with the people they serve firmly in mind.",
+    ],
+    image: "/images/Leaders/hakeem_profile.jpg",
+    imagePosition: "center 5%",
+    imageScale: "scale-[1.4]",
+    linkedin: "",
+  },
+  {
     name: "Oliver Lane",
     role: "Senior Adviser",
     bio: [
-      "Founder and CEO of BehindLogin, with a career spanning product strategy, transformation, and delivery across financial services, media, and technology. Oliver spent three and a half years at Hargreaves Lansdown, one of the UK's leading investment platforms, where he worked across product at a business trusted by over one and a half million clients.",
+      "Founder and CEO of BehindLogin, with a career spanning product strategy, transformation, and delivery across financial services, media, and technology.",
       "He brings a founder's instinct for building from the ground up alongside deep experience navigating large, regulated organisations. Oliver advises on product strategy and digital transformation, helping institutions move from intent to execution.",
     ],
     image: "/images/Leaders/Oliver_Profile.jpg",
@@ -71,7 +83,7 @@ export default function LeadershipPage() {
 
           {/* ── Team ───────────────────────────────────────────────────── */}
           <section className="px-6 md:px-20 lg:px-32 pt-4 md:pt-12 pb-24 border-b border-white/[0.06]">
-            <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06]">
+            <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-px bg-white/[0.06]">
               {team.map((person, i) => (
                 <div
                   key={i}
@@ -84,7 +96,8 @@ export default function LeadershipPage() {
                         src={person.image}
                         alt={person.name}
                         fill
-                        className="object-cover object-top"
+                        className={`object-cover ${ (person as any).imageScale ?? "" }`}
+                        style={{ objectPosition: (person as any).imagePosition ?? "center top" }}
                       />
                     ) : (
                       <div className="absolute inset-0 bg-white/[0.04]" />
@@ -105,7 +118,7 @@ export default function LeadershipPage() {
                           >
                             {person.role}
                           </span>
-                          {person.linkedin && (
+                          {person.linkedin ? (
                             <a
                               href={person.linkedin}
                               target="_blank"
@@ -118,6 +131,8 @@ export default function LeadershipPage() {
                               </svg>
                               LinkedIn
                             </a>
+                          ) : (
+                            <div className="mt-3 h-[22px]" />
                           )}
                         </div>
                         <div className="h-px bg-white/[0.06] w-12" />

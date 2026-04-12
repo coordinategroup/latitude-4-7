@@ -11,7 +11,7 @@ import { urlFor } from "@/sanity/lib/image";
 export const metadata: Metadata = {
   title: "Sustainability | Latitude Four Seven",
   description:
-    "Engineering high-performance digital ecosystems that prioritise efficiency and long-term viability.",
+    "Making conscious decisions today so that the children of tomorrow inherit a digital world built with care.",
 };
 
 const pillars = [
@@ -81,10 +81,10 @@ export default async function SustainabilityPage() {
                   About Us
                 </span>
                 <h1 className="text-[26px] md:text-[42px] lg:text-[52px] font-medium text-[#F8FAFC] tracking-[-0.03em] leading-[1.04]">
-                  Strategic Sustainability & Operational Integrity
+                  Conscious digital leadership for the generations ahead
                 </h1>
                 <p className="text-[18px] md:text-[22px] text-[#C2C7D0] leading-[1.6] max-w-2xl">
-                  Engineering high-performance digital ecosystems that prioritise efficiency and long-term viability.
+                  Making conscious decisions today so that the children of tomorrow inherit a digital world built with care.
                 </p>
               </div>
 

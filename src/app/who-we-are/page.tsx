@@ -300,13 +300,13 @@ export default function WhoWeArePage() {
 
               <div className="flex flex-col gap-8">
                 <h2 className="text-[32px] md:text-[44px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.1]">
-                  A decade inside UK financial services
+                  Built on experience from the world's leading financial centres
                 </h2>
                 <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                  Ten years working within some of the largest financial services organisations in the UK, across investments and banking, has given us something most advisors don't have: practical, executable experience from the inside. We know what good digital infrastructure looks like, and what good digital products for citizens look like. Not just building the thing right, but making sure it's the right thing to build.
+                  Our team brings over a decade of hands-on experience from inside some of the world's most demanding financial environments, including London, Hong Kong, and other major international centres. Across investments, banking, and regulated digital services, we have worked within the institutions that set the standard, not studied them from the outside.
                 </p>
                 <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                  We bring those learnings directly to governments and institutions. What took the UK years to figure out doesn't have to be repeated from scratch. For a country like the Seychelles, that means shorter paths to better outcomes, grounded in experience that's already been tested at scale.
+                  We are supported by a network of senior financial services advisers drawn from across the UK, spanning regulation, product, and digital transformation. That depth of collective experience is what we bring to governments and institutions building their digital future: shorter paths to better outcomes, grounded in lessons already tested at scale.
                 </p>
               </div>
 

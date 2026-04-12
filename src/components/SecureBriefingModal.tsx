@@ -15,8 +15,8 @@ const monoStyle = { fontFamily: "var(--font-jetbrains-mono)" };
 
 const stageVariants = {
   enter: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: [0.25, 0.1, 0.25, 1] } },
-  exit: { opacity: 0, y: -16, transition: { duration: 0.25, ease: [0.25, 0.1, 0.25, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: [0.25, 0.1, 0.25, 1] as const } },
+  exit: { opacity: 0, y: -16, transition: { duration: 0.25, ease: [0.25, 0.1, 0.25, 1] as const } },
 };
 
 export default function SecureBriefingModal({ isOpen, onClose }: Props) {

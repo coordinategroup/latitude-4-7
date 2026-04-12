@@ -234,7 +234,7 @@ export default function SecureBriefingModal({ isOpen, onClose }: Props) {
                       tabIndex={-1}
                       autoComplete="off"
                     />
-                    {formState.errors && formState.errors.length > 0 && (
+                    {formState.errors && Object.keys(formState.errors).length > 0 && (
                       <p className="text-[13px] text-red-400">Something went wrong. Please try again or email us directly.</p>
                     )}
                     <div className="flex justify-end">

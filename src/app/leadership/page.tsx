@@ -33,16 +33,14 @@ const team = [
     linkedin: "https://www.linkedin.com/in/ianjordan/",
   },
   {
-    name: "Hakeem Mothe",
+    name: "Rebecca Coleman",
     role: "Senior Adviser",
     bio: [
-      "A Seychelles-based businessman with deep roots in the local economy, spanning import and export trade and real estate. Hakeem brings a grounded understanding of how commerce, community, and culture intersect in the islands.",
-      "He advises on local market dynamics and citizen needs, helping ensure that the digital programmes we support are designed with the people they serve firmly in mind.",
+      "Head of UX Design and Research at Hargreaves Lansdown, with a career leading experience strategy and research across global markets and financial services.",
+      "She combines a strategic lens for shaping client led ambition with over a decade of experience in senior leadership at Dyson. Rebecca advises on experience design and operational change, helping organisations shift from product first delivery to joined up, human centric outcomes.",
     ],
-    image: "/images/Leaders/hakeem_profile.jpg",
-    imagePosition: "center 5%",
-    imageScale: "scale-[1.4]",
-    linkedin: "",
+    image: "/images/Leaders/Bec_Profile.jpg",
+    linkedin: "https://www.linkedin.com/in/rebecca-coleman-3318b027/",
   },
   {
     name: "Oliver Lane",
@@ -53,6 +51,28 @@ const team = [
     ],
     image: "/images/Leaders/Oliver_Profile.jpg",
     linkedin: "https://www.linkedin.com/in/oliver-lane1/",
+  },
+  {
+    name: "Mohamed Ait Si Brahim",
+    role: "Senior Adviser",
+    bio: [
+      "Chief Technology Officer at Hargreaves Lansdown, with twenty-five years of experience in technical leadership and software engineering across the full product lifecycle.",
+      "He specialises in pioneering cloud adoption and delivering innovative products within highly regulated environments. Mohamed advises on resilient, cost effective architecture and transformational change, helping boards bridge the gap between complex engineering and pragmatic, category defining delivery.",
+    ],
+    image: "/images/Leaders/Mo_Profile.jpg",
+    linkedin: "https://www.linkedin.com/in/maitsibrahim/",
+  },
+  {
+    name: "Hakeem Mothe",
+    role: "Senior Adviser",
+    bio: [
+      "A Seychelles-based businessman with deep roots in the local economy, spanning import and export trade and real estate. Hakeem brings a grounded understanding of how commerce, community, and culture intersect in the islands.",
+      "He advises on local market dynamics and citizen needs, helping ensure that the digital programmes we support are designed with the people they serve firmly in mind.",
+    ],
+    image: "/images/Leaders/hakeem_profile.jpg",
+    imagePosition: "center 5%",
+    imageScale: "scale-[1.4]",
+    linkedin: "",
   },
 ];
 
@@ -83,7 +103,7 @@ export default function LeadershipPage() {
 
           {/* ── Team ───────────────────────────────────────────────────── */}
           <section className="px-6 md:px-20 lg:px-32 pt-4 md:pt-12 pb-24 border-b border-white/[0.06]">
-            <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-px bg-white/[0.06]">
+            <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06]">
               {team.map((person, i) => (
                 <div
                   key={i}

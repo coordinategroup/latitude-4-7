@@ -98,7 +98,7 @@ export default function Footer() {
           <CookieSettingsButton />
         </div>
         <span className="text-[12px] text-black/40">
-          &copy; 2028 Latitude Four Seven
+          &copy; {new Date().getFullYear()} Latitude Four Seven
         </span>
       </div>
 

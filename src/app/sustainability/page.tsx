@@ -91,7 +91,7 @@ export default async function SustainabilityPage() {
               {/* Cover image */}
               <div className="mt-16 relative w-full aspect-[16/7] overflow-hidden">
                 <Image
-                  src="/images/Sustainability/sustainability_cover.jpg"
+                  src="/images/Sustainability/sustainability_image.jpg"
                   alt="Sustainability"
                   fill
                   className="object-cover object-center"

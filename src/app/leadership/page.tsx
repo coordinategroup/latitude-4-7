@@ -16,7 +16,7 @@ const team = [
     name: "Luke Albest",
     role: "Founder",
     bio: [
-      "Ten years inside UK financial services, two years in Hong Kong, and two years in mainland China, with a background in product management and product design.",
+      "Eight years inside UK financial services, two years in Hong Kong, and two years in mainland China, with a background in product management and product design.",
       "Luke's work has always centred on the same challenge: weaving business and government requirements into digital services that actually work for the people who use them. He founded Latitude Four Seven to bring that experience directly to governments building their digital future.",
     ],
     image: "/images/Leaders/1770897725876.jpg",

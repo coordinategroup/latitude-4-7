@@ -98,6 +98,39 @@ export default function Header() {
                   <path d="M2 4.5L6 8l4-3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </motion.svg>
               </button>
+
+              <AnimatePresence>
+                {capOpen && (
+                  <motion.div
+                    className="absolute top-full left-0 mt-2 w-72 border border-white/[0.08]"
+                    style={{ backgroundColor: "rgba(8,9,10,1)" }}
+                    onMouseEnter={openCap}
+                    onMouseLeave={closeCap}
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -4 }}
+                    transition={{ duration: 0.22, ease: [0.25, 0.1, 0.25, 1] }}
+                  >
+                    <div className="px-5 py-5">
+                      <p className="text-[11px] tracking-[0.22em] text-[#D4B996]/60 uppercase mb-4" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
+                        Capabilities
+                      </p>
+                      <div className="flex flex-col">
+                        {capabilities.map((item) => (
+                          <a
+                            key={item.label}
+                            href={item.href}
+                            onClick={() => setCapOpen(false)}
+                            className="group py-3 border-t border-white/[0.06] first:border-t-0 hover:border-white/[0.12] transition-colors duration-200"
+                          >
+                            <span className="text-[15px] font-medium text-[#F8FAFC] tracking-[-0.02em] group-hover:text-[#D4B996] transition-colors duration-200">{item.label}</span>
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             <a
@@ -122,6 +155,43 @@ export default function Header() {
                   <path d="M2 4.5L6 8l4-3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </motion.svg>
               </button>
+
+              <AnimatePresence>
+                {aboutOpen && (
+                  <motion.div
+                    className="absolute top-full left-0 mt-2 w-56 border border-white/[0.08]"
+                    style={{ backgroundColor: "rgba(8,9,10,1)" }}
+                    onMouseEnter={openAbout}
+                    onMouseLeave={closeAbout}
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -4 }}
+                    transition={{ duration: 0.22, ease: [0.25, 0.1, 0.25, 1] }}
+                  >
+                    <div className="px-5 py-5">
+                      <p className="text-[11px] tracking-[0.22em] text-[#D4B996]/60 uppercase mb-4" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
+                        About Us
+                      </p>
+                      <div className="flex flex-col">
+                        {[
+                          { label: "Who We Are", href: "/who-we-are" },
+                          { label: "Leadership", href: "/leadership" },
+                          { label: "Sustainability", href: "/sustainability" },
+                        ].map((item) => (
+                          <a
+                            key={item.label}
+                            href={item.href}
+                            onClick={() => setAboutOpen(false)}
+                            className="group py-3 border-t border-white/[0.06] first:border-t-0 hover:border-white/[0.12] transition-colors duration-200"
+                          >
+                            <span className="text-[15px] font-medium text-[#F8FAFC] tracking-[-0.02em] group-hover:text-[#D4B996] transition-colors duration-200">{item.label}</span>
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </nav>
 
@@ -149,77 +219,6 @@ export default function Header() {
 
         </div>
 
-        {/* ── Capabilities dropdown ───────────────────────────────────── */}
-        <AnimatePresence>
-          {capOpen && (
-            <motion.div
-              className="hidden md:block absolute top-full left-0 right-0 border-b border-white/[0.08]"
-              style={{ backgroundColor: "rgba(8,9,10,1)" }}
-              onMouseEnter={openCap}
-              onMouseLeave={closeCap}
-              initial={{ opacity: 0, y: -4 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -4 }}
-              transition={{ duration: 0.22, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              <div className="px-4 md:px-20 lg:px-32 py-8">
-                <p className="text-[11px] tracking-[0.22em] text-[#D4B996]/60 uppercase mb-5" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
-                  Capabilities
-                </p>
-                <div className="flex flex-col">
-                  {capabilities.map((item) => (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      onClick={() => setCapOpen(false)}
-                      className="group py-4 border-t border-white/[0.06] last:border-b last:border-white/[0.06] hover:border-white/[0.12] transition-colors duration-200"
-                    >
-                      <span className="text-[18px] font-medium text-[#F8FAFC] tracking-[-0.02em] group-hover:text-[#D4B996] transition-colors duration-200">{item.label}</span>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* ── About Us dropdown ───────────────────────────────────────── */}
-        <AnimatePresence>
-          {aboutOpen && (
-            <motion.div
-              className="hidden md:block absolute top-full left-0 right-0 border-b border-white/[0.08]"
-              style={{ backgroundColor: "rgba(8,9,10,1)" }}
-              onMouseEnter={openAbout}
-              onMouseLeave={closeAbout}
-              initial={{ opacity: 0, y: -4 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -4 }}
-              transition={{ duration: 0.22, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              <div className="px-4 md:px-20 lg:px-32 py-8">
-                <p className="text-[11px] tracking-[0.22em] text-[#D4B996]/60 uppercase mb-5" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
-                  About Us
-                </p>
-                <div className="flex flex-col">
-                  {[
-                    { label: "Who We Are", href: "/who-we-are" },
-                    { label: "Leadership", href: "/leadership" },
-                    { label: "Sustainability", href: "/sustainability" },
-                  ].map((item) => (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      onClick={() => setAboutOpen(false)}
-                      className="group py-4 border-t border-white/[0.06] last:border-b last:border-white/[0.06] hover:border-white/[0.12] transition-colors duration-200"
-                    >
-                      <span className="text-[18px] font-medium text-[#F8FAFC] tracking-[-0.02em] group-hover:text-[#D4B996] transition-colors duration-200">{item.label}</span>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </header>
 
       {/* ── Mobile full-screen menu ───────────────────────────────────── */}

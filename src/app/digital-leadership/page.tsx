@@ -42,7 +42,7 @@ const related = [
   {
     index: "01",
     label: "Sovereign Architecture",
-    description: "Engineering the independent digital foundation of the Republic.",
+    description: "Advising on procurement and data ownership to keep the Seychelles in control of its digital future.",
     href: "/sovereign-architecture",
   },
   {

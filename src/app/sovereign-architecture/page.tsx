@@ -17,25 +17,25 @@ const criteria = [
   {
     index: "01",
     title: "Control Without Dependency",
-    body: "Sovereign architecture begins with a simple question: who holds the keys? Too many national digital systems run on infrastructure owned and controlled by external providers. We advise on procurement and design structures where the institution retains administrative authority, data residency, and contractual leverage, not the vendor.",
+    body: "Procurement decisions are harder to reverse than they look. When a national service is built on systems owned, hosted, and administered by an external provider, the institution is a tenant, not an owner. We advise on the questions to ask before any vendor is selected: who holds administrative access, where does the data sit, and what happens to both if the relationship ends.",
   },
   {
     index: "02",
-    title: "Resilience by Design",
-    body: "Resilience is not a feature added after the architecture is drawn. It is the first design constraint. Systems built for the Seychelles must function under conditions of geopolitical pressure, supply chain disruption, and vendor withdrawal. We design for those conditions from the first line of the specification.",
+    title: "Contracts Written in the National Interest",
+    body: "The most consequential procurement decisions feel low-risk at the time. We advise on how to read vendor agreements, assess commercial structures, and identify dependency risks before they are signed: so that a change in a vendor relationship never becomes a national service disruption.",
   },
   {
     index: "03",
-    title: "Interoperability Without Exposure",
-    body: "A sovereign system that cannot connect to global financial infrastructure is an island, not an asset. We advise on architectures that participate fully in international data exchange and payment rails without creating backdoor dependencies or surrendering jurisdictional control over the data that flows through them.",
+    title: "Systems That Serve Citizens, Not Vendors",
+    body: "Citizens expect government services to feel joined up. When departments procure systems independently, citizens pay the price: inconsistent experiences, duplicated checks, and data that cannot follow them across services. We advise on procurement decisions that prioritise citizen experience and cross-service compatibility from the outset.",
   },
 ];
 
 const pillars = [
-  { value: "Data Residency", label: "Wherever data is stored, its governance and control must remain with the Seychelles. Physical location is secondary to who holds authority over it. We advise on structures that make this enforceable, not just contractual." },
-  { value: "Key Sovereignty", label: "We hold the access rights, not the vendor who built the system. If a relationship with a provider ends, full administrative control of every system must remain intact. That is a design requirement, not a negotiation point." },
-  { value: "Audit Rights", label: "Full, unmediated access to system logs and infrastructure state at any time. A system that cannot be independently audited cannot be trusted, and trust is the foundation of any public digital service." },
-  { value: "Vendor Neutrality", label: "Architecture decisions must be made in the national interest, not the vendor's. No single provider should hold structural leverage over critical national systems. We advise on procurement and design that keeps those options genuinely open." },
+  { value: "Data Residency", label: "When citizen data is stored and governed within the Seychelles, government remains accountable for it. We advise on procurement requirements that make local data ownership a contractual commitment, not an aspiration that disappears when a vendor is under commercial pressure." },
+  { value: "Access and Control", label: "When a relationship with a provider ends, the institution must retain full access to every system and every record. We advise on the contractual and practical requirements that make this a reality, not just a clause buried in a service agreement." },
+  { value: "Audit Rights", label: "Citizens trust public services when those services can be held to account. We advise on procurement that includes clear audit provisions: so that independent oversight is a built-in right, not something that has to be negotiated after the fact." },
+  { value: "Vendor Neutrality", label: "Procurement decisions made to suit a vendor's commercial interests are rarely the right ones for a national service. We advise on how to keep options genuinely open: structuring contracts so that no single provider holds leverage over critical public services." },
 ];
 
 const related = [
@@ -96,7 +96,7 @@ export default function SovereignArchitecturePage() {
                   { stat: "68%", label: "Of developing nations critically dependent on a single foreign vendor" },
                   { stat: "$3.2M", label: "Average cost to exit a locked-in government system" },
                   { stat: "3x", label: "Longer to exit a dependency than to enter one" },
-                  { stat: "40%", label: "Lower total cost of ownership with sovereign architecture" },
+                  { stat: "40%", label: "Lower total cost of ownership with vendor-neutral procurement decisions" },
                 ].map((item) => (
                   <div key={item.label} className="flex flex-col gap-2 px-8 py-10 first:pl-0 last:pr-0 odd:pl-0 md:odd:pl-8 md:first:pl-0">
                     <span className="text-[32px] font-medium text-[#D4B996] tracking-[-0.02em]">{item.stat}</span>
@@ -128,7 +128,7 @@ export default function SovereignArchitecturePage() {
                   </p>
                   <div className="h-px bg-white/[0.06]" />
                   <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                    The risk is rarely the well-known platforms. It is the smaller, specialist vendors who sell bespoke systems, retain the proprietary architecture, and leave us with no realistic way to switch, audit, or self-serve. The contract ends and the keys go with them.
+                    The risk is rarely the well-known platforms. It is the smaller, specialist vendors who sell bespoke systems, retain the proprietary access, and leave no viable exit. The contract ends and the keys go with them.
                   </p>
                   <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
                     The Seychelles programme is being built differently. Before any procurement decision is made, we ask a simple question: if this relationship breaks down tomorrow, where does that leave the nation? Considerate procurement starts there. It changes what gets bought, how it is contracted, and who retains ownership when the engagement ends.
@@ -150,7 +150,7 @@ export default function SovereignArchitecturePage() {
                     Design Criteria
                   </span>
                   <h2 className="text-[26px] md:text-[34px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.15]">
-                    Built to these standards, or not at all
+                    The questions we bring to every procurement decision
                   </h2>
                 </div>
               </div>
@@ -221,7 +221,7 @@ export default function SovereignArchitecturePage() {
                     Minimum Standard
                   </span>
                   <h2 className="text-[32px] md:text-[42px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.15]">
-                    What every sovereign system must deliver
+                    What every procurement decision should protect
                   </h2>
                 </div>
                 <AccordionGroup items={pillars.map(p => ({ title: p.value, body: p.label }))} />

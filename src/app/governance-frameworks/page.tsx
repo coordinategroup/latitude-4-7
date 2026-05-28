@@ -10,32 +10,32 @@ import SecureBriefingButton from "@/components/SecureBriefingButton";
 export const metadata: Metadata = {
   title: "Governance Frameworks | Latitude Four Seven",
   description:
-    "Securing the Seychelles' digital future through modern policy, trust, and regulatory structures built for the world as it is today.",
+    "Building governance frameworks that support confident digital adoption through usability testing, design-led structures, and clear accountability.",
 };
 
 const criteria = [
   {
     index: "01",
-    title: "Legislation that reflects today.",
-    body: "The Seychelles cannot govern 2026 digital services with a 2001 mindset. We advise on harmonising the 2023 Data Protection Act with the rest of the legal code, ensuring KYC, AML, and Digital Identity laws work together, not against each other.",
+    title: "Governance centred on the user.",
+    body: "We design governance structures around the people who use them, not just the institutions that commission them. That means usability research, tested workflows, and accountability structures that citizens can actually see and trust.",
   },
   {
     index: "02",
-    title: "Oversight with teeth.",
-    body: "A regulator that cannot audit the systems it oversees cannot do its job. We help build oversight structures with genuine technical authority: the tools, the access rights, and the mandate to hold digital systems to account.",
+    title: "Oversight that creates confidence.",
+    body: "Oversight is not a burden on the system; it is part of what makes the system credible. We help build oversight structures with genuine authority and the tools to exercise it: so citizens know their services are held to account.",
   },
   {
     index: "03",
     title: "Compliance built in, not bolted on.",
-    body: "Compliance is not just for banks and multinationals. It is what a responsible government owes its citizens. We advise on embedding compliance into the architecture of public services from day one, so it is never an afterthought and never a retrofit.",
+    body: "Compliance is not just for banks and multinationals. It is what a responsible government owes its citizens. We embed compliance into the architecture of public services from day one, so it is never an afterthought and never a retrofit.",
   },
 ];
 
 const coverage = [
-  { value: "Data Protection", label: "The 2023 Data Protection Act was a milestone, but a law is only as strong as its implementation. We advise on building the technical oversight required to make these protections real for every citizen, moving beyond paperwork to genuine digital safety." },
-  { value: "KYC & AML", label: "Modern identity verification and anti-money laundering obligations must reflect the reality of digital financial services. We advise on frameworks that meet international standards without creating unnecessary friction for citizens and institutions operating in good faith." },
-  { value: "Audit Rights", label: "A regulator without genuine technical access is a regulator in name only. We help build oversight structures with the tools, authority, and expertise to audit the systems they oversee, not just receive reports about them." },
-  { value: "Digital Identity Law", label: "Legal frameworks must recognise and protect digital identity across all public services, giving citizens clear rights over how their identity is used, stored, and shared. Without this, digital services rest on an unenforceable foundation." },
+  { value: "Usability Testing", label: "Governance frameworks are only as effective as the services they underpin. We run structured usability testing programmes that surface friction before rollout, not after, ensuring every digital service meets the standard citizens actually need." },
+  { value: "Service Design", label: "Well-governed services are designed with the user at the centre. We build the design frameworks and review processes that keep user needs at the heart of every public-facing digital product, from first concept through to live deployment." },
+  { value: "Accountability Structures", label: "Clear accountability is what separates governance that functions from governance that exists on paper. We design the ownership models, escalation pathways, and review cycles that give institutions the authority and clarity to act." },
+  { value: "Adoption Pathways", label: "Digital adoption is not automatic. We develop the communication strategies, onboarding frameworks, and change management structures that bring citizens and institutions along: sustainably and at scale." },
 ];
 
 const related = [
@@ -80,10 +80,10 @@ export default function GovernanceFrameworksPage() {
                 Capability // 02
               </span>
               <h1 className="text-[26px] md:text-[42px] lg:text-[52px] font-medium text-[#F8FAFC] tracking-[-0.03em] leading-[1.05] max-w-4xl">
-                Rules written for the world<br />as it actually is
+                Governance designed<br />to drive adoption
               </h1>
               <p className="mt-6 text-[17px] md:text-[20px] text-[#F8FAFC]/70 leading-[1.7] max-w-2xl">
-                We advise the Seychelles on building governance frameworks that reflect 2026 reality: updated legislation, clear oversight, and compliance built in from the ground up.
+                We build the frameworks, structures, and usability programmes that give citizens and institutions the confidence to adopt digital services and keep using them.
               </p>
             </div>
           </section>
@@ -93,10 +93,10 @@ export default function GovernanceFrameworksPage() {
             <div className="max-w-[1400px] mx-auto px-6 md:px-20 lg:px-32">
               <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/[0.06]">
                 {[
-                  { stat: "62%", label: "Of small island states governed by pre-smartphone legislation" },
+                  { stat: "3x", label: "Faster citizen adoption when governance is designed around user needs" },
                   { stat: "$4.9M", label: "Average cost of a public sector data protection failure" },
-                  { stat: "3x", label: "Faster citizen adoption with demonstrable digital trust" },
-                  { stat: "20 yrs", label: "Average gap between new technology and updated regulation" },
+                  { stat: "78%", label: "Reduction in service drop-off with structured usability testing" },
+                  { stat: "4x", label: "More likely to achieve scale when design and governance are built together" },
                 ].map((item) => (
                   <div key={item.label} className="flex flex-col gap-2 px-8 py-10 first:pl-0 last:pr-0 odd:pl-0 md:odd:pl-8 md:first:pl-0">
                     <span className="text-[32px] font-medium text-[#D4B996] tracking-[-0.02em]">{item.stat}</span>
@@ -119,19 +119,19 @@ export default function GovernanceFrameworksPage() {
                     The Challenge
                   </span>
                   <h2 className="text-[26px] md:text-[30px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.2]">
-                    The laws have not kept up. The technology has not waited
+                    Adoption is the outcome. Governance is the enabler
                   </h2>
                 </div>
                 <div className="relative bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col gap-6">
                   <p className="text-[20px] md:text-[22px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.5]">
-                    The Seychelles is navigating a 2026 digital landscape using a 2001 legal anchor. While the 2023 Data Protection Act is a vital step forward, the legacy of older legislation creates friction for SeyID integration and modern fintech. This is not just legal lag; it is a structural barrier to national agility.
+                    Digital transformation fails not because technology is unavailable, but because governance does not support confident adoption. Citizens disengage when services feel unclear, untested, or unaccountable. Institutions stall when responsibilities are undefined and oversight is performative.
                   </p>
                   <div className="h-px bg-white/[0.06]" />
                   <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                    The result is regulators who lack the tools to audit the systems they oversee, and citizens with no clear legal rights over their own digital identity. That is not a minor compliance gap. It is a structural trust deficit that digital adoption cannot survive.
+                    The result is a digital estate that exists on paper but not in practice: services launched without user testing, governance structures that cannot be explained to the people they govern, and adoption figures that plateau well below what the investment deserves.
                   </p>
                   <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                    The Seychelles has a chance most countries do not: to build governance frameworks informed by what has worked and failed elsewhere, before the window closes. We help make the most of it.
+                    We build governance frameworks grounded in how people actually behave: tested with real users, designed for real workflows, and structured to scale without losing accountability.
                   </p>
                 </div>
               </div>
@@ -197,7 +197,7 @@ export default function GovernanceFrameworksPage() {
             </div>
             <div className="max-w-[1400px] mx-auto flex flex-col items-center text-center gap-8">
               <p className="text-[22px] md:text-[32px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.4] max-w-3xl">
-                "Trust is the primary currency of any digital system. Citizens will not adopt services they do not believe are protected. We cannot secure a 2026 economy with a legislative foundation built in 2001. The Seychelles deserves a rulebook written for the world as it actually is."
+                "Trust is not declared; it is designed. Citizens adopt services when they feel safe, when the process is clear, and when accountability is visible. Governance is not the constraint on digital transformation; it is the foundation it stands on."
               </p>
               <div className="h-px bg-white/[0.08] w-24" />
               <span
@@ -218,10 +218,10 @@ export default function GovernanceFrameworksPage() {
                     className="text-[11px] tracking-[0.22em] text-[#D4B996]/60 uppercase block mb-4"
                     style={{ fontFamily: "var(--font-jetbrains-mono)" }}
                   >
-                    Minimum Standard
+                    Our Approach
                   </span>
                   <h2 className="text-[32px] md:text-[42px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.15]">
-                    Where governance must reach
+                    What we build around
                   </h2>
                 </div>
                 <AccordionGroup items={coverage.map(c => ({ title: c.value, body: c.label }))} />
@@ -284,7 +284,7 @@ export default function GovernanceFrameworksPage() {
               </div>
               <div className="bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
                 <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                  The best time to shape the rules is before the systems are built. The second best time is now.
+                  The best time to build governance around your users is before you go live. The second best time is now.
                 </p>
                 <SecureBriefingButton
                   className="shrink-0 px-8 py-3 text-[11px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 transition-all duration-300 whitespace-nowrap"

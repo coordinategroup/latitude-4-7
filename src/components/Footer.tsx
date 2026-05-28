@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CookieSettingsButton from "./CookieSettingsButton";
 
 const monoStyle = { fontFamily: "var(--font-jetbrains-mono)" };
 
@@ -19,11 +20,7 @@ export default function Footer() {
               className="object-contain object-left"
             />
             <p className="text-[13px] font-light text-black leading-[1.75]">
-              Latitude 4.7 is a strategic advisory unit of the Coordinate Group. For product management and advisory, visit{" "}
-              <a href="#" className="text-[#C48C59] hover:text-[#b37a48] transition-colors duration-200 underline underline-offset-2">
-                Longitude 5.5
-              </a>
-              .
+              Latitude 4.7 is a strategic advisory unit of the Coordinate Group.
             </p>
           </div>
 
@@ -85,6 +82,21 @@ export default function Footer() {
         <span className="text-[12px] text-black/40 font-mono tracking-widest">
           4.6753<span className="text-[#C48C59]">&deg;</span>S &nbsp;/&nbsp; 55.4920<span className="text-[#C48C59]">&deg;</span>E
         </span>
+        <div className="flex flex-wrap items-center gap-6">
+          <a href="/privacy" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
+            Privacy
+          </a>
+          <a href="/terms" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
+            Terms
+          </a>
+          <a href="/accessibility" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
+            Accessibility
+          </a>
+          <a href="/cookies" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
+            Cookies
+          </a>
+          <CookieSettingsButton />
+        </div>
         <span className="text-[12px] text-black/40">
           &copy; 2028 Latitude Four Seven
         </span>

@@ -10,14 +10,14 @@ import SecureBriefingButton from "@/components/SecureBriefingButton";
 export const metadata: Metadata = {
   title: "Digital Leadership | Latitude Four Seven",
   description:
-    "Building the local capability for the Seychelles to lead its own digital transformation, ending revolving-door consultancy for good.",
+    "Bringing departments together through robust leadership and interoperability: building the structures that make joined-up government possible.",
 };
 
 const criteria = [
   {
     index: "01",
-    title: "Product-led thinking at the top.",
-    body: "Digital transformation doesn't fail because the technology is wrong. It fails because strategy and delivery are too often pulling in different directions. We work with senior leaders to close that gap, building genuine product literacy so the right questions get asked before the wrong decisions get made.",
+    title: "Leadership that connects, not just directs.",
+    body: "The biggest barrier to joined-up government is rarely technical; it is leadership. Departments that optimise for their own objectives rather than shared outcomes create duplication, inconsistency, and citizen frustration. We work with senior leaders to build the shared direction, cross-departmental trust, and product literacy that make collaboration the default.",
   },
   {
     index: "02",
@@ -26,15 +26,15 @@ const criteria = [
   },
   {
     index: "03",
-    title: "Brain gain, not brain drain.",
-    body: "Lasting transformation requires local ownership. We work alongside Seychellois teams from the start, investing in the people and institutions that will carry the work forward long after any single engagement is complete.",
+    title: "Interoperability by design, not retrofit.",
+    body: "Systems that cannot communicate create islands of progress, not transformation. We advise on shared data standards, open integration frameworks, and architecture that allows departments to work from a common foundation, so that progress in one area builds capability across the whole.",
   },
 ];
 
 const shifts = [
-  { post: "Trusted digital identity", from: "Physical documents", to: "Currently, citizens navigate public services through paper-based identity systems that are slow to verify and difficult to scale. The shift is to trusted digital identity infrastructure that works across every government service, reducing friction and extending access to all." },
-  { post: "Interoperable digital payments", from: "Cash-first economy", to: "Cash dependency limits financial inclusion and creates inefficiency across the economy. The shift is to interoperable digital payment rails built for citizens, businesses, and government: accessible, reliable, and designed for the Seychelles context." },
-  { post: "Product-led procurement", from: "Vendor-led decisions", to: "When procurement is led by vendors, the decisions tend to serve the vendor. The shift is to product-led procurement, where outcomes are defined first, requirements flow from those outcomes, and suppliers are held to them." },
+  { post: "Shared digital identity", from: "Siloed verification", to: "Citizens currently navigate public services that verify identity separately, creating friction and inconsistency across departments. The shift is to a shared digital identity infrastructure that works consistently across every government service: one experience, regardless of which department the citizen is dealing with." },
+  { post: "Interoperable digital payments", from: "Fragmented payment systems", to: "Fragmented payment systems across departments create duplication, inconsistency, and unnecessary cost. The shift is to interoperable digital payment rails built on shared standards: consistent, reliable, and designed to serve citizens and government as one connected system." },
+  { post: "Cross-departmental governance", from: "Siloed procurement", to: "When departments procure independently, without visibility of what others are building, the result is duplication and incompatibility. The shift is to shared procurement standards and cross-departmental governance, so that what one department builds, the whole of government can benefit from." },
   { post: "Local capability and ownership", from: "Revolving door consultancy", to: "External expertise without genuine knowledge transfer leaves institutions no stronger than before. The shift is to engagements structured around building local capability, so the Seychelles is better equipped at the end of every piece of work than it was at the start." },
 ];
 
@@ -83,7 +83,7 @@ export default function DigitalLeadershipPage() {
                 The technology is rarely<br />the problem
               </h1>
               <p className="mt-6 text-[17px] md:text-[20px] text-[#F8FAFC]/70 leading-[1.7] max-w-2xl">
-                We advise the Seychelles on building the decision-making culture, product literacy, and local talent that makes transformation stick.
+                We help the Seychelles build the cross-departmental leadership, shared systems, and interoperability frameworks that turn individual digital capabilities into joined-up government.
               </p>
             </div>
           </section>
@@ -119,19 +119,19 @@ export default function DigitalLeadershipPage() {
                     The Challenge
                   </span>
                   <h2 className="text-[26px] md:text-[30px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.2]">
-                    Digital transformation without digital leadership is just expensive IT
+                    Siloed departments cannot deliver joined-up services
                   </h2>
                 </div>
                 <div className="relative bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col gap-6">
                   <p className="text-[20px] md:text-[22px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.5]">
-                    The Seychelles does not have a technology problem. It has a complexity problem. Layered legacy systems, inherited structures, and competing priorities make it genuinely difficult to move in a clear direction, regardless of how strong the intent behind it.
+                    The barrier to digital transformation in government is rarely technical. It is structural: departments working in parallel but not together, systems that cannot communicate across agency boundaries, and leadership that cannot see across the whole. Citizens experience this as fragmented, inconsistent services.
                   </p>
                   <div className="h-px bg-white/[0.06]" />
                   <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                    The shift from physical documents to digital identity, from cash to interoperable payments, from manual processes to automated services: these are rarely technology problems. They are change management challenges, trust challenges, and institutional ones. The technology is almost always the easy part.
+                    The result is duplication: multiple departments solving the same problem differently, procurement decisions made without visibility of what already exists, and data that lives in silos when it should flow. Each department may be making progress, but the citizen sees none of it as joined up.
                   </p>
                   <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                    What makes the difference is whether the people responsible for a service understand it well enough to improve it, defend it, and explain it to the citizens who use it. That requires investment in Seychellois talent, not just in Seychellois infrastructure.
+                    We work with leaders across the Seychelles government to build the cross-departmental frameworks, shared technology standards, and interoperability architecture that make joined-up services possible and sustainable.
                   </p>
                 </div>
               </div>
@@ -221,7 +221,7 @@ export default function DigitalLeadershipPage() {
                     The Shift
                   </span>
                   <h2 className="text-[32px] md:text-[42px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.15]">
-                    From where the Seychelles is, to where it needs to be
+                    The shifts that make joined-up government possible
                   </h2>
                 </div>
                 <AccordionGroup items={shifts.map(s => ({ title: s.post, body: s.to }))} />
@@ -279,12 +279,12 @@ export default function DigitalLeadershipPage() {
                   Engage
                 </span>
                 <h2 className="text-[26px] md:text-[30px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.2]">
-                  Leadership capability is the outcome, not the assumption
+                  Departments that work together serve citizens better
                 </h2>
               </div>
               <div className="bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
                 <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                  The best time to build local capability is before the engagement model is set. The second best time is now.
+                  The best time to build cross-departmental leadership is before the silos become structural. The second best time is now.
                 </p>
                 <SecureBriefingButton
                   className="shrink-0 px-8 py-3 text-[11px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 transition-all duration-300 whitespace-nowrap"

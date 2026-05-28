@@ -10,14 +10,14 @@ import SecureBriefingButton from "@/components/SecureBriefingButton";
 export const metadata: Metadata = {
   title: "Sovereign Architecture | Latitude Four Seven",
   description:
-    "Engineering the independent digital foundation of the Republic of the Seychelles.",
+    "Advising on considerate procurement and localised data ownership to build digital infrastructure the Seychelles controls, not rents.",
 };
 
 const criteria = [
   {
     index: "01",
     title: "Control Without Dependency",
-    body: "Sovereign architecture begins with a simple question: who holds the keys? Too many national digital systems run on infrastructure owned and controlled by external providers. We advise on structures where the institution holds administrative authority, data residency, and contractual leverage, not the vendor.",
+    body: "Sovereign architecture begins with a simple question: who holds the keys? Too many national digital systems run on infrastructure owned and controlled by external providers. We advise on procurement and design structures where the institution retains administrative authority, data residency, and contractual leverage, not the vendor.",
   },
   {
     index: "02",
@@ -83,7 +83,7 @@ export default function SovereignArchitecturePage() {
                 Your infrastructure, your rules
               </h1>
               <p className="mt-6 text-[17px] md:text-[20px] text-[#F8FAFC]/70 leading-[1.7] max-w-2xl">
-                We advise the Seychelles on how to build digital systems it actually controls, not rents from providers who can reprice, restrict, or walk away.
+                We advise on considerate procurement and localised data management, so the Seychelles builds digital systems it genuinely owns: not rents from providers who can reprice, restrict, or walk away.
               </p>
             </div>
           </section>
@@ -131,7 +131,7 @@ export default function SovereignArchitecturePage() {
                     The risk is rarely the well-known platforms. It is the smaller, specialist vendors who sell bespoke systems, retain the proprietary architecture, and leave us with no realistic way to switch, audit, or self-serve. The contract ends and the keys go with them.
                   </p>
                   <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                    The Seychelles programme is being built differently. Before any procurement decision is made, we ask a simple question: if this relationship breaks down tomorrow, where do we go from here? That question changes what gets bought, and how.
+                    The Seychelles programme is being built differently. Before any procurement decision is made, we ask a simple question: if this relationship breaks down tomorrow, where does that leave the nation? Considerate procurement starts there. It changes what gets bought, how it is contracted, and who retains ownership when the engagement ends.
                   </p>
                 </div>
               </div>
@@ -197,7 +197,7 @@ export default function SovereignArchitecturePage() {
             </div>
             <div className="max-w-[1400px] mx-auto flex flex-col items-center text-center gap-8">
               <p className="text-[22px] md:text-[32px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.4] max-w-3xl">
-                "The question is never whether a country can afford to build its own future. It's whether they can afford not to. The cost of dependency compounds over time, and the moment you realise you are exposed is rarely the moment you still have leverage to change it."
+                "The question is never whether a country can afford to build its own future. It is whether they can afford not to. The cost of dependency compounds over time, and the moment you realise you are exposed is rarely the moment you still have leverage to change it."
               </p>
               <div className="h-px bg-white/[0.08] w-24" />
               <span
@@ -279,7 +279,7 @@ export default function SovereignArchitecturePage() {
                   Engage
                 </span>
                 <h2 className="text-[26px] md:text-[30px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.2]">
-                  Sovereignty is a design decision, not a procurement one
+                  What you procure, and how you procure it, determines what you own
                 </h2>
               </div>
               <div className="bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">

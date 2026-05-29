@@ -232,14 +232,14 @@ export default function Header() {
             transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
           >
             {/* Top bar */}
-            <div className="flex items-center justify-between px-6 pt-8 pb-6 border-b border-white/[0.06]">
+            <div className="flex items-center justify-between px-4 pt-[18px] pb-[16px] border-b border-white/[0.06]">
               <a href="/" onClick={() => setMobileOpen(false)}>
                 <Image
                   src="/images/Logos/latitude_logo.png"
                   alt="Latitude 4.7"
-                  width={140}
-                  height={40}
-                  className="object-contain object-left"
+                  width={191}
+                  height={55}
+                  className="block object-contain object-left"
                 />
               </a>
               <button

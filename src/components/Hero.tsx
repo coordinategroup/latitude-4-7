@@ -201,7 +201,7 @@ export default function Hero() {
           animate="visible"
         >
           <a
-            href="/sovereign-architecture"
+            href="/who-we-are"
             className="px-8 py-3 text-[11px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 hover:translate-x-px transition-all duration-300"
             style={{ fontFamily: "var(--font-jetbrains-mono)" }}
           >

@@ -317,9 +317,6 @@ export default function Experience() {
           <h2 className="text-[26px] md:text-[40px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.15] max-w-2xl">
             Defining the standards<br />of national digital governance
           </h2>
-          <a href="/governance-frameworks" className="hidden md:block px-6 py-2.5 text-[10px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 hover:translate-x-px transition-all duration-300" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
-            GOVERNANCE FRAMEWORKS
-          </a>
         </div>
 
         {/* Bento grid */}

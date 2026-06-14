@@ -19,7 +19,7 @@ export default function ContactCTA() {
             Begin Engagement
           </h2>
           <p className="text-[16px] text-black leading-[1.85] max-w-md">
-            For institutional stakeholders and governing bodies requiring independent technical oversight and strategic alignment.
+            For institutional stakeholders, governing bodies, and private organisations requiring independent technical oversight and strategic alignment.
           </p>
           <div className="mt-2">
             <button

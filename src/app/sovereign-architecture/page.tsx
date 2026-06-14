@@ -10,45 +10,45 @@ import SecureBriefingButton from "@/components/SecureBriefingButton";
 export const metadata: Metadata = {
   title: "Sovereign Architecture | Latitude Four Seven",
   description:
-    "Advising on considerate procurement and localised data ownership to build digital infrastructure the Seychelles controls, not rents.",
+    "Designing the digital ecosystem of the Seychelles: how services, infrastructure, and shared foundations are built to work together as one.",
 };
 
 const criteria = [
   {
     index: "01",
-    title: "Control Without Dependency",
-    body: "Procurement decisions are harder to reverse than they look. When a national service is built on systems owned, hosted, and administered by an external provider, the institution is a tenant, not an owner. We advise on the questions to ask before any vendor is selected: who holds administrative access, where does the data sit, and what happens to both if the relationship ends.",
+    title: "Designed as a whole, not assembled in parts.",
+    body: "An ecosystem designed from the outside in, starting with the experience it needs to deliver, produces fundamentally different architecture than one assembled service by service. We advise on how to approach the digital estate as a coherent whole: shared data models, common design standards, and infrastructure that every service can build on.",
   },
   {
     index: "02",
-    title: "Contracts Written in the National Interest",
-    body: "The most consequential procurement decisions feel low-risk at the time. We advise on how to read vendor agreements, assess commercial structures, and identify dependency risks before they are signed: so that a change in a vendor relationship never becomes a national service disruption.",
+    title: "Interoperable by design, not by integration.",
+    body: "Integration is what you do when services were never designed to connect. True interoperability means building that connectivity into the architecture from the start: shared APIs, open data standards, and design patterns that allow every part of the ecosystem to communicate without friction.",
   },
   {
     index: "03",
-    title: "Systems That Serve Citizens, Not Vendors",
-    body: "Citizens expect government services to feel joined up. When departments procure systems independently, citizens pay the price: inconsistent experiences, duplicated checks, and data that cannot follow them across services. We advise on procurement decisions that prioritise citizen experience and cross-service compatibility from the outset.",
+    title: "Built to evolve without starting over.",
+    body: "The architecture decisions made today determine how easy or how painful tomorrow's requirements will be. We advise on ecosystem design that is modular and extensible: where individual components can be updated, replaced, or scaled without rebuilding the foundations they sit on.",
   },
 ];
 
 const pillars = [
-  { value: "Data Residency", label: "When citizen data is stored and governed within the Seychelles, government remains accountable for it. We advise on procurement requirements that make local data ownership a contractual commitment, not an aspiration that disappears when a vendor is under commercial pressure." },
-  { value: "Access and Control", label: "When a relationship with a provider ends, the institution must retain full access to every system and every record. We advise on the contractual and practical requirements that make this a reality, not just a clause buried in a service agreement." },
-  { value: "Audit Rights", label: "Citizens trust public services when those services can be held to account. We advise on procurement that includes clear audit provisions: so that independent oversight is a built-in right, not something that has to be negotiated after the fact." },
-  { value: "Vendor Neutrality", label: "Procurement decisions made to suit a vendor's commercial interests are rarely the right ones for a national service. We advise on how to keep options genuinely open: structuring contracts so that no single provider holds leverage over critical public services." },
+  { value: "Ecosystem Thinking", label: "Before any individual service is designed, the broader ecosystem it will live in must be understood. We advise on mapping the full digital estate, including existing services, shared infrastructure, data flows, and dependencies, so that every new decision is made with the whole in view." },
+  { value: "Shared Foundations", label: "Shared design systems, common data standards, and reusable infrastructure components reduce duplication and accelerate delivery across the estate. We advise on building foundations that every service can build on, rather than ones that every service has to rebuild." },
+  { value: "Interoperability", label: "Services that are genuinely interoperable share data, standards, and functionality without friction. We advise on the API strategies, open data standards, and integration patterns that allow every part of the digital estate to communicate and work as a connected whole rather than a collection of isolated products." },
+  { value: "Longevity by Design", label: "The most expensive digital estates are the ones that were never designed to last. We advise on architecture decisions made with longevity in mind: open standards, clear documentation, and systems that a future team can build on rather than inherit and regret." },
 ];
 
 const related = [
   {
     index: "02",
-    label: "Governance Frameworks",
-    description: "The policy and oversight structures that make technology accountable.",
+    label: "Experience Design",
+    description: "End-to-end digital experience creation, from discovery and research through to delivery and iteration.",
     href: "/governance-frameworks",
   },
   {
     index: "03",
     label: "Digital Leadership",
-    description: "Building the local capability to lead transformation from within.",
+    description: "Building the cross-sector leadership and local expertise that creates unified digital experiences.",
     href: "/digital-leadership",
   },
 ];
@@ -80,10 +80,10 @@ export default function SovereignArchitecturePage() {
                 Capability // 01
               </span>
               <h1 className="text-[26px] md:text-[42px] lg:text-[52px] font-medium text-[#F8FAFC] tracking-[-0.03em] leading-[1.05] max-w-4xl">
-                Your infrastructure, your rules
+                One ecosystem. Built to work as one.
               </h1>
               <p className="mt-6 text-[17px] md:text-[20px] text-[#F8FAFC]/70 leading-[1.7] max-w-2xl">
-                We advise on considerate procurement and localised data management, so the Seychelles builds digital systems it genuinely owns: not rents from providers who can reprice, restrict, or walk away.
+                We advise on how the digital estate is designed, connected, and built: interoperable services, shared foundations, and an architecture that works as one rather than a collection of isolated parts.
               </p>
             </div>
           </section>
@@ -93,10 +93,10 @@ export default function SovereignArchitecturePage() {
             <div className="max-w-[1400px] mx-auto px-6 md:px-20 lg:px-32">
               <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/[0.06]">
                 {[
-                  { stat: "68%", label: "Of developing nations critically dependent on a single foreign vendor" },
-                  { stat: "$3.2M", label: "Average cost to exit a locked-in government system" },
-                  { stat: "3x", label: "Longer to exit a dependency than to enter one" },
-                  { stat: "40%", label: "Lower total cost of ownership with vendor-neutral procurement decisions" },
+                  { stat: "70%", label: "Of digital services fail within 3 years due to architecture that cannot scale" },
+                  { stat: "5x", label: "Higher cost to redesign a system than to design it correctly from the outset" },
+                  { stat: "3x", label: "More value delivered when services are connected by design rather than integrated after the fact" },
+                  { stat: "40%", label: "Of digital budgets spent integrating systems that should have been designed to connect" },
                 ].map((item) => (
                   <div key={item.label} className="flex flex-col gap-2 px-8 py-10 first:pl-0 last:pr-0 odd:pl-0 md:odd:pl-8 md:first:pl-0">
                     <span className="text-[32px] font-medium text-[#D4B996] tracking-[-0.02em]">{item.stat}</span>
@@ -119,19 +119,19 @@ export default function SovereignArchitecturePage() {
                     The Challenge
                   </span>
                   <h2 className="text-[26px] md:text-[30px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.2]">
-                    Digital tenancy is not digital sovereignty
+                    Disconnected parts cannot form a coherent whole
                   </h2>
                 </div>
                 <div className="relative bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col gap-6">
                   <p className="text-[20px] md:text-[22px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.5]">
-                    Too much of the Seychelles' digital infrastructure is built on a spaghetti stack of dependencies, with data that technically belongs to a foreign provider. That is not sovereignty. That is a subscription.
+                    Most digital estates are not designed as ecosystems. They are assembled: one service here, one platform there, built by different teams at different times with different assumptions. The result is a fragmented estate where integration is always expensive, consistency is always elusive, and the user always pays the price.
                   </p>
                   <div className="h-px bg-white/[0.06]" />
                   <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                    The risk is rarely the well-known platforms. It is the smaller, specialist vendors who sell bespoke systems, retain the proprietary access, and leave no viable exit. The contract ends and the keys go with them.
+                    The real cost is not the integration work itself. It is the ceiling it places on what can be built next. Every new service that has to work around what already exists inherits its constraints, its technical debt, and its limitations. The estate stops growing and starts accumulating.
                   </p>
                   <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                    The Seychelles programme is being built differently. Before any procurement decision is made, we ask a simple question: if this relationship breaks down tomorrow, where does that leave the nation? Considerate procurement starts there. It changes what gets bought, how it is contracted, and who retains ownership when the engagement ends.
+                    We advise on how to design the digital ecosystem intentionally: shared foundations, connected services, and an architecture that makes it easier to build the next thing than it was to build the last.
                   </p>
                 </div>
               </div>
@@ -150,7 +150,7 @@ export default function SovereignArchitecturePage() {
                     Design Criteria
                   </span>
                   <h2 className="text-[26px] md:text-[34px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.15]">
-                    The questions we bring to every procurement decision
+                    How we approach the digital ecosystem
                   </h2>
                 </div>
               </div>
@@ -197,7 +197,7 @@ export default function SovereignArchitecturePage() {
             </div>
             <div className="max-w-[1400px] mx-auto flex flex-col items-center text-center gap-8">
               <p className="text-[22px] md:text-[32px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.4] max-w-3xl">
-                "The question is never whether a country can afford to build its own future. It is whether they can afford not to. The cost of dependency compounds over time, and the moment you realise you are exposed is rarely the moment you still have leverage to change it."
+                "A digital ecosystem designed as a collection of separate projects will always behave like one. The question to ask at the start is not what does this service need. It is what does the whole need, and how does this service contribute to it."
               </p>
               <div className="h-px bg-white/[0.08] w-24" />
               <span
@@ -221,7 +221,7 @@ export default function SovereignArchitecturePage() {
                     Minimum Standard
                   </span>
                   <h2 className="text-[32px] md:text-[42px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.15]">
-                    What every procurement decision should protect
+                    What every ecosystem decision should achieve
                   </h2>
                 </div>
                 <AccordionGroup items={pillars.map(p => ({ title: p.value, body: p.label }))} />
@@ -279,12 +279,12 @@ export default function SovereignArchitecturePage() {
                   Engage
                 </span>
                 <h2 className="text-[26px] md:text-[30px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.2]">
-                  What you procure, and how you procure it, determines what you own
+                  The ecosystem you design today determines what you can build tomorrow
                 </h2>
               </div>
               <div className="bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
                 <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                  The best time to get this right is before a vendor is chosen. The second best time is now.
+                  The best time to design the digital estate as a coherent ecosystem is at the start. The second best time is now.
                 </p>
                 <SecureBriefingButton
                   className="shrink-0 px-8 py-3 text-[11px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 transition-all duration-300 whitespace-nowrap"

@@ -34,7 +34,7 @@ export default function Authority() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.85, delay: 0.18, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            With over a decade of experience leading digital transformation at Tier 1 UK financial institutions; we bring a global benchmark of governance to Mahé. Our role is to act as the independent bridge between government mandates and digital execution.
+            With over a decade of experience leading digital transformation at Tier 1 UK financial institutions; we bring a global benchmark of governance to Mahé. Our role is to act as the independent bridge between public institutions, private enterprise, and world-class digital execution.
           </motion.p>
 
         </div>

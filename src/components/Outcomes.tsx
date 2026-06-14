@@ -7,7 +7,7 @@ const outcomes = [
   {
     title: "Experience Design & Strategy",
     description:
-      "We'll oversee the creation of intuitive, data-driven experiences that aligns on citizen needs with institutional goals.",
+      "We'll oversee the creation of intuitive, data-driven experiences that align user and customer needs with institutional and business goals.",
   },
   {
     title: "Digital Governance",

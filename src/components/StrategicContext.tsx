@@ -71,13 +71,13 @@ export default function StrategicContext() {
           <div className="grid grid-cols-1 md:grid-cols-[30%_1fr] gap-8 md:gap-20 items-start">
 
             <h2 className="hidden md:block font-medium text-[#F8FAFC] tracking-[-0.02em] leading-snug self-start mt-0" style={{ fontSize: "clamp(18px, 1.5vw, 26px)" }}>
-              A step closer to digital independence
+              Modernising Seychelles for the digital age
             </h2>
 
             <div className="flex flex-col gap-10" style={{ fontSize: "clamp(28px, 2vw, 54px)", lineHeight: "1.3", maxWidth: "900px" }}>
               <Sentence scrollYProgress={scrollYProgress} start={s0Start} end={s0End}>
                 <span className="font-medium tracking-[-0.02em] text-[#F8FAFC]">
-                  Our role is to ensure that national systems, from financial rails to data exchange, are world-class, secure, and remain firmly under local sovereign control.
+                  Our role is to modernise the digital architecture of the Seychelles, building world-class infrastructure that accelerates adoption, unlocks richer digital experiences, and positions the nation as a forward-thinking destination for both public services and private enterprise.
                 </span>
               </Sentence>
 

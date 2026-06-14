@@ -13,8 +13,8 @@ const capabilities = [
   },
   {
     index: "02",
-    label: "Governance Frameworks",
-    description: "Building the policy and oversight structures that make technology accountable.",
+    label: "Experience Design",
+    description: "End-to-end digital experience creation, from discovery and research through to delivery and iteration.",
     href: "/governance-frameworks",
   },
   {
@@ -82,7 +82,7 @@ export default function Header() {
           </a>
 
           {/* Desktop nav — three items centred absolutely */}
-          <nav className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
+          <nav className="hidden lg:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
 
             {/* Capabilities trigger */}
             <div className="relative" onMouseEnter={openCap} onMouseLeave={closeCap}>
@@ -199,7 +199,7 @@ export default function Header() {
           <div className="flex items-center gap-4">
             <button
               onClick={() => setBriefingOpen(true)}
-              className="hidden md:inline-flex px-5 py-2 text-[12px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 hover:translate-x-px transition-all duration-300"
+              className="hidden lg:inline-flex px-5 py-2 text-[12px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 hover:translate-x-px transition-all duration-300"
               style={{ fontFamily: "var(--font-jetbrains-mono)" }}
             >
               SECURE BRIEFING
@@ -207,7 +207,7 @@ export default function Header() {
 
           {/* Mobile hamburger */}
             <button
-              className="md:hidden flex flex-col gap-[5px] p-2"
+              className="lg:hidden flex flex-col gap-[5px] p-2"
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
             >
@@ -225,7 +225,7 @@ export default function Header() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            className="fixed inset-0 z-[60] bg-[#08090A] flex flex-col md:hidden"
+            className="fixed inset-0 z-[60] bg-[#08090A] flex flex-col lg:hidden"
             initial={{ opacity: 0, y: "-100%" }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}

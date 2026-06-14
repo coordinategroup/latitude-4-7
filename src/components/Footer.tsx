@@ -34,7 +34,7 @@ export default function Footer() {
                 Sovereign Architecture
               </a>
               <a href="/governance-frameworks" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
-                Governance Frameworks
+                Experience Design
               </a>
               <a href="/digital-leadership" className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase" style={monoStyle}>
                 Digital Leadership

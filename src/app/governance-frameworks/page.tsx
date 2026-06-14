@@ -8,47 +8,47 @@ import AccordionGroup from "@/components/AccordionGroup";
 import SecureBriefingButton from "@/components/SecureBriefingButton";
 
 export const metadata: Metadata = {
-  title: "Governance Frameworks | Latitude Four Seven",
+  title: "Experience Design | Latitude Four Seven",
   description:
-    "Building governance frameworks that support confident digital adoption through usability testing, design-led structures, and clear accountability.",
+    "End-to-end digital experience creation, from discovery and user research through to prototyping, testing, and live delivery.",
 };
 
 const criteria = [
   {
     index: "01",
-    title: "Governance centred on the user.",
-    body: "We design governance structures around the people who use them, not just the institutions that commission them. That means usability research, tested workflows, and accountability structures that citizens can actually see and trust.",
+    title: "Start with the user, not the solution.",
+    body: "Understanding the problem before committing to a solution is the most valuable thing a product team can do. We run structured discovery programmes, including user interviews, behavioural research, and service mapping, that ensure every design decision is grounded in real user needs rather than internal assumptions.",
   },
   {
     index: "02",
-    title: "Oversight that creates confidence.",
-    body: "Oversight is not a burden on the system; it is part of what makes the system credible. We help build oversight structures with genuine authority and the tools to exercise it: so citizens know their services are held to account.",
+    title: "Prototype early. Test often.",
+    body: "The fastest way to validate an idea is to put something in front of real users before any significant build has begun. We design and test prototypes at every stage of the process, surfacing issues early when they are cheap to fix and building confidence in what gets built.",
   },
   {
     index: "03",
-    title: "Compliance built in, not bolted on.",
-    body: "Compliance is not just for banks and multinationals. It is what a responsible government owes its citizens. We embed compliance into the architecture of public services from day one, so it is never an afterthought and never a retrofit.",
+    title: "Manage the product, not just the project.",
+    body: "Delivery does not end at launch. The products and services that succeed are the ones with a clear product owner, a roadmap that responds to evidence, and a team structured to iterate continuously. We help organisations build the product management capability to do exactly that.",
   },
 ];
 
 const coverage = [
-  { value: "Usability Testing", label: "Governance frameworks are only as effective as the services they underpin. We run structured usability testing programmes that surface friction before rollout, not after, ensuring every digital service meets the standard citizens actually need." },
-  { value: "Service Design", label: "Well-governed services are designed with the user at the centre. We build the design frameworks and review processes that keep user needs at the heart of every public-facing digital product, from first concept through to live deployment." },
-  { value: "Accountability Structures", label: "Clear accountability is what separates governance that functions from governance that exists on paper. We design the ownership models, escalation pathways, and review cycles that give institutions the authority and clarity to act." },
-  { value: "Adoption Pathways", label: "Digital adoption is not automatic. We develop the communication strategies, onboarding frameworks, and change management structures that bring citizens and institutions along: sustainably and at scale." },
+  { value: "Discovery & User Research", label: "We run structured discovery programmes that define the problem space before any solution is committed to. User interviews, behavioural analysis, and service mapping give design and product teams the evidence they need to make the right decisions from the start." },
+  { value: "Service Design & Prototyping", label: "We design end-to-end service journeys and build testable prototypes that validate ideas before development begins. Every touchpoint is considered as part of a coherent whole, not designed in isolation." },
+  { value: "Usability Testing", label: "We test with real users at every stage of the design process, not just before launch. Structured usability sessions surface friction, confusion, and drop-off points early, when they are still cheap to address, and give teams the confidence to ship." },
+  { value: "Product Management & Iteration", label: "We help organisations establish the product management frameworks, prioritisation processes, and measurement models that keep digital services improving after launch. Good products are never done; they are continuously understood and refined." },
 ];
 
 const related = [
   {
     index: "01",
     label: "Sovereign Architecture",
-    description: "Advising on procurement and data ownership to keep the Seychelles in control of its digital future.",
+    description: "Designing the digital ecosystem: how every service, system, and shared foundation connects and works as one.",
     href: "/sovereign-architecture",
   },
   {
     index: "03",
     label: "Digital Leadership",
-    description: "Building the local capability to lead transformation from within.",
+    description: "Cross-sector leadership, local upskilling, and aligned teams that make transformation stick.",
     href: "/digital-leadership",
   },
 ];
@@ -64,7 +64,7 @@ export default function GovernanceFrameworksPage() {
           <section className="relative h-[85vh] min-h-[600px] flex items-end overflow-hidden">
             <Image
               src="/images/Governance_Frameworks/hero_image.png"
-              alt="Governance Frameworks"
+              alt="Experience Design"
               fill
               className="object-cover object-center"
               priority
@@ -80,10 +80,10 @@ export default function GovernanceFrameworksPage() {
                 Capability // 02
               </span>
               <h1 className="text-[26px] md:text-[42px] lg:text-[52px] font-medium text-[#F8FAFC] tracking-[-0.03em] leading-[1.05] max-w-4xl">
-                Governance designed<br />to drive adoption
+                From discovery to delivery,<br />by design
               </h1>
               <p className="mt-6 text-[17px] md:text-[20px] text-[#F8FAFC]/70 leading-[1.7] max-w-2xl">
-                We build the frameworks, structures, and usability programmes that give citizens and institutions the confidence to adopt digital services and keep using them.
+                We guide the end-to-end creation of digital products and services, from understanding user needs through to live, tested, and continuously improving experiences.
               </p>
             </div>
           </section>
@@ -93,10 +93,10 @@ export default function GovernanceFrameworksPage() {
             <div className="max-w-[1400px] mx-auto px-6 md:px-20 lg:px-32">
               <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/[0.06]">
                 {[
-                  { stat: "3x", label: "Faster citizen adoption when governance is designed around user needs" },
-                  { stat: "$4.9M", label: "Average cost of a public sector data protection failure" },
-                  { stat: "78%", label: "Reduction in service drop-off with structured usability testing" },
-                  { stat: "4x", label: "More likely to achieve scale when design and governance are built together" },
+                  { stat: "2x", label: "Faster adoption when discovery is completed before build begins" },
+                  { stat: "75%", label: "Of digital product failures traced back to skipping the discovery phase" },
+                  { stat: "5x", label: "Return on investment from structured usability testing before launch" },
+                  { stat: "3x", label: "More likely to iterate successfully with a product management framework in place" },
                 ].map((item) => (
                   <div key={item.label} className="flex flex-col gap-2 px-8 py-10 first:pl-0 last:pr-0 odd:pl-0 md:odd:pl-8 md:first:pl-0">
                     <span className="text-[32px] font-medium text-[#D4B996] tracking-[-0.02em]">{item.stat}</span>
@@ -119,19 +119,19 @@ export default function GovernanceFrameworksPage() {
                     The Challenge
                   </span>
                   <h2 className="text-[26px] md:text-[30px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.2]">
-                    Adoption is the outcome. Governance is the enabler
+                    Most digital products are built before the problem is understood
                   </h2>
                 </div>
                 <div className="relative bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col gap-6">
                   <p className="text-[20px] md:text-[22px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.5]">
-                    Digital transformation fails not because technology is unavailable, but because governance does not support confident adoption. Citizens disengage when services feel unclear, untested, or unaccountable. Institutions stall when responsibilities are undefined and oversight is performative.
+                    The most common cause of digital product failure is not poor engineering. It is starting in the wrong place. Teams move to build before they have validated the problem, designed for the wrong users, or optimised for delivery speed rather than the experience that determines whether anyone uses it.
                   </p>
                   <div className="h-px bg-white/[0.06]" />
                   <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                    The result is a digital estate that exists on paper but not in practice: services launched without user testing, governance structures that cannot be explained to the people they govern, and adoption figures that plateau well below what the investment deserves.
+                    The result is products that work technically but fail in practice: services that users cannot navigate, journeys that drop off at the critical moment, and roadmaps full of features nobody asked for. The cost is not just budget. It is the trust of every user who tried and gave up.
                   </p>
                   <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                    We build governance frameworks grounded in how people actually behave: tested with real users, designed for real workflows, and structured to scale without losing accountability.
+                    We guide organisations through a structured, end-to-end design and delivery process: from the earliest discovery work through to launch, iteration, and the ongoing product management that keeps services improving over time.
                   </p>
                 </div>
               </div>
@@ -150,7 +150,7 @@ export default function GovernanceFrameworksPage() {
                     Design Criteria
                   </span>
                   <h2 className="text-[26px] md:text-[34px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.15]">
-                    Three things every governance framework must do
+                    Three things we focus on in every engagement
                   </h2>
                 </div>
               </div>
@@ -197,7 +197,7 @@ export default function GovernanceFrameworksPage() {
             </div>
             <div className="max-w-[1400px] mx-auto flex flex-col items-center text-center gap-8">
               <p className="text-[22px] md:text-[32px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.4] max-w-3xl">
-                "Trust is not declared; it is designed. Citizens adopt services when they feel safe, when the process is clear, and when accountability is visible. Governance is not the constraint on digital transformation; it is the foundation it stands on."
+                "The difference between a digital product that works and one that fails is almost never the technology. It is whether anyone bothered to understand the user before they started building."
               </p>
               <div className="h-px bg-white/[0.08] w-24" />
               <span
@@ -221,7 +221,7 @@ export default function GovernanceFrameworksPage() {
                     Our Approach
                   </span>
                   <h2 className="text-[32px] md:text-[42px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.15]">
-                    What we build around
+                    Our end-to-end design and delivery process
                   </h2>
                 </div>
                 <AccordionGroup items={coverage.map(c => ({ title: c.value, body: c.label }))} />
@@ -279,12 +279,12 @@ export default function GovernanceFrameworksPage() {
                   Engage
                 </span>
                 <h2 className="text-[26px] md:text-[30px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.2]">
-                  Governance built for now. Designed to last
+                  Good digital products start with the right process
                 </h2>
               </div>
               <div className="bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
                 <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                  The best time to build governance around your users is before you go live. The second best time is now.
+                  The best time to establish a design and delivery process is before the first line of code is written. The second best time is now.
                 </p>
                 <SecureBriefingButton
                   className="shrink-0 px-8 py-3 text-[11px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 transition-all duration-300 whitespace-nowrap"

@@ -10,32 +10,32 @@ import SecureBriefingButton from "@/components/SecureBriefingButton";
 export const metadata: Metadata = {
   title: "Digital Leadership | Latitude Four Seven",
   description:
-    "Bringing departments together through robust leadership and interoperability: building the structures that make joined-up government possible.",
+    "Building the cross-sector leadership, local expertise, and shared frameworks that create unified digital experiences across public institutions and private enterprise.",
 };
 
 const criteria = [
   {
     index: "01",
     title: "Leadership that connects, not just directs.",
-    body: "The biggest barrier to joined-up government is rarely technical; it is leadership. Departments that optimise for their own objectives rather than shared outcomes create duplication, inconsistency, and citizen frustration. We work with senior leaders to build the shared direction, cross-departmental trust, and product literacy that make collaboration the default.",
+    body: "The biggest barrier to joined-up services is rarely technical; it is leadership. Public institutions and private organisations that optimise for their own objectives rather than shared outcomes create duplication, inconsistency, and user frustration. We work with senior leaders to build the shared direction, cross-sector trust, and product literacy that make collaboration the default.",
   },
   {
     index: "02",
-    title: "Test and learn, not plan and pray.",
-    body: "Procurement tends to favour the large, the certain, and the slow. We help the Seychelles build an evidence-based delivery culture where small, testable decisions replace large, irreversible ones. Benefits are demonstrated before scale is committed to. Assumptions are tested before they are baked in.",
+    title: "Skills built in, not brought in.",
+    body: "Lasting digital transformation requires internal capability, not permanent external dependency. We work alongside local teams to build the skills, confidence, and ways of working that allow organisations to keep developing long after the engagement ends. Capability that stays is the only kind that compounds.",
   },
   {
     index: "03",
-    title: "Interoperability by design, not retrofit.",
-    body: "Systems that cannot communicate create islands of progress, not transformation. We advise on shared data standards, open integration frameworks, and architecture that allows departments to work from a common foundation, so that progress in one area builds capability across the whole.",
+    title: "Ways of working that scale across teams.",
+    body: "The way teams work together determines the quality of what they build. We embed the collaborative practices, shared rituals, and product operating models that allow cross-functional teams to move fast, stay aligned, and make decisions at the right level without bottlenecks.",
   },
 ];
 
 const shifts = [
-  { post: "Shared digital identity", from: "Siloed verification", to: "Citizens currently navigate public services that verify identity separately, creating friction and inconsistency across departments. The shift is to a shared digital identity infrastructure that works consistently across every government service: one experience, regardless of which department the citizen is dealing with." },
-  { post: "Interoperable digital payments", from: "Fragmented payment systems", to: "Fragmented payment systems across departments create duplication, inconsistency, and unnecessary cost. The shift is to interoperable digital payment rails built on shared standards: consistent, reliable, and designed to serve citizens and government as one connected system." },
-  { post: "Cross-departmental governance", from: "Siloed procurement", to: "When departments procure independently, without visibility of what others are building, the result is duplication and incompatibility. The shift is to shared procurement standards and cross-departmental governance, so that what one department builds, the whole of government can benefit from." },
-  { post: "Local capability and ownership", from: "Revolving door consultancy", to: "External expertise without genuine knowledge transfer leaves institutions no stronger than before. The shift is to engagements structured around building local capability, so the Seychelles is better equipped at the end of every piece of work than it was at the start." },
+  { post: "Aligned teams, not parallel ones", from: "Siloed departments", to: "When departments and organisations work in parallel rather than together, the result is duplicated effort, inconsistent decisions, and digital experiences that feel fragmented to the people using them. We work with leadership teams to build the shared direction, cross-functional trust, and collaborative working practices that make alignment the default rather than the exception." },
+  { post: "Upskilling that outlasts the engagement", from: "Revolving door consultancy", to: "External expertise without genuine knowledge transfer leaves organisations no stronger than before. We structure every engagement around building the skills and confidence of local teams: so that the people doing the work understand it, own it, and can continue to develop it long after we have left." },
+  { post: "Embedding product thinking across teams", from: "Project-led delivery", to: "Many organisations still operate with a project mindset: defined scope, fixed budget, delivery date, done. We help teams make the shift to product thinking: continuous iteration, evidence-based decisions, and a culture of learning that keeps services improving over time rather than stalling after launch." },
+  { post: "Leadership capable of leading digital change", from: "Sponsorship without fluency", to: "Digital transformation fails when leadership cannot champion it with confidence. We work directly with senior leaders to build the product literacy, digital fluency, and decision-making frameworks they need to lead transformation from the front, not just sponsor it from a distance." },
 ];
 
 const related = [
@@ -47,8 +47,8 @@ const related = [
   },
   {
     index: "02",
-    label: "Governance Frameworks",
-    description: "The policy and oversight structures that make technology accountable.",
+    label: "Experience Design",
+    description: "End-to-end digital experience creation, from discovery and research through to delivery and iteration.",
     href: "/governance-frameworks",
   },
 ];
@@ -83,7 +83,7 @@ export default function DigitalLeadershipPage() {
                 The technology is rarely<br />the problem
               </h1>
               <p className="mt-6 text-[17px] md:text-[20px] text-[#F8FAFC]/70 leading-[1.7] max-w-2xl">
-                We help the Seychelles build the cross-departmental leadership, shared systems, and interoperability frameworks that turn individual digital capabilities into joined-up government.
+                We help the Seychelles build the cross-sector leadership, shared systems, and local expertise that turn individual digital capabilities into unified experiences across public institutions and private enterprise.
               </p>
             </div>
           </section>
@@ -119,19 +119,19 @@ export default function DigitalLeadershipPage() {
                     The Challenge
                   </span>
                   <h2 className="text-[26px] md:text-[30px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.2]">
-                    Siloed departments cannot deliver joined-up services
+                    Siloed departments, misaligned teams, and skills gaps stall transformation
                   </h2>
                 </div>
                 <div className="relative bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col gap-6">
                   <p className="text-[20px] md:text-[22px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.5]">
-                    The barrier to digital transformation in government is rarely technical. It is structural: departments working in parallel but not together, systems that cannot communicate across agency boundaries, and leadership that cannot see across the whole. Citizens experience this as fragmented, inconsistent services.
+                    The barrier to digital transformation is rarely technical. It is structural: teams working without shared direction, leadership that cannot see across the whole, and organisations investing in tools without investing in the people who need to use them. Users experience this as fragmented, inconsistent services.
                   </p>
                   <div className="h-px bg-white/[0.06]" />
                   <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                    The result is duplication: multiple departments solving the same problem differently, procurement decisions made without visibility of what already exists, and data that lives in silos when it should flow. Each department may be making progress, but the citizen sees none of it as joined up.
+                    The result is stalled momentum: talented people pulling in different directions, external consultants solving problems that local teams could own, and digital programmes that deliver on paper but fail to embed. Each team may be making progress, but without alignment it rarely adds up to transformation.
                   </p>
                   <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                    We work with leaders across the Seychelles government to build the cross-departmental frameworks, shared technology standards, and interoperability architecture that make joined-up services possible and sustainable.
+                    We work with leaders across the Seychelles to build the cross-sector alignment, local capability, and ways of working that make joined-up services possible, sustainable, and led from within.
                   </p>
                 </div>
               </div>
@@ -221,7 +221,7 @@ export default function DigitalLeadershipPage() {
                     The Shift
                   </span>
                   <h2 className="text-[32px] md:text-[42px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.15]">
-                    The shifts that make joined-up government possible
+                    How we build aligned, capable organisations
                   </h2>
                 </div>
                 <AccordionGroup items={shifts.map(s => ({ title: s.post, body: s.to }))} />
@@ -279,12 +279,12 @@ export default function DigitalLeadershipPage() {
                   Engage
                 </span>
                 <h2 className="text-[26px] md:text-[30px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.2]">
-                  Departments that work together serve citizens better
+                  Organisations that work together deliver better experiences
                 </h2>
               </div>
               <div className="bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
                 <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                  The best time to build cross-departmental leadership is before the silos become structural. The second best time is now.
+                  The best time to build cross-sector leadership and local capability is before the silos become structural. The second best time is now.
                 </p>
                 <SecureBriefingButton
                   className="shrink-0 px-8 py-3 text-[11px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 transition-all duration-300 whitespace-nowrap"

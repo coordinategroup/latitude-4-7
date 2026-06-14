@@ -286,23 +286,23 @@ function Card({ fig, title, description, Illustration, className }: CardProps) {
 const cards: CardProps[] = [
   {
     fig: "FIG 0.1",
-    title: "Sovereign Infrastructure",
+    title: "Sovereign Architecture",
     description:
-      "Moving from \u201cdigital tenancy\u201d to a future where the Seychelles owns and operates its own core national data and financial ledgers.",
+      "Designing the digital ecosystem as one connected whole: shared foundations, interoperable services, and architecture that grows with the nation rather than constraining it.",
     Illustration: PillarSVG,
   },
   {
     fig: "FIG 0.2",
-    title: "System Interoperability",
+    title: "Experience Design",
     description:
-      "Breaking down silos between government and banking to create a seamless, unified digital ecosystem for all citizens.",
+      "Service design, usability testing, and product management structures that drive confident adoption across public institutions and private organisations.",
     Illustration: LayersSVG,
   },
   {
     fig: "FIG 0.3",
-    title: "Local Upskilling",
+    title: "Digital Leadership",
     description:
-      "Investing in a new generation of Seychellois talent to ensure the country has the internal expertise to lead its own technological future.",
+      "Cross-sector leadership, local upskilling, and shared frameworks that create unified digital experiences across public and private Seychelles.",
     Illustration: RailsSVG,
   },
 ];
@@ -315,7 +315,7 @@ export default function Experience() {
         {/* Section header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 pb-10 border-b border-white/[0.08] mb-12">
           <h2 className="text-[26px] md:text-[40px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.15] max-w-2xl">
-            Defining the standards<br />of national digital governance
+            Defining the digital standards<br />for public and private Seychelles
           </h2>
         </div>
 

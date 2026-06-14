@@ -15,21 +15,21 @@ export const metadata: Metadata = {
 const capabilities = [
   {
     index: "01",
-    label: "Product Innovation",
-    title: "Governance embedded, not bolted on.",
-    body: "Good governance doesn't slow things down: it's what makes them work. We advise from the start, so institutions aren't trying to patch compliance onto systems that were never designed to support it.",
+    label: "Sovereign Architecture",
+    title: "Build the ecosystem first.",
+    body: "The services that scale and last are designed as a connected whole from the start. We advise on how to build a digital estate where every part is interoperable, every service builds on shared foundations, and the architecture grows with the organisation rather than constraining it.",
   },
   {
     index: "02",
-    label: "Sovereign Infrastructure",
-    title: "The institution holds the keys.",
-    body: "Renting your digital infrastructure from a foreign provider isn't sovereignty: it's dependency. We advise institutions on how to structure ownership, contracts, and data control so that the keys stay where they belong, with the institution.",
+    label: "Experience Design",
+    title: "Start with the user. Finish with evidence.",
+    body: "The most common cause of digital failure is building before understanding. We guide organisations through the full design and delivery process: from discovery and user research through to prototyping, testing, and the ongoing product management that keeps services improving.",
   },
   {
     index: "03",
-    label: "Governance & Trust",
-    title: "Move fast. Stay clean.",
-    body: "Compliance and speed aren't opposites: they're a planning problem. We help institutions navigate regulatory requirements without sacrificing momentum, so the right governance is in place before it's demanded.",
+    label: "Digital Leadership",
+    title: "People make transformation stick.",
+    body: "Technology is only as good as the teams behind it. We build the cross-sector alignment, local capability, and ways of working that allow organisations to lead their own digital future, without depending on outside expertise indefinitely.",
   },
 ];
 
@@ -130,7 +130,7 @@ export default function WhoWeArePage() {
                   Strategy at the speed of sovereign change
                 </h1>
                 <p className="text-[18px] md:text-[22px] text-[#C2C7D0] leading-[1.6] max-w-2xl">
-                  We advise governments and institutions on how to take control of their digital future, before someone else defines it for them.
+                  We advise governments, institutions, and private organisations on how to build, connect, and lead their digital future.
                 </p>
               </div>
 
@@ -152,12 +152,12 @@ export default function WhoWeArePage() {
             <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-0">
               <div className="md:pr-16 md:border-r border-black/[0.10]">
                 <p className="text-[16px] text-[#3a3a3a] leading-[1.9]">
-                  Most nations are more digitally dependent than they realise. Critical systems run on foreign infrastructure, contracts are written in favour of the provider, and the data sits somewhere else entirely. That's not a technology problem: it's a strategic one.
+                  Most organisations are further from their digital potential than they realise. Products are built before the problem is understood, systems are assembled in silos rather than designed to connect, and teams lack the alignment and capability to make transformation stick. That is not a technology problem: it is a strategic one.
                 </p>
               </div>
               <div className="mt-8 md:mt-0 md:pl-16">
                 <p className="text-[16px] text-[#3a3a3a] leading-[1.9]">
-                  We advise governments and institutions on how to change that. From shaping the policy frameworks that govern data ownership, to guiding the decisions that determine which direction to take: we sit at the table where strategy is set, and stay until the right one is clear.
+                  We advise public institutions and private organisations on how to change that. From designing the digital ecosystem that connects everything together, to building the experiences users actually need, to developing the local capability to lead it all from within: we sit at the table where strategy is set, and stay until the right direction is clear.
                 </p>
               </div>
             </div>
@@ -175,7 +175,7 @@ export default function WhoWeArePage() {
 
                 {/* Right: single paragraph */}
                 <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                  Old systems aren't just slow: they actively resist the fast, accountable decisions that modern institutions need to make. While others are still in planning, those who move will pull ahead. We're here to close the gap between what a government intends and what actually gets done, before the moment passes.
+                  Old systems aren't just slow: they actively resist the fast, accountable decisions that modern organisations need to make. While others are still planning, those who move will pull ahead. We're here to close the gap between what an organisation intends and what actually gets built, used, and sustained.
                 </p>
 
               </div>

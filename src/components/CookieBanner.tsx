@@ -86,33 +86,33 @@ export default function CookieBanner() {
   return (
     <div
       role="dialog"
-      aria-modal="false"
+      aria-modal="true"
       aria-label="Cookie consent"
-      className="fixed bottom-0 left-0 right-0 z-[9999] bg-[#08090A] border-t border-white/[0.08]"
+      className="fixed bottom-0 left-0 right-0 z-[9999] bg-[#FAFAFA] border-t border-black/[0.08]"
     >
       {!showSettings ? (
         <div className="max-w-[1400px] mx-auto px-6 md:px-20 lg:px-32 py-5 flex flex-col sm:flex-row sm:items-center gap-4">
-          <p className="text-[13px] text-[#C2C7D0] leading-relaxed flex-1">
+          <p className="text-[13px] text-[#0A0A0B]/55 leading-relaxed flex-1">
             We use a small number of cookies to understand how this site is performing. No tracking, no advertising: just the basics.
           </p>
           <div className="flex items-center gap-3 shrink-0">
             <button
               onClick={handleAcceptAll}
-              className="px-5 py-2 bg-[#D4B996] text-[#08090A] text-[11px] tracking-widest font-medium hover:bg-[#D4B996]/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4B996]"
+              className="px-5 py-2 bg-[#292929] text-white text-[11px] tracking-widest font-medium hover:bg-[#292929]/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#292929]"
               style={{ fontFamily: "var(--font-jetbrains-mono)" }}
             >
               Accept
             </button>
             <button
               onClick={handleEssentialOnly}
-              className="px-5 py-2 border border-white/[0.2] text-white/70 text-[11px] tracking-widest hover:border-white/40 hover:text-white/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+              className="px-5 py-2 border border-black/[0.2] text-[#0A0A0B]/60 text-[11px] tracking-widest hover:border-black/40 hover:text-[#0A0A0B]/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-black/20"
               style={{ fontFamily: "var(--font-jetbrains-mono)" }}
             >
               Essential only
             </button>
             <button
               onClick={() => setShowSettings(true)}
-              className="text-[12px] text-white/40 hover:text-white/70 transition-colors underline underline-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30 px-1"
+              className="text-[12px] text-[#0A0A0B]/40 hover:text-[#0A0A0B]/70 transition-colors underline underline-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/20 px-1"
             >
               Settings
             </button>
@@ -121,7 +121,7 @@ export default function CookieBanner() {
       ) : (
         <div className="max-w-[1400px] mx-auto px-6 md:px-20 lg:px-32 py-6">
           <h2
-            className="text-[11px] tracking-[0.22em] text-[#D4B996]/60 uppercase mb-5"
+            className="text-[11px] tracking-[0.22em] text-[#0A0A0B]/40 uppercase mb-5"
             style={{ fontFamily: "var(--font-jetbrains-mono)" }}
           >
             Cookie preferences
@@ -132,15 +132,15 @@ export default function CookieBanner() {
                 type="checkbox"
                 checked
                 disabled
-                className="mt-0.5 accent-[#D4B996] opacity-40 cursor-not-allowed"
+                className="mt-0.5 accent-[#292929] opacity-40 cursor-not-allowed"
                 aria-label="Essential cookies (always active)"
               />
               <div>
-                <p className="text-[13px] font-medium text-[#F8FAFC]/80">
+                <p className="text-[13px] font-medium text-[#292929]">
                   Essential cookies{" "}
-                  <span className="text-[#F8FAFC]/40 font-normal">(always active)</span>
+                  <span className="text-[#0A0A0B]/40 font-normal">(always active)</span>
                 </p>
-                <p className="text-[12px] text-[#C2C7D0]/50 mt-0.5">Required for the site to function. Cannot be disabled.</p>
+                <p className="text-[12px] text-[#0A0A0B]/40 mt-0.5">Required for the site to function. Cannot be disabled.</p>
               </div>
             </label>
             <label className="flex items-start gap-4 cursor-pointer">
@@ -148,26 +148,26 @@ export default function CookieBanner() {
                 type="checkbox"
                 checked={analyticsChecked}
                 onChange={(e) => setAnalyticsChecked(e.target.checked)}
-                className="mt-0.5 accent-[#D4B996] cursor-pointer"
+                className="mt-0.5 accent-[#292929] cursor-pointer"
                 aria-label="Performance and analytics cookies"
               />
               <div>
-                <p className="text-[13px] font-medium text-[#F8FAFC]/80">Performance &amp; analytics</p>
-                <p className="text-[12px] text-[#C2C7D0]/50 mt-0.5">Anonymised data on how visitors use the site. Helps us improve the experience.</p>
+                <p className="text-[13px] font-medium text-[#292929]">Performance &amp; analytics</p>
+                <p className="text-[12px] text-[#0A0A0B]/40 mt-0.5">Anonymised data on how visitors use the site. Helps us improve the experience.</p>
               </div>
             </label>
           </div>
           <div className="flex items-center gap-3">
             <button
               onClick={handleSaveSettings}
-              className="px-5 py-2 bg-[#D4B996] text-[#08090A] text-[11px] tracking-widest font-medium hover:bg-[#D4B996]/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4B996]"
+              className="px-5 py-2 bg-[#292929] text-white text-[11px] tracking-widest font-medium hover:bg-[#292929]/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#292929]"
               style={{ fontFamily: "var(--font-jetbrains-mono)" }}
             >
               Save preferences
             </button>
             <button
               onClick={() => setShowSettings(false)}
-              className="text-[12px] text-white/40 hover:text-white/70 transition-colors underline underline-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30 px-1"
+              className="text-[12px] text-[#0A0A0B]/40 hover:text-[#0A0A0B]/70 transition-colors underline underline-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/20 px-1"
             >
               Back
             </button>

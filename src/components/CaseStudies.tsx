@@ -11,74 +11,122 @@ type Post = {
   mainImage?: { asset: { _id: string; url: string }; hotspot?: object };
 };
 
-const QUERY = `
-  *[_type == "post" && type != "Spotlight"] | order(publishedAt desc) [0..3] {
-    _id,
-    type,
-    title,
-    slug,
-    mainImage {
-      asset->{ _id, url },
-      hotspot
-    }
+const PERSPECTIVES_QUERY = `
+  *[_type == "post" && type == "Perspective"] | order(publishedAt desc) [0..2] {
+    _id, type, title, slug,
+    mainImage { asset->{ _id, url }, hotspot }
   }
 `;
 
+function ArticleCard({ post }: { post: Post }) {
+  return (
+    <Link
+      href={`/research-and-perspectives/${post.slug.current}`}
+      className="flex flex-col group cursor-pointer overflow-hidden"
+    >
+      <div className="relative aspect-[5/6] overflow-hidden bg-[#292929]/5">
+        {post.mainImage?.asset?.url ? (
+          <Image
+            src={urlFor(post.mainImage).width(1200).height(1600).url()}
+            alt={post.title}
+            fill
+            className="object-cover object-center"
+                  quality={90}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        ) : null}
+      </div>
+      <div className="flex flex-col gap-5 pt-8">
+        <span
+          className="text-[10px] uppercase tracking-widest text-[#292929]/80"
+          style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+        >
+          {post.type}
+        </span>
+        <h3 className="text-[28px] font-medium text-[#292929] tracking-[-0.02em] leading-snug max-w-[85%]">
+          {post.title}
+        </h3>
+      </div>
+    </Link>
+  );
+}
+
+function PillarSection({
+  label,
+  heading,
+  description,
+  href,
+  buttonLabel,
+}: {
+  label: string;
+  heading: string;
+  description: React.ReactNode;
+  href: string;
+  buttonLabel: string;
+}) {
+  return (
+    <div className="px-4 md:px-[51px] lg:px-[56px] pt-44 pb-72">
+      <div className="max-w-3xl flex flex-col gap-8 ml-[50%] mr-4 md:mr-[102px] lg:mr-[112px]">
+          {label && (
+            <span
+              className="block text-[12px] tracking-[0.22em] uppercase text-[#0A0A0B]"
+              style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+            >
+              {label}
+            </span>
+          )}
+          <h2 className="m-0 font-medium text-[#292929] tracking-[-0.02em] leading-[1.2] text-[24px] md:text-[24px] lg:text-[26px] xl:text-[35px] min-[1700px]:!text-[40px]" style={{ fontFamily: "var(--font-instrument)" }}>
+            {heading}
+          </h2>
+          <p className="m-0 text-[18px] 2xl:text-[22px] leading-[1.4] text-[#0A0A0B]">
+            {description}
+          </p>
+          <Link
+            href={href}
+            className="self-start inline-flex items-center h-9 px-8 rounded-full text-[11px] tracking-widest uppercase text-white bg-[#110F0F] hover:bg-[#2a2828] transition-all duration-300"
+            style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+          >
+            {buttonLabel}
+          </Link>
+      </div>
+    </div>
+  );
+}
+
 export default async function CaseStudies() {
-  const posts: Post[] = await client.fetch(QUERY);
+  const perspectivePosts = await client.fetch<Post[]>(PERSPECTIVES_QUERY);
 
   return (
-    <section id="case-studies" className="bg-[#08090A] py-16 md:py-32">
-      <div className="px-6 md:px-20 lg:px-32">
+    <section id="case-studies" className="bg-[#FAFAFA]">
 
-        <div className="flex items-end justify-between mb-10">
-          <h2 className="text-[26px] md:text-[36.8px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-tight">
-            Research &amp; Perspectives
-          </h2>
-          <Link href="/research-and-perspectives" className="group relative px-6 py-2.5 text-[10px] tracking-widest text-[#D4B996] border border-[#D4B996]/50 hover:border-[#D4B996] hover:bg-[#D4B996]/10 hover:translate-x-px transition-all duration-300" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
-            READ MORE
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          {posts.map((post) => (
-            <Link
-              key={post._id}
-              href={`/research-and-perspectives/${post.slug.current}`}
-              className="flex flex-col group cursor-pointer border border-white/[0.08] hover:border-white/[0.16] transition-colors duration-300 overflow-hidden"
+      {perspectivePosts.length > 0 && (
+        <div className="px-4 md:px-[51px] lg:px-[56px] pt-24 md:pt-36 pb-24 md:pb-36">
+          <div className="flex items-center justify-between mb-6">
+            <span
+              className="text-[12px] tracking-[0.22em] uppercase text-[#0A0A0B]"
+              style={{ fontFamily: "var(--font-jetbrains-mono)" }}
             >
-              {/* Top half: image */}
-              <div className="relative h-[200px] sm:h-[220px] overflow-hidden bg-white/[0.03]">
-                {post.mainImage?.asset?.url ? (
-                  <Image
-                    src={urlFor(post.mainImage).width(600).height(440).url()}
-                    alt={post.title}
-                    fill
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  />
-                ) : null}
-              </div>
-
-              {/* Bottom half: content */}
-              <div className="flex flex-col justify-between gap-4 p-6 bg-[#0E1012] flex-1">
-                <h3 className="text-[16px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-snug">
-                  {post.title}
-                </h3>
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-semibold uppercase tracking-widest text-[#C2C7D0]" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
-                    {post.type}
-                  </span>
-                  <svg className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[#D4B996]" width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path d="M2.5 7h9M7 2.5L11.5 7 7 11.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </div>
-              </div>
+              Perspectives
+            </span>
+            <Link
+              href="/research-and-perspectives"
+              className="shrink-0 inline-flex items-center h-9 px-8 rounded-full text-[11px] tracking-widest uppercase text-[#110F0F] border border-[#292929]/30 hover:border-[#292929]/60 transition-all duration-300"
+              style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+            >
+              Read more
             </Link>
-          ))}
+          </div>
+          <div className="flex overflow-x-auto -mr-4 sm:mr-0 gap-4 sm:gap-6 snap-x snap-mandatory sm:grid sm:grid-cols-3 sm:overflow-visible [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            {perspectivePosts.map((post) => (
+              <div key={post._id} className="flex-none w-[82vw] snap-start sm:w-auto">
+                <ArticleCard post={post} />
+              </div>
+            ))}
+          </div>
         </div>
+      )}
 
-      </div>
+
     </section>
   );
 }

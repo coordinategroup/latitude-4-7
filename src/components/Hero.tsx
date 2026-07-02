@@ -18,7 +18,7 @@ export default function Hero() {
     <section className="bg-[#FAFAFA] flex flex-col h-[100svh] md:h-auto md:block">
 
       {/* H1 left · subtext right */}
-      <div className="px-4 md:px-[51px] lg:px-[56px] pt-[120px] sm:pt-[200px] lg:pt-[300px] pb-10">
+      <div className="px-4 md:px-[51px] lg:px-[56px] pt-[152px] sm:pt-[232px] lg:pt-[332px] pb-10">
         <div className="flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
 
           <motion.h1

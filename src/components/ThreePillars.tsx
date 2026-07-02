@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 const pillars = [
   {
-    title: "Sovereign Independence",
+    title: "Souvren Independence",
     description:
       "Ensuring that national digital solutions remain independent, neutral, and fully under local control.",
     icon: (
@@ -251,7 +251,7 @@ export default function ThreePillars() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
           {pillars.map((pillar) => (
             <div
               key={pillar.title}

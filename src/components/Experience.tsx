@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 /* ─────────────────────────────────────────────────────────────────────────
    SVG 1: Strategic Alignment — Isometric pillar with dashed orbit ring
    ───────────────────────────────────────────────────────────────────────── */
-function PillarSVG({ hovered }: { hovered: boolean }) {
+export function PillarSVG({ hovered }: { hovered: boolean }) {
   // Ellipse perimeter ≈ 223px; dasharray period = 14px → animate by -14 per loop
   return (
     <svg viewBox="0 0 200 200" fill="none" aria-hidden="true" className="w-full h-full">
@@ -286,7 +286,7 @@ function Card({ fig, title, description, Illustration, className }: CardProps) {
 const cards: CardProps[] = [
   {
     fig: "FIG 0.1",
-    title: "Sovereign Architecture",
+    title: "Souvren Architecture",
     description:
       "Designing the digital ecosystem as one connected whole: shared foundations, interoperable services, and architecture that grows with the nation rather than constraining it.",
     Illustration: PillarSVG,

@@ -92,6 +92,24 @@ export default defineType({
       ],
     }),
 
+    // ── Secondary Image ────────────────────────────────────────────────────
+    defineField({
+      name: "secondaryImage",
+      title: "Article Cover Image",
+      type: "image",
+      description: "If uploaded, this replaces the main image as the cover on the article page.",
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative text",
+        },
+      ],
+    }),
+
     // ── Body ───────────────────────────────────────────────────────────────
     defineField({
       name: "body",
@@ -110,6 +128,12 @@ export default defineType({
           title: "Name",
           type: "string",
           validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+          name: "profileImage",
+          title: "Profile Image",
+          type: "image",
+          options: { hotspot: true },
         }),
         defineField({
           name: "jobTitle",

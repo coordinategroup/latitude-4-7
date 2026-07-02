@@ -153,12 +153,12 @@ export default function ValuesSection() {
         return (
           <div
             key={val.index}
-            className="border-t border-white/[0.08] cursor-default"
+            className="border-t border-black/[0.08] cursor-default"
             onMouseEnter={() => setOpen(i)}
           >
             <div className="flex items-center gap-10 py-7">
               <span
-                className="text-[11px] tracking-[0.22em] text-[#D4B996] uppercase w-8 shrink-0"
+                className="text-[11px] tracking-[0.22em] text-[#C48C59] uppercase w-8 shrink-0"
                 style={{ fontFamily: "var(--font-jetbrains-mono)" }}
               >
                 {val.index}
@@ -167,7 +167,8 @@ export default function ValuesSection() {
                 <h3
                   className="text-[36px] md:text-[44px] font-medium tracking-[-0.02em] leading-none"
                   style={{
-                    color: isOpen ? "#F8FAFC" : "rgba(248,250,252,0.2)",
+                    fontFamily: "var(--font-instrument)",
+                    color: isOpen ? "#292929" : "rgba(41,41,41,0.15)",
                     transition: "color 0.4s ease",
                   }}
                 >
@@ -184,14 +185,14 @@ export default function ValuesSection() {
                 transition: "max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
               }}
             >
-              <p className="text-[15px] text-[#C2C7D0] leading-[1.85] pb-8 pl-[72px] max-w-2xl">
+              <p className="text-[16px] text-[#0A0A0B]/55 leading-[1.6] pb-8 pl-[72px] max-w-2xl">
                 {val.description}
               </p>
             </div>
           </div>
         );
       })}
-      <div className="border-t border-white/[0.08]" />
+      <div className="border-t border-black/[0.08]" />
     </div>
   );
 }

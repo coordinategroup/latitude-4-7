@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Inter, DM_Sans, JetBrains_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter, DM_Sans, JetBrains_Mono, Cormorant_Garamond, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import CookieBanner from "@/components/CookieBanner";
 
@@ -15,19 +15,36 @@ const dmSans = DM_Sans({
   weight: ["300", "500", "600", "700"],
 });
 
+const instrumentSans = Instrument_Sans({
+  variable: "--font-instrument",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+});
+
+const cormorantGaramond = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+});
+
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
   weight: ["400", "500"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
-  title: "Latitude 4.7 | Digital Independence",
+  title: "Souvren | Digital Consultancy",
   description:
     "Independent technical governance and oversight to secure the Seychelles' digital infrastructure.",
   robots: "index, follow",
   openGraph: {
-    title: "Latitude 4.7 | Digital Independence",
+    title: "Souvren | Digital Consultancy",
     description:
       "Technical oversight and governance for the Seychelles' digital mission.",
     type: "website",
@@ -42,7 +59,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${dmSans.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${dmSans.variable} ${jetbrainsMono.variable} ${cormorantGaramond.variable} ${instrumentSans.variable} font-sans antialiased`}>
         {children}
         <CookieBanner />
       </body>

@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,7 +10,7 @@ import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 
 export const metadata: Metadata = {
-  title: "Sustainability | Latitude Four Seven",
+  title: "Sustainability | Souvren",
   description:
     "Making conscious decisions today so that the children of tomorrow inherit a digital world built with care.",
 };
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
 const pillars = [
   {
     index: "01",
-    label: "Sovereign Maturity",
+    label: "Souvren Maturity",
     body: "Ensuring data stays locally resident to protect digital autonomy. Sovereignty is not a destination: it is a discipline maintained through every architectural decision.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -63,236 +64,161 @@ const ARTICLE_QUERY = `
 `;
 
 export default async function SustainabilityPage() {
+  notFound();
   const article = await client.fetch(ARTICLE_QUERY);
   return (
-    <>
+    <div className="mx-auto w-full max-w-[1932px]">
       <Header />
       <PageFadeIn>
-        <main className="bg-[#08090A] min-h-screen">
+        <main className="bg-[#FAFAFA] min-h-screen">
 
           {/* ── Hero ───────────────────────────────────────────────────── */}
-          <section className="px-6 md:px-20 lg:px-32 pt-52 pb-24 border-b border-white/[0.06]">
-            <div className="max-w-[1400px] mx-auto">
-              <div className="flex flex-col gap-8 max-w-4xl">
-                <span
-                  className="text-[11px] tracking-[0.22em] text-[#A28E73]/60 uppercase block"
-                  style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-                >
-                  About Us
-                </span>
-                <h1 className="text-[26px] md:text-[42px] lg:text-[52px] font-medium text-[#F8FAFC] tracking-[-0.03em] leading-[1.04]">
-                  Conscious digital leadership for the generations ahead
-                </h1>
-                <p className="text-[18px] md:text-[22px] text-[#C2C7D0] leading-[1.6] max-w-2xl">
-                  Making conscious decisions today so that the children of tomorrow inherit a digital world built with care.
-                </p>
-              </div>
+          <section className="px-4 md:px-[51px] lg:px-[56px] pt-8">
 
-              {/* Cover image */}
-              <div className="mt-16 relative w-full aspect-[16/7] overflow-hidden">
-                <Image
-                  src="/images/Sustainability/sustainability_image.jpg"
-                  alt="Sustainability"
-                  fill
-                  className="object-cover object-center"
-                  priority
-                />
-              </div>
+            <div className="h-[120px] sm:h-[200px] lg:h-[300px]" />
+
+            <div className="flex flex-col gap-6 max-w-4xl pb-16">
+              <h1 className="text-[28px] md:text-[32px] lg:text-[48px] font-medium text-[#292929] tracking-[-0.02em] leading-[1.3]" style={{ fontFamily: "var(--font-instrument)" }}>
+                Conscious digital leadership for the generations ahead
+              </h1>
+              <p className="text-[18px] lg:text-[22px] text-[#0A0A0B]/55 leading-[1.4] max-w-3xl">
+                Making conscious decisions today so that the children of tomorrow inherit a digital world built with care.
+              </p>
             </div>
           </section>
+
+          {/* ── Hero image ─────────────────────────────────────────────── */}
+          <div className="px-4 md:px-[51px] lg:px-[56px] pb-28">
+            <div className="relative w-full aspect-[16/7] overflow-hidden">
+              <Image
+                src="/images/Sustainability/sustainability_image.jpg"
+                alt="Sustainability"
+                fill
+                className="object-cover object-center"
+                priority
+              />
+            </div>
+          </div>
 
           {/* ── The Philosophy ──────────────────────────────────────────── */}
-          <section className="px-6 md:px-20 lg:px-32 py-24 border-b border-white/[0.06]">
-            <div className="max-w-[1400px] mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-[28%_1fr] gap-12 md:gap-20 items-start">
-                <div className="md:sticky md:top-32">
-                  <span
-                    className="text-[11px] tracking-[0.22em] text-[#A28E73]/60 uppercase block mb-4"
-                    style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-                  >
-                    The Philosophy
-                  </span>
-                  <h2 className="text-[26px] md:text-[30px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.2]">
-                    Sustainability as a product of good engineering
-                  </h2>
-                </div>
-                <div className="flex flex-col gap-6">
-                  <p className="text-[18px] md:text-[20px] font-medium text-[#F8FAFC] tracking-[-0.01em] leading-[1.6]">
-                    Sustainability is a byproduct of good engineering.
-                  </p>
-                  <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                    We build lean, intentional systems that avoid the waste of traditional enterprise software, reducing both energy demand and operational costs. The most sustainable digital infrastructure is the infrastructure that was designed correctly from the outset: modular, minimal, and built to last beyond the contract that funded it.
-                  </p>
-                  <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                    For small island states like the Seychelles, this is not an abstract principle. Every unnecessary dependency, every oversized platform, and every piece of technical debt has a direct cost: in budget, in energy, and in the political capital required to undo it.
-                  </p>
-                </div>
+          <div className="px-4 md:px-[51px] lg:px-[56px] pt-24 pb-56">
+            <div className="max-w-3xl flex flex-col gap-12 ml-[50%] mr-4 md:mr-[102px] lg:mr-[112px]">
+              <h2 className="m-0 font-medium text-[#292929] tracking-[-0.02em] leading-snug lg:leading-[1.2] text-[24px] md:text-[24px] lg:text-[26px] xl:text-[35px] min-[1700px]:!text-[40px]" style={{ fontFamily: "var(--font-instrument)" }}>
+                Sustainability is a byproduct of good engineering
+              </h2>
+              <div className="flex flex-col gap-6 text-[16px] md:text-[18px] min-[1700px]:!text-[21px] leading-[1.4] text-[#0A0A0B]/55">
+                <p className="m-0">We build lean, intentional systems that avoid the waste of traditional enterprise software, reducing both energy demand and operational costs. The most sustainable digital infrastructure is the infrastructure that was designed correctly from the outset: modular, minimal, and built to last beyond the contract that funded it.</p>
+                <p className="m-0">For small island states like the Seychelles, this is not an abstract principle. Every unnecessary dependency, every oversized platform, and every piece of technical debt has a direct cost: in budget, in energy, and in the political capital required to undo it.</p>
               </div>
             </div>
-          </section>
+          </div>
 
           {/* ── Featured Article ────────────────────────────────────────── */}
           {article && (
-            <section className="px-6 md:px-20 lg:px-32 py-24 border-b border-white/[0.06]">
-              <div className="max-w-[1400px] mx-auto">
-                <span
-                  className="text-[11px] tracking-[0.22em] text-[#A28E73]/60 uppercase block mb-10"
-                  style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-                >
+            <div className="px-4 md:px-[51px] lg:px-[56px] pb-28">
+              <div className="flex items-center justify-between mb-6">
+                <span className="text-[12px] tracking-[0.22em] uppercase text-[#0A0A0B]" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
                   Research &amp; Perspectives
                 </span>
-                <Link
-                  href={`/research-and-perspectives/${article.slug.current}`}
-                  className="group flex flex-col md:flex-row gap-0 border border-white/[0.08] hover:border-white/[0.16] transition-colors duration-300 overflow-hidden"
-                >
-                  {/* Image */}
-                  <div className="relative w-full md:w-[40%] h-[240px] md:h-auto overflow-hidden bg-white/[0.03] shrink-0">
-                    {article.mainImage?.asset?.url ? (
-                      <Image
-                        src={urlFor(article.mainImage).width(800).url()}
-                        alt={article.mainImage.alt ?? article.title}
-                        fill
-                        className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                      />
-                    ) : (
-                      <div className="absolute inset-0 bg-white/[0.04]" />
-                    )}
-                  </div>
-                  {/* Content */}
-                  <div className="flex flex-col justify-between gap-6 p-8 md:p-10 bg-[#0E1012] flex-1">
-                    <div className="flex flex-col gap-4">
-                      {article.type && (
-                        <span
-                          className="text-[11px] tracking-[0.22em] text-[#A28E73] uppercase"
-                          style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-                        >
-                          {article.type}
-                        </span>
-                      )}
-                      <h3 className="text-[22px] md:text-[26px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-snug">
-                        {article.title}
-                      </h3>
-                    </div>
-                    <div className="flex items-center gap-2 text-[#A28E73]">
-                      <span className="text-[11px] tracking-widest uppercase" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
-                        Read
-                      </span>
-                      <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-                        <path d="M2.5 7h9M7 2.5L11.5 7 7 11.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
-                  </div>
-                </Link>
               </div>
-            </section>
+              <Link
+                href={`/research-and-perspectives/${article.slug.current}`}
+                className="group relative flex overflow-hidden aspect-[21/7]"
+              >
+                {article.mainImage?.asset?.url && (
+                  <Image
+                    src={urlFor(article.mainImage).width(1600).url()}
+                    alt={article.mainImage.alt ?? article.title}
+                    fill
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  />
+                )}
+                <div className="absolute inset-0 bg-[#0A0A0B]/40" />
+                <div className="relative z-10 flex flex-col justify-between p-8 md:p-12 w-full">
+                  <span className="text-[10px] uppercase tracking-widest text-white" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>{article.type}</span>
+                  <div className="flex flex-col gap-4">
+                    <h3 className="text-[24px] md:text-[32px] font-medium text-white tracking-[-0.02em] leading-snug max-w-2xl" style={{ fontFamily: "var(--font-instrument)" }}>{article.title}</h3>
+                    <span className="inline-flex items-center gap-2 text-[11px] tracking-widest uppercase text-white/70" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
+                      Read
+                      <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M7 2.5L11.5 7 7 11.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            </div>
           )}
 
-          {/* ── The Three Pillars ───────────────────────────────────────── */}
-          <section className="px-6 md:px-20 lg:px-32 py-24 border-b border-white/[0.06]">
-            <div className="max-w-[1400px] mx-auto">
-              <div className="flex items-end justify-between pb-12 border-b border-white/[0.08] mb-12">
-                <div>
-                  <span
-                    className="text-[11px] tracking-[0.22em] text-[#A28E73]/60 uppercase block mb-4"
-                    style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-                  >
-                    Three Pillars
-                  </span>
-                  <h2 className="text-[26px] md:text-[34px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.15]">
-                    The foundations of sustainable digital governance
-                  </h2>
+          {/* ── Three Pillars ──────────────────────────────────────────── */}
+          <section className="px-4 md:px-[51px] lg:px-[56px] pb-28">
+            <div className="flex flex-col divide-y divide-black/[0.08]">
+
+              {/* Row 1: image left, text right */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-0 py-16 md:py-24">
+                <div className="relative aspect-[4/3] bg-[#E8E4DE] overflow-hidden md:pr-44">
+                  <div className="absolute inset-0 bg-[#D8D3CB]" />
+                </div>
+                <div className="flex flex-col gap-8 pt-10 md:pt-0 md:pl-44 justify-center max-w-[800px]">
+                  <span className="text-[11px] tracking-[0.22em] uppercase text-[#C48C59]" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>{pillars[0].index}</span>
+                  <h3 className="m-0 font-medium text-[#292929] tracking-[-0.02em] leading-[1.2] text-[24px] md:text-[24px] lg:text-[26px] xl:text-[35px] min-[1700px]:!text-[40px]" style={{ fontFamily: "var(--font-instrument)" }}>
+                    {pillars[0].label}
+                  </h3>
+                  <p className="text-[16px] md:text-[18px] min-[1700px]:!text-[21px] leading-[1.4] text-[#0A0A0B]/55 m-0">{pillars[0].body}</p>
                 </div>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06]">
-                {pillars.map((p) => (
-                  <div
-                    key={p.index}
-                    className="group relative flex flex-col gap-6 p-10 bg-[#08090A] hover:bg-[#0D0E12] transition-colors duration-300"
-                  >
-                    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-[#A28E73]/50 via-[#A28E73]/20 to-transparent" />
-                    <div className="flex items-start justify-between">
-                      {p.icon}
-                      <span
-                        className="text-[11px] tracking-[0.22em] text-[#A28E73] uppercase"
-                        style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-                      >
-                        {p.index}
-                      </span>
-                    </div>
-                    <h3 className="text-[19px] font-medium text-[#F8FAFC] tracking-[-0.01em] leading-snug">
-                      {p.label}
-                    </h3>
-                    <p className="text-[14px] text-[#C2C7D0] leading-[1.85]">
-                      {p.body}
-                    </p>
-                  </div>
-                ))}
+
+              {/* Row 2: text left, image right */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-0 py-16 md:py-24">
+                <div className="flex flex-col gap-8 pb-10 md:pb-0 md:pr-44 justify-center order-2 md:order-1 max-w-[800px]">
+                  <span className="text-[11px] tracking-[0.22em] uppercase text-[#C48C59]" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>{pillars[1].index}</span>
+                  <h3 className="m-0 font-medium text-[#292929] tracking-[-0.02em] leading-[1.2] text-[24px] md:text-[24px] lg:text-[26px] xl:text-[35px] min-[1700px]:!text-[40px]" style={{ fontFamily: "var(--font-instrument)" }}>
+                    {pillars[1].label}
+                  </h3>
+                  <p className="text-[16px] md:text-[18px] min-[1700px]:!text-[21px] leading-[1.4] text-[#0A0A0B]/55 m-0">{pillars[1].body}</p>
+                </div>
+                <div className="relative aspect-[4/3] bg-[#E8E4DE] overflow-hidden order-1 md:order-2 md:pl-44">
+                  <div className="absolute inset-0 bg-[#CCC7BF]" />
+                </div>
               </div>
+
+              {/* Row 3: image left, text right */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-0 py-16 md:py-24">
+                <div className="relative aspect-[4/3] bg-[#E8E4DE] overflow-hidden md:pr-44">
+                  <div className="absolute inset-0 bg-[#D4CEC6]" />
+                </div>
+                <div className="flex flex-col gap-8 pt-10 md:pt-0 md:pl-44 justify-center max-w-[800px]">
+                  <span className="text-[11px] tracking-[0.22em] uppercase text-[#C48C59]" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>{pillars[2].index}</span>
+                  <h3 className="m-0 font-medium text-[#292929] tracking-[-0.02em] leading-[1.2] text-[24px] md:text-[24px] lg:text-[26px] xl:text-[35px] min-[1700px]:!text-[40px]" style={{ fontFamily: "var(--font-instrument)" }}>
+                    {pillars[2].label}
+                  </h3>
+                  <p className="text-[16px] md:text-[18px] min-[1700px]:!text-[21px] leading-[1.4] text-[#0A0A0B]/55 m-0">{pillars[2].body}</p>
+                </div>
+              </div>
+
             </div>
           </section>
 
-          {/* ── The Entity ──────────────────────────────────────────────── */}
-          <section className="px-6 md:px-20 lg:px-32 py-24 border-b border-white/[0.06]">
-            <div className="max-w-[1400px] mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-[28%_1fr] gap-12 md:gap-20 items-start">
-                <div className="md:sticky md:top-32">
-                  <span
-                    className="text-[11px] tracking-[0.22em] text-[#A28E73]/60 uppercase block mb-4"
-                    style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-                  >
-                    The Entity
-                  </span>
-                  <h2 className="text-[26px] md:text-[30px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.2]">
-                    Professional foundations for sovereign work
-                  </h2>
-                </div>
-                <div className="relative bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col gap-6">
-                  <p className="text-[18px] md:text-[20px] font-medium text-[#F8FAFC] tracking-[-0.01em] leading-[1.6]">
-                    Latitude 4.7 is a specialist arm of The Coordinate Group.
-                  </p>
-                  <div className="h-px bg-white/[0.06]" />
-                  <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                    The Coordinate Group is the intended registered entity for our operations once active. This structure ensures that our strategic work is backed by a professional foundation of international compliance and risk management.
-                  </p>
-                  <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                    Governments and institutions we work with can engage with confidence: the advice is specialist, the structure is sound, and the accountability is clear.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
 
-          {/* ── CTA ────────────────────────────────────────────────────── */}
-          <section className="px-6 md:px-20 lg:px-32 py-24">
-            <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-[28%_1fr] gap-12 md:gap-20 items-start">
-              <div>
-                <span
-                  className="text-[11px] tracking-[0.22em] text-[#A28E73]/60 uppercase block mb-4"
-                  style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-                >
-                  Engage
-                </span>
-                <h2 className="text-[26px] md:text-[30px] font-medium text-[#F8FAFC] tracking-[-0.02em] leading-[1.2]">
-                  Build something that lasts
-                </h2>
-              </div>
-              <div className="bg-white/[0.03] border border-white/[0.08] p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-                <p className="text-[16px] text-[#C2C7D0] leading-[1.9]">
-                  If your institution is building digital infrastructure that needs to outlast any single administration, we would like to talk.
-                </p>
-                <SecureBriefingButton
-                  className="shrink-0 px-8 py-3 text-[11px] tracking-widest text-[#A28E73] border border-[#A28E73]/50 hover:border-[#A28E73] hover:bg-[#A28E73]/10 transition-all duration-300 whitespace-nowrap"
-                  style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-                >
-                  INITIATE SECURE BRIEFING
-                </SecureBriefingButton>
-              </div>
+          {/* ── Closer ─────────────────────────────────────────────────── */}
+          <section className="px-4 md:px-[51px] lg:px-[56px] py-32">
+            <div className="flex flex-col items-center text-center gap-8 max-w-3xl mx-auto">
+              <h2 className="m-0 font-medium text-[#292929] tracking-[-0.02em] leading-[1.2] text-[24px] md:text-[24px] lg:text-[26px] xl:text-[35px] min-[1700px]:!text-[40px]" style={{ fontFamily: "var(--font-instrument)" }}>
+                Build something that lasts
+              </h2>
+              <p className="text-[16px] md:text-[18px] text-[#0A0A0B]/55 leading-[1.6]">
+                If your institution is building digital infrastructure that needs to outlast any single administration, we would like to talk.
+              </p>
+              <SecureBriefingButton
+                className="inline-flex items-center h-9 px-8 rounded-full text-[11px] tracking-widest uppercase text-[#110F0F] border border-[#292929]/30 hover:border-[#292929]/60 transition-all duration-300"
+                style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+              >
+                Contact
+              </SecureBriefingButton>
             </div>
           </section>
 
         </main>
       </PageFadeIn>
       <Footer />
-    </>
+    </div>
   );
 }

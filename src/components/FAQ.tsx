@@ -5,7 +5,7 @@ import { useState } from "react";
 const faqs = [
   {
     q: "How quickly can you start?",
-    a: "Significantly faster than traditional executive recruitment. Because I operate as a B2B partner via Latitude Four Seven, I can bypass the typical 4-6 month hiring cycle. My availability for on-island, in-person work depends on the project phases of my current client portfolio, but I can typically be on the ground in Victoria within less than a week.",
+    a: "Significantly faster than traditional executive recruitment. Because I operate as a B2B partner via Souvren, I can bypass the typical 4-6 month hiring cycle. My availability for on-island, in-person work depends on the project phases of my current client portfolio, but I can typically be on the ground in Victoria within less than a week.",
   },
   {
     q: "Are you available for interim roles?",
@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "How do you handle the notice period?",
-    a: "My consultancy structure, Latitude Four Seven, is designed for immediate deployment. I manage my own transition logistics, ensuring there is zero administrative lag for the Seychelles Government or banking partners.",
+    a: "My consultancy structure, Souvren, is designed for immediate deployment. I manage my own transition logistics, ensuring there is zero administrative lag for the Seychelles Government or banking partners.",
   },
 ];
 

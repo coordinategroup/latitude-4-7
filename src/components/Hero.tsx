@@ -15,21 +15,7 @@ const fadeUp = {
 
 export default function Hero() {
   return (
-    <section className="bg-[#FAFAFA] flex flex-col h-dvh md:h-auto md:block">
-
-      {/* Label */}
-      <div className="px-4 md:px-[51px] lg:px-[56px] pt-8 pb-6">
-        <motion.span
-          className="block text-[11px] tracking-[0.22em] text-[#0A0A0B]/40 uppercase"
-          style={{ fontFamily: "var(--font-jetbrains-mono)" }}
-          variants={fadeUp}
-          custom={0}
-          initial="hidden"
-          animate="visible"
-        >
-          Digital Governance · Seychelles
-        </motion.span>
-      </div>
+    <section className="bg-[#FAFAFA] flex flex-col h-[100svh] md:h-auto md:block">
 
       {/* H1 left · subtext right */}
       <div className="px-4 md:px-[51px] lg:px-[56px] pt-[120px] sm:pt-[200px] lg:pt-[300px] pb-10">

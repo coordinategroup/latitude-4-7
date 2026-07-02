@@ -8,10 +8,9 @@ export default function CookieSettingsButton() {
   return (
     <button
       onClick={reOpenCookieSettings}
-      className="text-[13px] tracking-widest text-black/60 hover:text-black transition-colors duration-200 uppercase cursor-pointer bg-transparent border-none p-0"
-      style={monoStyle}
+      className="text-[13px] text-[#0A0A0B]/60 hover:text-[#0A0A0B] transition-colors duration-200 cursor-pointer bg-transparent border-none p-0"
     >
-      Cookie Settings
+      Cookie settings
     </button>
   );
 }

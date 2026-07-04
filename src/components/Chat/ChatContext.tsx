@@ -41,6 +41,7 @@ export function ChatProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isStreaming, setIsStreaming] = useState(false);
   const isStreamingRef = useRef(false);
+  const abortControllerRef = useRef<AbortController | null>(null);
 
   const sendMessage = useCallback(
     async (text: string) => {
@@ -70,10 +71,14 @@ export function ChatProvider({ children }: { children: ReactNode }) {
       isStreamingRef.current = true;
 
       try {
+        const controller = new AbortController();
+        abortControllerRef.current = controller;
+
         const res = await fetch("/api/chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ messages: history }),
+          signal: controller.signal,
         });
 
         if (!res.ok || !res.body) throw new Error("Request failed");
@@ -99,19 +104,25 @@ export function ChatProvider({ children }: { children: ReactNode }) {
             m.id === assistantId ? { ...m, isStreaming: false } : m
           )
         );
-      } catch {
-        setMessages((prev) =>
-          prev.map((m) =>
-            m.id === assistantId
-              ? {
-                  ...m,
-                  content: "Something went wrong. Please try again.",
-                  isStreaming: false,
-                }
-              : m
-          )
-        );
+      } catch (err) {
+        if (err instanceof Error && err.name === "AbortError") {
+          // User closed the widget — silently clean up the streaming message
+          setMessages((prev) => prev.filter((m) => m.id !== assistantId));
+        } else {
+          setMessages((prev) =>
+            prev.map((m) =>
+              m.id === assistantId
+                ? {
+                    ...m,
+                    content: "Something went wrong. Please try again.",
+                    isStreaming: false,
+                  }
+                : m
+            )
+          );
+        }
       } finally {
+        abortControllerRef.current = null;
         setIsStreaming(false);
         isStreamingRef.current = false;
       }
@@ -126,7 +137,10 @@ export function ChatProvider({ children }: { children: ReactNode }) {
         isOpen,
         isStreaming,
         open: () => setIsOpen(true),
-        close: () => setIsOpen(false),
+        close: () => {
+          abortControllerRef.current?.abort();
+          setIsOpen(false);
+        },
         sendMessage,
       }}
     >

@@ -6,8 +6,17 @@ import type { Message } from "./ChatContext";
 export default function ChatMessages({ messages }: { messages: Message[] }) {
   const bottomRef = useRef<HTMLDivElement>(null);
 
+  const prevCountRef = useRef(messages.length);
+
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (messages.length !== prevCountRef.current) {
+      // New message added — smooth scroll
+      prevCountRef.current = messages.length;
+      bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Streaming update — instant scroll (no animation jitter)
+      bottomRef.current?.scrollIntoView({ behavior: "instant" });
+    }
   }, [messages]);
 
   return (

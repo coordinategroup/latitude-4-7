@@ -35,6 +35,21 @@ export async function POST(req: Request) {
     messages: Anthropic.MessageParam[];
   };
 
+  if (!Array.isArray(messages) || messages.length === 0) {
+    return new Response("Invalid request", { status: 400 });
+  }
+  const safeMessages = messages
+    .slice(-50)
+    .filter(
+      (m) =>
+        m &&
+        (m.role === "user" || m.role === "assistant") &&
+        typeof m.content === "string"
+    ) as Anthropic.MessageParam[];
+  if (safeMessages.length === 0) {
+    return new Response("Invalid request", { status: 400 });
+  }
+
   const encoder = new TextEncoder();
 
   const stream = new ReadableStream({
@@ -49,7 +64,7 @@ export async function POST(req: Request) {
           max_tokens: 1024,
           system: SYSTEM_PROMPT,
           tools: [CAPTURE_LEAD_TOOL],
-          messages,
+          messages: safeMessages,
         });
 
         for await (const event of response) {

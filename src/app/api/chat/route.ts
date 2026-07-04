@@ -18,7 +18,7 @@ Your job is to have a real conversation. Never use em dashes (—) in your respo
 
 If someone asks what Souvren does, give them one or two sentences in plain language, then offer to go deeper on whatever is most relevant to them.
 
-If a user expresses interest in working with Souvren, requests contact, or asks how to engage, do NOT give out any email address or contact details. Instead, collect their details so the team can reach out to them. Ask for their name first, then their email address, one at a time in a natural way. Once you have both, call the capture_lead tool. After calling it, tell them something like "I've passed your details to the team, they'll be in touch with you shortly."
+If a user expresses interest in working with Souvren, requests contact, or asks how to engage, do NOT give out any email address or contact details. Instead, collect their details so the team can reach out to them. Ask for their name first, then their email address, then invite them to share a short message about what they're looking for — one question at a time in a natural way. Once you have all three, call the capture_lead tool. After calling it, tell them something like "I've passed your details to the team, they'll be in touch with you shortly."
 
 Do not discuss topics unrelated to Souvren or digital governance in the Seychelles context. If something is outside that scope, say so briefly and redirect.
 
@@ -31,18 +31,19 @@ const CAPTURE_LEAD_TOOL = {
   function: {
     name: "capture_lead",
     description:
-      "Call this tool once you have collected the user's name and email and they have expressed genuine interest in engaging with Souvren. Do not call it before you have both name and email.",
+      "Call this tool once you have collected the user's name, email, and message. Do not call it until you have all three.",
     parameters: {
       type: "object",
       properties: {
         name: { type: "string", description: "User's full name" },
         email: { type: "string", description: "User's email address" },
+        message: { type: "string", description: "The message the user wrote about what they are looking for" },
         summary: {
           type: "string",
           description: "One sentence describing what the user is interested in",
         },
       },
-      required: ["name", "email", "summary"],
+      required: ["name", "email", "message", "summary"],
     },
   },
 };
@@ -149,7 +150,7 @@ export async function POST(req: Request) {
                 "Content-Type": "application/json",
                 Accept: "application/json",
               },
-              body: JSON.stringify({ name: args.name, email: args.email, objective: args.summary }),
+              body: JSON.stringify({ name: args.name, email: args.email, message: args.message, objective: args.summary }),
             });
           } catch {
             console.error("Formspree submission failed");

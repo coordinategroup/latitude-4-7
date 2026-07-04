@@ -86,57 +86,78 @@ export default function ChatWidget() {
       </AnimatePresence>
 
       {/* Trigger button */}
-      <motion.button
-        onClick={isOpen ? close : open}
-        aria-label={isOpen ? "Close Vela" : "Open Vela"}
-        className="w-12 h-12 rounded-full bg-[#110F0F] text-white flex items-center justify-center shadow-lg hover:bg-[#2a2828] transition-colors duration-200"
+      <motion.div
+        className="relative"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1, duration: 0.4, type: "spring", stiffness: 200 }}
       >
-        <AnimatePresence mode="wait">
-          {isOpen ? (
-            <motion.svg
-              key="close"
-              initial={{ rotate: -90, opacity: 0 }}
-              animate={{ rotate: 0, opacity: 1 }}
-              exit={{ rotate: 90, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-            >
-              <path
-                d="M3 3l10 10M13 3L3 13"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-            </motion.svg>
-          ) : (
-            <motion.svg
-              key="chat"
-              initial={{ rotate: 90, opacity: 0 }}
-              animate={{ rotate: 0, opacity: 1 }}
-              exit={{ rotate: -90, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
-              <path
-                d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </motion.svg>
-          )}
-        </AnimatePresence>
-      </motion.button>
+        {/* Pulse rings — only when closed */}
+        {!isOpen && (
+          <>
+            <span className="absolute inset-0 rounded-full bg-[#C48C59]/20 animate-ping" style={{ animationDuration: "2.4s" }} />
+            <span className="absolute inset-[-6px] rounded-full bg-[#C48C59]/10 animate-ping" style={{ animationDuration: "2.4s", animationDelay: "0.4s" }} />
+          </>
+        )}
+        <button
+          onClick={isOpen ? close : open}
+          aria-label={isOpen ? "Close Vela" : "Open Vela"}
+          className="relative w-12 h-12 rounded-full bg-[#110F0F] text-white flex items-center justify-center shadow-lg hover:bg-[#1e1c1c] transition-colors duration-200"
+        >
+          <AnimatePresence mode="wait">
+            {isOpen ? (
+              <motion.svg
+                key="close"
+                initial={{ rotate: -90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: 90, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+              >
+                <path
+                  d="M3 3l10 10M13 3L3 13"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
+              </motion.svg>
+            ) : (
+              <motion.svg
+                key="sparkle"
+                initial={{ rotate: 90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: -90, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                {/* Large central star */}
+                <path
+                  d="M12 2 L13.5 9.5 L21 12 L13.5 14.5 L12 22 L10.5 14.5 L3 12 L10.5 9.5 Z"
+                  fill="#C48C59"
+                />
+                {/* Small top-right sparkle */}
+                <path
+                  d="M19 2 L19.7 4.3 L22 5 L19.7 5.7 L19 8 L18.3 5.7 L16 5 L18.3 4.3 Z"
+                  fill="white"
+                  opacity="0.7"
+                />
+                {/* Small bottom-left sparkle */}
+                <path
+                  d="M5 16 L5.5 17.5 L7 18 L5.5 18.5 L5 20 L4.5 18.5 L3 18 L4.5 17.5 Z"
+                  fill="white"
+                  opacity="0.5"
+                />
+              </motion.svg>
+            )}
+          </AnimatePresence>
+        </button>
+      </motion.div>
     </div>
   );
 }

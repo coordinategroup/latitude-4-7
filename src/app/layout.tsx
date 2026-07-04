@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Inter, DM_Sans, JetBrains_Mono, Cormorant_Garamond, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import CookieBanner from "@/components/CookieBanner";
+import { ChatProvider } from "@/components/Chat/ChatContext";
+import ChatWidget from "@/components/Chat/ChatWidget";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -59,9 +61,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${dmSans.variable} ${jetbrainsMono.variable} ${cormorantGaramond.variable} ${instrumentSans.variable} font-sans antialiased`}>
-        {children}
-        <CookieBanner />
+      <body
+        className={`${inter.variable} ${dmSans.variable} ${jetbrainsMono.variable} ${cormorantGaramond.variable} ${instrumentSans.variable} font-sans antialiased`}
+      >
+        <ChatProvider>
+          {children}
+          <CookieBanner />
+          <ChatWidget />
+        </ChatProvider>
       </body>
     </html>
   );

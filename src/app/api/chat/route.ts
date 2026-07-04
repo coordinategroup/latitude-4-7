@@ -1,8 +1,4 @@
-import { GoogleGenerativeAI, SchemaType, type Tool } from "@google/generative-ai";
-
 export const runtime = "edge";
-
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GENERATIVE_AI_API_KEY!);
 
 const SYSTEM_PROMPT = `You are Vela, the Souvren assistant. Souvren is a strategic advisory consultancy helping the Seychelles build digital independence through three frameworks: Souvren Architecture (sovereign digital ecosystems), Experience Design (human-centred services), and Digital Leadership (local capability building).
 
@@ -12,26 +8,25 @@ If a user expresses interest in working with Souvren, requests contact, or asks 
 
 Do not discuss topics unrelated to Souvren or digital governance in the Seychelles context.`;
 
-const CAPTURE_LEAD_TOOL: Tool = {
-  functionDeclarations: [
-    {
-      name: "capture_lead",
-      description:
-        "Call this tool once you have collected the user's name and email and they have expressed genuine interest in engaging with Souvren. Do not call it before you have both name and email.",
-      parameters: {
-        type: SchemaType.OBJECT,
-        properties: {
-          name: { type: SchemaType.STRING, description: "User's full name" },
-          email: { type: SchemaType.STRING, description: "User's email address" },
-          summary: {
-            type: SchemaType.STRING,
-            description: "One sentence describing what the user is interested in",
-          },
+const CAPTURE_LEAD_TOOL = {
+  type: "function" as const,
+  function: {
+    name: "capture_lead",
+    description:
+      "Call this tool once you have collected the user's name and email and they have expressed genuine interest in engaging with Souvren. Do not call it before you have both name and email.",
+    parameters: {
+      type: "object",
+      properties: {
+        name: { type: "string", description: "User's full name" },
+        email: { type: "string", description: "User's email address" },
+        summary: {
+          type: "string",
+          description: "One sentence describing what the user is interested in",
         },
-        required: ["name", "email", "summary"],
       },
+      required: ["name", "email", "summary"],
     },
-  ],
+  },
 };
 
 type SimpleMessage = { role: "user" | "assistant"; content: string };
@@ -56,49 +51,79 @@ export async function POST(req: Request) {
     return new Response("Invalid request", { status: 400 });
   }
 
-  // Gemini: history = all but last message; current = last message
-  const lastMsg = safeMessages[safeMessages.length - 1];
-  const historyMsgs = safeMessages.slice(0, -1);
+  const mistralMessages = [
+    { role: "system", content: SYSTEM_PROMPT },
+    ...safeMessages.map((m) => ({ role: m.role, content: m.content })),
+  ];
 
-  const history = historyMsgs.map((m) => ({
-    role: m.role === "assistant" ? "model" : "user",
-    parts: [{ text: m.content }],
-  }));
-
-  const model = genAI.getGenerativeModel({
-    model: "gemini-2.0-flash",
-    systemInstruction: SYSTEM_PROMPT,
-    tools: [CAPTURE_LEAD_TOOL],
+  const response = await fetch("https://api.mistral.ai/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.MISTRAL_API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: "mistral-small-latest",
+      messages: mistralMessages,
+      tools: [CAPTURE_LEAD_TOOL],
+      tool_choice: "auto",
+      stream: true,
+    }),
   });
 
-  const chat = model.startChat({ history });
+  if (!response.ok || !response.body) {
+    console.error("Mistral API error:", response.status, await response.text());
+    return new Response("Something went wrong. Please try again.", { status: 500 });
+  }
+
   const encoder = new TextEncoder();
 
   const stream = new ReadableStream({
     async start(controller) {
+      const reader = response.body!.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+      let toolCallName = "";
+      let toolCallArgs = "";
+      let isToolCall = false;
+
       try {
-        const result = await chat.sendMessageStream(lastMsg.content);
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
 
-        let functionCall: { name: string; args: Record<string, string> } | null = null;
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split("\n");
+          buffer = lines.pop() ?? "";
 
-        for await (const chunk of result.stream) {
-          const candidate = chunk.candidates?.[0];
-          if (!candidate?.content?.parts) continue;
+          for (const line of lines) {
+            if (!line.startsWith("data: ")) continue;
+            const data = line.slice(6).trim();
+            if (data === "[DONE]") break;
 
-          for (const part of candidate.content.parts) {
-            if ("text" in part && part.text) {
-              controller.enqueue(encoder.encode(part.text));
-            } else if ("functionCall" in part && part.functionCall) {
-              functionCall = {
-                name: part.functionCall.name,
-                args: part.functionCall.args as Record<string, string>,
-              };
+            try {
+              const chunk = JSON.parse(data);
+              const delta = chunk.choices?.[0]?.delta;
+
+              if (delta?.content) {
+                controller.enqueue(encoder.encode(delta.content));
+              }
+
+              if (delta?.tool_calls) {
+                isToolCall = true;
+                for (const tc of delta.tool_calls) {
+                  if (tc.function?.name) toolCallName = tc.function.name;
+                  if (tc.function?.arguments) toolCallArgs += tc.function.arguments;
+                }
+              }
+            } catch {
+              // malformed chunk — skip
             }
           }
         }
 
-        if (functionCall?.name === "capture_lead") {
-          const { name, email, summary } = functionCall.args;
+        if (isToolCall && toolCallName === "capture_lead") {
+          const args = JSON.parse(toolCallArgs) as Record<string, string>;
           try {
             await fetch("https://formspree.io/f/xpqkapgw", {
               method: "POST",
@@ -106,7 +131,7 @@ export async function POST(req: Request) {
                 "Content-Type": "application/json",
                 Accept: "application/json",
               },
-              body: JSON.stringify({ name, email, objective: summary }),
+              body: JSON.stringify({ name: args.name, email: args.email, objective: args.summary }),
             });
           } catch {
             console.error("Formspree submission failed");

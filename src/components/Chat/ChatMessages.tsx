@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import ReactMarkdown from "react-markdown";
 import type { Message } from "./ChatContext";
 
 export default function ChatMessages({ messages }: { messages: Message[] }) {
@@ -33,7 +34,21 @@ export default function ChatMessages({ messages }: { messages: Message[] }) {
                 : "bg-[#F0F0EE] text-[#292929] rounded-2xl rounded-bl-sm"
             }`}
           >
-            {msg.content}
+            {msg.role === "assistant" ? (
+              <ReactMarkdown
+                components={{
+                  p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
+                  ol: ({ children }) => <ol className="list-decimal pl-4 mb-2 space-y-1">{children}</ol>,
+                  ul: ({ children }) => <ul className="list-disc pl-4 mb-2 space-y-1">{children}</ul>,
+                  li: ({ children }) => <li>{children}</li>,
+                  strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+                }}
+              >
+                {msg.content}
+              </ReactMarkdown>
+            ) : (
+              msg.content
+            )}
             {msg.isStreaming && msg.content === "" && (
               <span className="inline-block w-[6px] h-[14px] bg-[#C48C59] animate-pulse align-middle" />
             )}

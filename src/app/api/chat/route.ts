@@ -129,11 +129,17 @@ export async function POST(req: Request) {
               }
 
               if (delta?.tool_calls) {
+                console.log("Tool call delta received:", JSON.stringify(delta.tool_calls));
                 isToolCall = true;
                 for (const tc of delta.tool_calls) {
                   if (tc.function?.name) toolCallName = tc.function.name;
                   if (tc.function?.arguments) toolCallArgs += tc.function.arguments;
                 }
+              }
+
+              const finishReason = chunk.choices?.[0]?.finish_reason;
+              if (finishReason) {
+                console.log("Finish reason:", finishReason);
               }
             } catch {
               // malformed chunk — skip

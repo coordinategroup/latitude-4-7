@@ -141,6 +141,8 @@ export async function POST(req: Request) {
           }
         }
 
+        console.log("Stream ended. isToolCall:", isToolCall, "toolCallName:", toolCallName, "toolCallArgs:", toolCallArgs);
+
         if (isToolCall && toolCallName === "capture_lead") {
           const args = JSON.parse(toolCallArgs) as Record<string, string>;
           try {

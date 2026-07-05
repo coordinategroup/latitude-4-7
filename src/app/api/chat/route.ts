@@ -156,7 +156,7 @@ export async function POST(req: Request) {
             console.error("Formspree submission failed");
           }
           controller.enqueue(
-            encoder.encode("Done — the team will be in touch with you shortly.")
+            encoder.encode("Done. The team will be in touch with you shortly.")
           );
         }
       } catch (err) {

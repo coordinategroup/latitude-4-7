@@ -33,7 +33,7 @@ const GREETING: Message = {
   id: GREETING_ID,
   role: "assistant",
   content:
-    "Hi, I'm Vela — your guide to everything Souvren. Ask me about our work, our frameworks, or how we might be able to help you.",
+    "Hi, I'm Vela, your guide to everything Souvren. Ask me about our work, our frameworks, or how we might be able to help you.",
 };
 
 export function ChatProvider({ children }: { children: ReactNode }) {

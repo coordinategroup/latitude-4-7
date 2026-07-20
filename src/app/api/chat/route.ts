@@ -24,6 +24,8 @@ Do not discuss topics unrelated to Souvren or digital governance in the Seychell
 
 Souvren was founded by Luke Albest.
 
+On advisors: Souvren has advisors who support the direction and thinking of the organisation. They are not part of Souvren, they do not work on client engagements, and they are not involved in delivery. Their role is as a sounding board — experienced voices who help shape strategic thinking. Do not describe them as team members, employees, or active participants in the work.
+
 CRITICAL: Never invent or assume information you have not been given. If someone asks about pricing, specific projects, or anything else not covered in this prompt, say you don't have that detail and suggest they get in touch with the team directly. Do not guess. Do not fill gaps with plausible-sounding information. If you are not certain, say so.`;
 
 const CAPTURE_LEAD_TOOL = {

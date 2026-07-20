@@ -94,8 +94,7 @@ export default async function WhoWeArePage() {
                 </span>
                 <Link
                   href="/case-studies"
-                  className="inline-flex items-center h-9 px-8 rounded-full text-[11px] tracking-widest uppercase text-[#110F0F] border border-[#292929]/30 hover:border-[#292929]/60 transition-all duration-300"
-                  style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+                  className="inline-flex items-center h-9 px-8 rounded-full text-[15px] font-medium text-[#110F0F] border border-[#292929]/30 hover:border-[#292929]/60 transition-all duration-300"
                 >
                   Read more
                 </Link>
@@ -137,8 +136,7 @@ export default async function WhoWeArePage() {
                         </p>
                         <Link
                           href={`/case-studies/${study.slug.current}`}
-                          className="self-start inline-flex items-center h-9 px-6 rounded-full text-[11px] tracking-widest uppercase text-white border border-white/40 hover:border-white transition-all duration-300"
-                          style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+                          className="self-start inline-flex items-center h-9 px-6 rounded-full text-[15px] font-medium text-white border border-white/40 hover:border-white transition-all duration-300"
                         >
                           Read
                         </Link>
@@ -211,8 +209,7 @@ export default async function WhoWeArePage() {
                 We're not the largest consultancy in the room. We're the one that's seen what happens when the largest one leaves. We advise for outcomes, not optics: and we stay until the right direction is set.
               </p>
               <SecureBriefingButton
-                className="inline-flex items-center h-9 px-8 rounded-full text-[11px] tracking-widest uppercase text-[#110F0F] border border-[#292929]/30 hover:border-[#292929]/60 transition-all duration-300"
-                style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+                className="inline-flex items-center h-9 px-8 rounded-full text-[15px] font-medium text-[#110F0F] border border-[#292929]/30 hover:border-[#292929]/60 transition-all duration-300"
               >
                 Contact
               </SecureBriefingButton>

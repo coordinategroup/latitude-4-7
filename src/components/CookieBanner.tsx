@@ -98,15 +98,13 @@ export default function CookieBanner() {
           <div className="flex items-center gap-3 shrink-0">
             <button
               onClick={handleAcceptAll}
-              className="px-5 py-2 bg-[#292929] text-white text-[11px] tracking-widest font-medium hover:bg-[#292929]/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#292929]"
-              style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+              className="px-5 py-2 bg-[#292929] text-white text-[15px] font-medium hover:bg-[#292929]/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#292929]"
             >
               Accept
             </button>
             <button
               onClick={handleEssentialOnly}
-              className="px-5 py-2 border border-black/[0.2] text-[#0A0A0B]/60 text-[11px] tracking-widest hover:border-black/40 hover:text-[#0A0A0B]/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-black/20"
-              style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+              className="px-5 py-2 border border-black/[0.2] text-[#0A0A0B]/60 text-[15px] font-medium hover:border-black/40 hover:text-[#0A0A0B]/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-black/20"
             >
               Essential only
             </button>
@@ -160,8 +158,7 @@ export default function CookieBanner() {
           <div className="flex items-center gap-3">
             <button
               onClick={handleSaveSettings}
-              className="px-5 py-2 bg-[#292929] text-white text-[11px] tracking-widest font-medium hover:bg-[#292929]/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#292929]"
-              style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+              className="px-5 py-2 bg-[#292929] text-white text-[15px] font-medium hover:bg-[#292929]/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#292929]"
             >
               Save preferences
             </button>

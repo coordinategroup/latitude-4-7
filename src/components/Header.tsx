@@ -85,10 +85,12 @@ export default function Header({ transparentAtTop = false }: { transparentAtTop?
   return (
     <>
       <motion.header
-        className="fixed top-0 left-0 right-0 z-50 transition-colors duration-300"
+        className="fixed top-0 left-0 right-0 z-50"
         animate={{
           y: headerHidden ? "-100%" : 0,
-          backgroundColor: atTop ? "rgba(0,0,0,0)" : "#FAFAFA",
+          backgroundColor: atTop ? "rgba(0,0,0,0)" : "rgba(250,250,250,0.72)",
+          backdropFilter: atTop ? "blur(0px)" : "blur(18px)",
+          borderBottom: atTop ? "1px solid rgba(0,0,0,0)" : "1px solid rgba(0,0,0,0.06)",
         }}
         transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
       >
@@ -133,6 +135,14 @@ export default function Header({ transparentAtTop = false }: { transparentAtTop?
                 <span className={`absolute bottom-0 left-0 w-full h-px scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${underlineClass}`} />
               </a>
 
+              <a
+                href="/partners"
+                className={`group relative text-[15px] transition-colors duration-300 ${navTextClass}`}
+              >
+                Partnerships
+                <span className={`absolute bottom-0 left-0 w-full h-px scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${underlineClass}`} />
+              </a>
+
               <button
                 className={`group relative text-[15px] transition-colors duration-300 ${navTextClass}`}
                 onMouseEnter={openAbout} onMouseLeave={closeAbout}
@@ -145,12 +155,11 @@ export default function Header({ transparentAtTop = false }: { transparentAtTop?
 
             <button
               onClick={() => setBriefingOpen(true)}
-              className={`hidden lg:inline-flex items-center h-9 px-5 rounded-full text-[11px] tracking-widest uppercase transition-all duration-300 ${
+              className={`hidden lg:inline-flex items-center h-9 px-5 rounded-full text-[15px] font-medium transition-all duration-300 ${
                 atTop
                   ? "text-white border border-white/40 hover:bg-white hover:text-[#110F0F]"
                   : "text-white bg-[#110F0F] hover:bg-[#2a2828]"
               }`}
-              style={{ fontFamily: "var(--font-jetbrains-mono)" }}
             >
               Contact
             </button>
@@ -310,6 +319,9 @@ export default function Header({ transparentAtTop = false }: { transparentAtTop?
                 <a href="/case-studies" onClick={() => setMobileOpen(false)} className="py-2 text-[20px] font-medium text-[#0A0A0B] tracking-[-0.02em] hover:text-[#C48C59] transition-colors duration-200">
                   Case Studies
                 </a>
+                <a href="/partners" onClick={() => setMobileOpen(false)} className="py-2 text-[20px] font-medium text-[#0A0A0B] tracking-[-0.02em] hover:text-[#C48C59] transition-colors duration-200">
+                  Partnerships
+                </a>
 
                 {/* About Us group */}
                 <button
@@ -358,8 +370,7 @@ export default function Header({ transparentAtTop = false }: { transparentAtTop?
               <div className="px-6 pb-12 pt-6 border-t border-black/[0.08]">
                 <button
                   onClick={() => { setMobileOpen(false); setBriefingOpen(true); }}
-                  className="flex items-center justify-center w-full h-10 rounded-full text-[11px] tracking-widest uppercase text-white bg-[#110F0F] hover:bg-[#2a2828] transition-all duration-300"
-                  style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+                  className="flex items-center justify-center w-full h-10 rounded-full text-[15px] font-medium text-white bg-[#110F0F] hover:bg-[#2a2828] transition-all duration-300"
                 >
                   Contact
                 </button>

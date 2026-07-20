@@ -197,8 +197,7 @@ export default function GovernanceFrameworksPage() {
                 The best time to establish a design and delivery process is before the first line of code is written. The second best time is now.
               </p>
               <SecureBriefingButton
-                className="inline-flex items-center h-9 px-8 rounded-full text-[11px] tracking-widest uppercase text-[#110F0F] border border-[#292929]/30 hover:border-[#292929]/60 transition-all duration-300"
-                style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+                className="inline-flex items-center h-9 px-8 rounded-full text-[15px] font-medium text-[#110F0F] border border-[#292929]/30 hover:border-[#292929]/60 transition-all duration-300"
               >
                 Contact
               </SecureBriefingButton>

@@ -25,8 +25,7 @@ export default function Frameworks() {
           </div>
           <Link
             href="/sovereign-architecture"
-            className="self-start inline-flex items-center h-9 px-8 rounded-full text-[11px] tracking-widest uppercase text-white bg-[#110F0F] hover:bg-[#2a2828] transition-all duration-300 mt-auto"
-            style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+            className="self-start inline-flex items-center h-9 px-8 rounded-full text-[15px] font-medium text-white bg-[#110F0F] hover:bg-[#2a2828] transition-all duration-300 mt-auto"
           >
             Learn more
           </Link>
@@ -46,8 +45,7 @@ export default function Frameworks() {
           </div>
           <Link
             href="/experience-design"
-            className="self-start inline-flex items-center h-9 px-8 rounded-full text-[11px] tracking-widest uppercase text-white bg-[#110F0F] hover:bg-[#2a2828] transition-all duration-300 mt-auto"
-            style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+            className="self-start inline-flex items-center h-9 px-8 rounded-full text-[15px] font-medium text-white bg-[#110F0F] hover:bg-[#2a2828] transition-all duration-300 mt-auto"
           >
             Learn More
           </Link>
@@ -67,8 +65,7 @@ export default function Frameworks() {
           </div>
           <Link
             href="/digital-leadership"
-            className="self-start inline-flex items-center h-9 px-8 rounded-full text-[11px] tracking-widest uppercase text-white bg-[#110F0F] hover:bg-[#2a2828] transition-all duration-300 mt-auto"
-            style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+            className="self-start inline-flex items-center h-9 px-8 rounded-full text-[15px] font-medium text-white bg-[#110F0F] hover:bg-[#2a2828] transition-all duration-300 mt-auto"
           >
             Learn More
           </Link>

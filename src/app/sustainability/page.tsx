@@ -138,7 +138,7 @@ export default async function SustainabilityPage() {
                   <span className="text-[10px] uppercase tracking-widest text-white" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>{article.type}</span>
                   <div className="flex flex-col gap-4">
                     <h3 className="text-[24px] md:text-[32px] font-medium text-white tracking-[-0.02em] leading-snug max-w-2xl" style={{ fontFamily: "var(--font-instrument)" }}>{article.title}</h3>
-                    <span className="inline-flex items-center gap-2 text-[11px] tracking-widest uppercase text-white/70" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
+                    <span className="inline-flex items-center gap-2 text-[15px] font-medium text-white/70" style={{ fontFamily: "var(--font-jetbrains-mono)" }}>
                       Read
                       <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M7 2.5L11.5 7 7 11.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
                     </span>
@@ -208,8 +208,7 @@ export default async function SustainabilityPage() {
                 If your institution is building digital infrastructure that needs to outlast any single administration, we would like to talk.
               </p>
               <SecureBriefingButton
-                className="inline-flex items-center h-9 px-8 rounded-full text-[11px] tracking-widest uppercase text-[#110F0F] border border-[#292929]/30 hover:border-[#292929]/60 transition-all duration-300"
-                style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+                className="inline-flex items-center h-9 px-8 rounded-full text-[15px] font-medium text-[#110F0F] border border-[#292929]/30 hover:border-[#292929]/60 transition-all duration-300"
               >
                 Contact
               </SecureBriefingButton>

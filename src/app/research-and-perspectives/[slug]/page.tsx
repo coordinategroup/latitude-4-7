@@ -441,8 +441,7 @@ export default async function ArticlePage(
               </h2>
               <Link
                 href="/research-and-perspectives"
-                className="inline-flex items-center h-9 px-8 rounded-full text-[11px] tracking-widest uppercase text-[#110F0F] border border-[#292929]/30 hover:border-[#292929]/60 transition-all duration-300"
-                style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+                className="inline-flex items-center h-9 px-8 rounded-full text-[15px] font-medium text-[#110F0F] border border-[#292929]/30 hover:border-[#292929]/60 transition-all duration-300"
               >
                 View all
               </Link>

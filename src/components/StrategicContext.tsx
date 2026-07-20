@@ -49,8 +49,7 @@ export default async function StrategicContext() {
 
           <a
             href="/who-we-are"
-            className="self-start inline-flex items-center h-9 px-8 rounded-full text-[11px] tracking-widest uppercase text-white bg-[#110F0F] hover:bg-[#2a2828] transition-all duration-300"
-            style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+            className="self-start inline-flex items-center h-9 px-8 rounded-full text-[15px] font-medium text-white bg-[#110F0F] hover:bg-[#2a2828] transition-all duration-300"
           >
             Learn More
           </a>
@@ -69,8 +68,7 @@ export default async function StrategicContext() {
           </span>
           <Link
             href="/case-studies"
-            className="inline-flex items-center h-9 px-8 rounded-full text-[11px] tracking-widest uppercase text-[#110F0F] border border-[#292929]/30 hover:border-[#292929]/60 transition-all duration-300"
-            style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+            className="inline-flex items-center h-9 px-8 rounded-full text-[15px] font-medium text-[#110F0F] border border-[#292929]/30 hover:border-[#292929]/60 transition-all duration-300"
           >
             Read more
           </Link>
@@ -120,8 +118,7 @@ export default async function StrategicContext() {
                 <div>
                   <Link
                     href={`/case-studies/${study.slug.current}`}
-                    className="self-start inline-flex items-center h-9 px-6 rounded-full text-[11px] tracking-widest uppercase text-white border border-white/40 hover:border-white transition-all duration-300"
-                    style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+                    className="self-start inline-flex items-center h-9 px-6 rounded-full text-[15px] font-medium text-white border border-white/40 hover:border-white transition-all duration-300"
                   >
                     Read
                   </Link>

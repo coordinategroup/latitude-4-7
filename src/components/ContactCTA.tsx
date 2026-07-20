@@ -18,8 +18,7 @@ export default function ContactCTA() {
         <div className="mt-2">
           <button
             onClick={() => setBriefingOpen(true)}
-            className="inline-flex items-center h-9 px-8 rounded-full text-[11px] tracking-widest uppercase text-white bg-[#110F0F] hover:bg-[#2a2828] transition-all duration-300"
-            style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+            className="inline-flex items-center h-9 px-8 rounded-full text-[15px] font-medium text-white bg-[#110F0F] hover:bg-[#2a2828] transition-all duration-300"
           >
             Contact
           </button>

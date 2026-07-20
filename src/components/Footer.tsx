@@ -63,6 +63,10 @@ export default function Footer() {
                 Leadership
                 <span className="absolute bottom-0 left-0 w-full h-px bg-[#292929] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </a>
+              <a href="/partners" className="group relative self-start text-[15px] text-[#0A0A0B]/60 hover:text-[#0A0A0B] transition-colors duration-200">
+                Partnerships
+                <span className="absolute bottom-0 left-0 w-full h-px bg-[#292929] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              </a>
             </nav>
           </div>
 

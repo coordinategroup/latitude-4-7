@@ -83,8 +83,7 @@ function PillarSection({
           </p>
           <Link
             href={href}
-            className="self-start inline-flex items-center h-9 px-8 rounded-full text-[11px] tracking-widest uppercase text-white bg-[#110F0F] hover:bg-[#2a2828] transition-all duration-300"
-            style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+            className="self-start inline-flex items-center h-9 px-8 rounded-full text-[15px] font-medium text-white bg-[#110F0F] hover:bg-[#2a2828] transition-all duration-300"
           >
             {buttonLabel}
           </Link>
@@ -110,8 +109,7 @@ export default async function CaseStudies() {
             </span>
             <Link
               href="/research-and-perspectives"
-              className="shrink-0 inline-flex items-center h-9 px-8 rounded-full text-[11px] tracking-widest uppercase text-[#110F0F] border border-[#292929]/30 hover:border-[#292929]/60 transition-all duration-300"
-              style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+              className="shrink-0 inline-flex items-center h-9 px-8 rounded-full text-[15px] font-medium text-[#110F0F] border border-[#292929]/30 hover:border-[#292929]/60 transition-all duration-300"
             >
               Read more
             </Link>
